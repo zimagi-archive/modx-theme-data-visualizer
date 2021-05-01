@@ -5,7 +5,10 @@ Download a copy here: https://modx.com/download or install via Gitify(https://do
 
 ## \_data Directory
 
-This directory is composed of a series of xaml files with all the information that will be set in the database when running `gitify build -f` in the command line in the web root.
+This directory is composed of a series of xaml files with all the information that will be set in the database. Run the following commands to start the process:
+
+`gitify package:install --all`
+`gitify build`
 
 ## assets/themes/zimagi_data_visualizer
 
