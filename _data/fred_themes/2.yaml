@@ -1,0 +1,6 @@
+id: 2
+name: 'Zimagi Data Visualizer'
+namespace: fred_theme_zimagi-data-visualizer
+settingsPrefix: fred.theme.zimagi-data-visualizer
+theme_folder: zimagi_data_visualizer
+uuid: 344c843c-5888-45fa-a796-9344772a4a09

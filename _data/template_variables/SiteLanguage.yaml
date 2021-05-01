@@ -1,0 +1,16 @@
+id: 2
+source: 1
+type: listbox
+name: SiteLanguage
+caption: 'Site Language'
+category: 'Site Language'
+elements: 'English (United States)==en||Español==es'
+rank: 4
+display: string
+properties: 'a:0:{}'
+input_properties: 'a:7:{s:10:"allowBlank";s:5:"false";s:9:"listWidth";s:0:"";s:5:"title";s:0:"";s:9:"typeAhead";s:5:"false";s:14:"typeAheadDelay";s:3:"250";s:14:"forceSelection";s:5:"false";s:13:"listEmptyText";s:0:"";}'
+output_properties: 'a:1:{s:6:"format";s:0:"";}'
+
+-----
+
+en

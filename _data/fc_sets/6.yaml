@@ -1,0 +1,7 @@
+id: 6
+profile: 2
+action: 'resource/*'
+description: 'Template used to visually separate resource in MODX Resources'' tree'
+active: 1
+template: 6
+constraint_class: modResource

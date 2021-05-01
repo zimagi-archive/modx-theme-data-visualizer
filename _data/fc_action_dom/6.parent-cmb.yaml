@@ -1,0 +1,10 @@
+id: 397
+set: 6
+action: 'resource/*'
+name: parent-cmb
+description: null
+container: modx-panel-resource
+rule: fieldVisible
+value: '0'
+constraint_class: modResource
+rank: 5

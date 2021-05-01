@@ -1,0 +1,60 @@
+id: 3
+source: 1
+templatename: _DocumentationTemplate-Fred
+description: 'Template used only to give insight HOW TO USE MODX with the visual content builder (Fred)'
+properties: 'a:0:{}'
+
+-----
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    
+    <!--<link rel="canonical" href="https://appstack.bootlab.io/dashboard-default.html" />-->
+    <link rel="shortcut icon" href="[[++fred.theme_dir]]img/favicon.ico" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Choose your prefered color scheme -->
+    <link href="[[++fred.theme_dir]]css/light.css" rel="stylesheet" />
+    <!-- <link href="[[++fred.theme_dir]]css/dark.css" rel="stylesheet" /> -->
+    [[- Set some css fred customizations for better user experience]]
+    [[!hasFredPermissions:is=`1`:then=`
+        <link href="[[++fred.theme_dir]]customizations/fred/fred-overrides.css" rel="stylesheet" />
+    `]]
+  </head>
+  
+  <body
+    data-theme="dark"
+    data-layout="fluid"
+    data-sidebar-position="left"
+    data-sidebar-behavior="sticky"
+  >
+    <div class="wrapper">
+      
+      <div class="main">
+       
+        <main class="content" data-fred-dropzone="content">
+          [[- Main area where building blocks will be dropped]]
+          [[*content]]
+        </main>
+
+       
+      </div>
+      
+    </div>
+
+    <script src="[[++fred.theme_dir]]js/app.js"></script>
+
+   
+  </body>
+</html>

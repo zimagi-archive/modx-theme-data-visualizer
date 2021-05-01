@@ -1,0 +1,3 @@
+name: fred
+path: '{core_path}components/fred/'
+assets_path: '{assets_path}components/fred/'

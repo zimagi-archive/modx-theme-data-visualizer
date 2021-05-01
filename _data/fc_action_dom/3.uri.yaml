@@ -1,0 +1,10 @@
+id: 928
+set: 3
+action: 'resource/*'
+name: uri
+description: null
+container: modx-panel-resource
+rule: fieldVisible
+value: '0'
+constraint_class: modResource
+rank: 5

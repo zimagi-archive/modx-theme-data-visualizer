@@ -1,0 +1,7 @@
+id: 4
+profile: 2
+action: 'resource/*'
+description: 'Hide fields that wont be needed'
+active: 1
+template: 4
+constraint_class: modResource

@@ -1,0 +1,10 @@
+id: 325
+set: 2
+action: 'resource/*'
+name: published
+description: null
+container: modx-panel-resource
+rule: fieldTitle
+value: 'Published (Public)'
+constraint_class: modResource
+rank: 4

@@ -1,0 +1,5 @@
+key: fred.default_enabled
+value: '1'
+xtype: combo-boolean
+namespace: fred
+area: default

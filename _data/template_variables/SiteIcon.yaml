@@ -1,0 +1,15 @@
+id: 4
+source: 1
+type: image
+name: SiteIcon
+caption: 'Site Icon (Site Icons should be square and at least 512 × 512 pixels)'
+description: 'Site Icons are the small icon next your site''s title that you see in browser tabs and bookmark bars.'
+category: 'Site Icon'
+elements: ''
+rank: 2
+display: text
+default_text: ''
+properties: 'a:0:{}'
+input_properties: 'a:1:{s:10:"allowBlank";s:4:"true";}'
+output_properties: 'a:1:{s:6:"format";s:0:"";}'
+content: ''

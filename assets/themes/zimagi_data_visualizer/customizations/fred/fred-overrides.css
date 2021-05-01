@@ -1,0 +1,310 @@
+/** Fred Override Styles
+*   by Aramis
+*   
+*   These syles will make more user friendly the Fred environment
+*   
+*   Include this next line of code in first line in assets/components/fred/web/fred.css: 
+*   @import url("../../../customizations/fred/fred-overrides.css");
+*/
+.fred .fred--toggle,
+.fred--panel label{
+    min-height: auto;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    margin-bottom: 0px !important;
+}
+.fred .fred--panel dl dt:after{
+    color: #363636 !important;
+}
+.fred .fred--panel dl dt:hover::after{
+    color: #ffffff !important;
+}
+.fred--block {
+    /* border: 2px dashed red; */
+    margin: 3px 0 3px 0;
+}
+
+.fred--block .fred--block {
+    border: 0px;
+}
+.fred .fred--modal-bg{
+    left: 0px;
+}
+*[data-fred-dropzone] {
+    border: 1px dotted red;
+    margin: 40px 0px 40px 0px;
+    padding: 20px;
+    position: relative;
+    clear: both !important;
+}
+
+*[data-fred-dropzone]::before {
+    content: 'DROPZONE';
+    color: red;
+    font-size: 10px;
+    font-family: "Courier", Helvetica, Arial !important;
+    font-weight: bold;
+    position: absolute;
+    top: 4px;
+    left: 20px;
+    opacity: .7;
+
+}
+main[data-fred-dropzone] {
+     padding: 30px 0px 20px 0px !important;
+     margin: 0px !important;
+}
+main[data-fred-dropzone]::before {
+    content: 'PAGE DROPZONE';
+}
+/*Push page content to the side for fred's toolbar*/
+body{
+   padding-left: 80px !important;
+}
+.fred--toolbar-plugins {
+    box-shadow: 0 0 4px #363636;
+    z-index: 2000;
+}
+
+.fred--block.fred-modal,
+.fred--block.fred-resource-include {
+    border: 1px solid #ddd !important;
+    background: linear-gradient(45deg, #eee 12.5%, #fff 12.5%, #fff 37.5%, #eee 37.5%, #eee 62.5%, #fff 62.5%, #fff 87.5%, #eee 87.5%);
+    background-size: 10px 10px;
+    background-position: 50px 50px;
+    padding: 1rem;
+}
+
+.fred--block.fred-modal::before,
+.fred--block.fred-resource-include::before {
+    font-size: 12px;
+    text-shadow: 0px 0px 5px #fff;
+    color: #00205c;
+}
+.fred--block.fred-modal::before{
+    content: 'MODAL FRED ELEMENT';
+}
+.fred--block.fred-resource-include::before{
+    content: 'INCLUDE RESOURCE ID IN SETTINGS';
+}
+
+.fred--block.fred-modal .modal,
+.fred--block.fred-modal .modal {
+    display: block !important;
+    opacity: 1 !important;
+    position: relative !important;
+}
+
+.fred--block.fred-modal .fade:not(.show) {
+    opacity: 1 !important;
+}
+
+.fred--block.fred-modal .modal.fade .modal-dialog {
+    transform: none !important;
+}
+
+/* Give gear setting icon larger hit area*/
+button.fred--element-settings {
+    /*  padding: 1rem 2rem 2rem 6rem !important; */
+}
+
+.fred--modal .ui-widget.elfinder-button-menu.elfinder-button-search-menu {
+    top: 25px !important;
+
+}
+
+.fred--panel select:focus,
+.fred--panel select:active {
+    color: #00205c !important;
+}
+/*Turn of preview controls*/
+.fred--content-preview_controls{
+    display: none !important;
+}
+
+/* Hide some elements on Fred modal fontawesome select */
+.fred--modal-body div.fred--preview{
+    margin-top: 2rem !important;
+    font-size: 2rem !important;
+}
+.fred--modal-body > div label{
+    /*display: none !important;*/
+}
+
+.fred--modal-body{
+    min-height: 400px !important;
+}
+.choices .choices__list.choices__list--single,
+.choices__inner .choices select{
+    font-size: 1.3rem !important;
+}
+.fred--block_content .card-custom-icon{
+    width: 55px !important;
+    height: 55px !important;
+}
+.fred--block .section .row{
+    margin-top: 0px !important;
+}
+
+header{
+    z-index: 1000;
+    position: relative;
+}
+main{
+    z-index: 9999;
+    position: relative;
+}
+.fred--block_content section.object-wrap div[data-fred-dropzone]{
+    padding-top: 30px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.fred--block_content .tab-content{
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}
+.fred--block_content .tabs-custom .nav-tabs{
+    margin-bottom: -40px !important;
+}
+.fred--block_content .step .body{
+    margin-top: 0px;
+}
+.fred--block_content .step .line{
+   /*  margin-top: -60px;
+   margin-bottom: -60px; */
+  top: 32px !important;
+  bottom: -40px !important;
+}
+.fred-resource-include .tab-content{
+    margin-top: 2.6rem !important;
+}
+
+/* Turn of preview controls */
+.fred--content-preview_controls {
+  display: none !important;
+}
+
+.fred--sidebar {
+  z-index: 9999 !important;
+}
+.fred--panel {
+  z-index: 10000 !important;
+}
+
+/* Turn off site pages */
+.fred--sidebar_pages {
+  display: none !important;
+}
+
+.fred--thumbs figcaption strong{
+    color: #fff !important;
+    font-weight: bold;
+}
+
+
+/*Hide sidebar edit link*/
+
+.fred--active .btn-edit-sidebar{
+    display: block !important;
+}
+
+/* Tooltip container */
+.fred--tooltip {
+  /* position: relative !important;
+  display: inline-block !important; */
+  position: absolute !important;
+  /* float: right; */
+  /*  right: 0px; */
+  left: -20px;
+  padding: 10px;
+  width: 20px !important;
+  height: 20px !important;
+  background-image: url('../../../assets/icons/icon-info.svg');
+  background-repeat: no-repeat;
+}
+
+/* Tooltip text */
+.fred--tooltip .fred--tooltiptext {
+  display: none !important;
+  width: 200px !important;
+  background-color: #444 !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute !important;
+  z-index: 1 !important;
+  top: 25px;
+  /* left: 50%;*/
+  left: 0px;
+  /* margin-left: -80px !important; */
+}
+.fred--tooltip .fred--tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  
+  left: 6px;
+  /* margin-left: -5px; */
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #444 transparent;
+  
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+.fred--tooltip:hover .fred--tooltiptext {
+  display: block !important;
+}
+
+/* Modal style fixes*/
+.modal{
+    z-index: 10003 !important;
+}
+.modal-backdrop{
+    z-index: 10001 !important;
+}
+dd label, fieldset label{
+    position: relative;
+}
+.fred--helpcontent{
+    position: absolute;
+    top: 80px;
+}
+.fred--helpcontent:before{
+    content: '' !important;
+    display: inline-block;
+    width: 24px !important;
+    height: 18px !important;
+    background-image: url('../../../assets/icons/file-text.svg') !important;
+    background-size: auto 100% !important;
+    background-repeat: no-repeat;
+    opacity: .6;
+}
+.fred--helpcontent:hover::before{
+    opacity: 1;
+}
+.fred-icon-gear{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('images/fred-gear-icon.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    margin-bottom: -10px;
+}
+/*Disable Menu Title Input in settings in Fred*/
+.fred--page_settings_form fieldset label:nth-child(5),
+.fred--page_settings_form fieldset label:nth-child(8){
+    display: none !important;
+}
+
+dd[role="tablist"]{
+    padding-bottom: 80px !important;
+}
+*[data-fred-dropzone]{
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+.card *[data-fred-dropzone]{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}

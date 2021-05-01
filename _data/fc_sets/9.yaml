@@ -1,0 +1,7 @@
+id: 9
+profile: 2
+action: 'resource/*'
+description: 'Hide Menu Title Setting'
+active: 1
+template: 2
+constraint_class: modResource

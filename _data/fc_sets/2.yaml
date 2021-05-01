@@ -1,0 +1,7 @@
+id: 2
+profile: 1
+action: 'resource/*'
+description: 'Modify Field Labels for All Users in All Templates'
+active: 1
+template: 2
+constraint_class: modResource

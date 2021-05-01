@@ -1,0 +1,28 @@
+.card-body .sample-txt{
+    position: absolute;
+    font-size: 3.4rem;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    width: 96%;
+    opacity: .15;
+    top: 40%;
+    z-index: 5;
+    transform: rotate(-30deg);
+  /* Safari */
+  -webkit-transform: rotate(-30deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-30deg);
+
+  /* IE */
+  -ms-transform: rotate(-30deg);
+
+  /* Opera */
+  -o-transform: rotate(-30deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    
+}

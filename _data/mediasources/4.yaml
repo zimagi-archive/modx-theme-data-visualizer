@@ -1,0 +1,4 @@
+id: 4
+name: 'Data Sources'
+description: 'Upload your data sources for your charts in this directory.'
+properties: 'a:5:{s:8:"basePath";a:6:{s:4:"name";s:8:"basePath";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:19:"assets/datasources/";s:7:"lexicon";N;}s:7:"baseUrl";a:6:{s:4:"name";s:7:"baseUrl";s:4:"desc";s:0:"";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:19:"assets/datasources/";s:7:"lexicon";N;}s:15:"imageExtensions";a:6:{s:4:"name";s:15:"imageExtensions";s:4:"desc";s:30:"prop_file.imageExtensions_desc";s:4:"type";s:9:"textfield";s:7:"options";a:0:{}s:5:"value";s:0:"";s:7:"lexicon";s:11:"core:source";}s:4:"fred";a:6:{s:4:"name";s:4:"fred";s:4:"desc";s:0:"";s:4:"type";s:13:"combo-boolean";s:7:"options";a:0:{}s:5:"value";b:1;s:7:"lexicon";N;}s:12:"fredReadOnly";a:6:{s:4:"name";s:12:"fredReadOnly";s:4:"desc";s:0:"";s:4:"type";s:13:"combo-boolean";s:7:"options";a:0:{}s:5:"value";b:0;s:7:"lexicon";N;}}'

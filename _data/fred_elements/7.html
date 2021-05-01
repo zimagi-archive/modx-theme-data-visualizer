@@ -1,0 +1,32 @@
+id: 7
+name: 'Manage Colors'
+uuid: 2f389c5e-aa13-4f11-bf17-932051ba7fdb
+image: 'https://via.placeholder.com/300x150?text=Color'
+category: 7
+rank: 1
+options_override: '{"settings":[{"name":"color_1","label":"Color 1","type":"colorpicker","value":"#0b84a5"},{"name":"color_2","label":"Color 2","type":"colorpicker","value":"#0b84a5"},{"name":"color_3","label":"Color 3","type":"colorpicker","value":"#0b84a5"},{"name":"color_4","label":"Color 5","type":"colorpicker","value":"#0b84a5"},{"name":"color_5","label":"Color 5","type":"colorpicker","value":"#0b84a5"},{"name":"color_6","label":"Color 6","type":"colorpicker","value":"#0b84a5"},{"name":"color_7","label":"Color 7","type":"colorpicker","value":"#0b84a5"},{"name":"color_8","label":"Color 8","type":"colorpicker","value":"#0b84a5"},{"name":"color_9","label":"Color 9","type":"colorpicker","value":"#0b84a5"},{"name":"color_10","label":"Color 10","type":"colorpicker","value":"#0b84a5"}]}'
+
+-----
+
+<script>
+var defaultGraphsColors=[{% for i in 1..10 %}{% set item = _context['color_'~i]%}"{{item}}"{%if i < 10%},{%endif%}{% endfor %}];
+var barChartPercentage = 0.325;
+var barChartCatPercentage = 0.5;
+</script>
+<div data-fred-render="false" class="px-2">
+    <h2 data-fred-render="false">Graphs Default Colors</h2>
+   
+    <div data-fred-render="false" class="alert alert-info alert-dismissible mt-2" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="alert-message">
+          <p class="mr-2">Hover over and click the <strong class="fred-icon-gear"><span class="sr-only">Gears</span></strong> icon, go to <strong>Open Settings</strong> to modify graphs colors.</p>
+        </div>
+    </div>
+    
+  </div>
+</div>
+{% for i in 1..10 %}
+    <div data-fred-render="false" class="border shadow-sm" style="background-color: {% set item = _context['color_'~i]%}{{ item }};width: 96%;min-height: 40px;margin: 5px"></div>
+{% endfor %}

@@ -1,0 +1,4 @@
+id: 1
+name: Filesystem
+description: ''
+properties: 'a:2:{s:4:"fred";a:6:{s:4:"name";s:4:"fred";s:4:"desc";s:0:"";s:4:"type";s:13:"combo-boolean";s:7:"options";a:0:{}s:5:"value";b:0;s:7:"lexicon";N;}s:12:"fredReadOnly";a:6:{s:4:"name";s:12:"fredReadOnly";s:4:"desc";s:0:"";s:4:"type";s:13:"combo-boolean";s:7:"options";a:0:{}s:5:"value";b:0;s:7:"lexicon";N;}}'

@@ -1,0 +1,7 @@
+id: 5
+profile: 2
+action: 'resource/*'
+description: 'Only show Template Variables section'
+active: 1
+template: 5
+constraint_class: modResource

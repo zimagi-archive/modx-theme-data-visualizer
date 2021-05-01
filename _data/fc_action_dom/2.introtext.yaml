@@ -1,0 +1,10 @@
+id: 324
+set: 2
+action: 'resource/*'
+name: introtext
+description: null
+container: modx-panel-resource
+rule: fieldTitle
+value: 'SEO Keywords'
+constraint_class: modResource
+rank: 4

@@ -1,0 +1,234 @@
+id: 2
+source: 1
+templatename: SiteTemplate
+description: 'Build your site with this template.'
+properties: 'a:0:{}'
+
+-----
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="[[*description]]"
+    />
+    <meta name="author" content="[[++name]]" />
+    <meta name="keywords" content="[[*introtext]]">
+    <meta name="ROBOTS" content="[[+robots]]">
+    <title>[[*longtitle:is=``:then=`[[!getSiteSetting? &id=`4` &tv=`SiteTitle`]]`:else=`[[*longtitle]]`]]</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="shortcut icon" href="/[[!getSiteSetting? &id=`4` &tv=`SiteIcon`]]" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Choose your prefered color scheme -->
+    <link href="[[++fred.theme_dir]]css/light.css" rel="stylesheet" />
+    <link href="[[++fred.theme_dir]]css/styles.css" rel="stylesheet" />
+    <!-- <link href="css/dark.css" rel="stylesheet" /> -->
+    <!--<base href="[[++site_url]]">-->
+    [[- Set some css fred customizations for better user experience]]
+    [[!hasFredPermissions:is=`1`:then=`
+        <link href="[[++fred.theme_dir]]customizations/fred/fred-overrides.css" rel="stylesheet" />
+    `]]
+  </head>
+  
+  <body
+    data-theme="dark"
+    data-layout="fluid"
+    data-sidebar-position="left"
+    data-sidebar-behavior="sticky"
+  >
+    
+    [[- App.js combines various javascript libraries like:
+        jQuery, Bootstrap 4, Charts.js, ApexCharts.js, etc 
+    ]]
+    <script src="[[++fred.theme_dir]]js/app.js"></script>
+    <script src="[[++fred.theme_dir]]js/charts-custom-functions.js"></script>
+
+    [[- Graphs default colors & settings
+        Include resource with ID 8 (_ChartsDefaultColors)
+        This resource's template generates javascript variables
+        defining colors and graphs settings 
+        
+        <script>
+            var defaultGraphsColors=["#4c85e5","#f6c85f", ...];
+            var barChartPercentage = 0.325;
+            var barChartCatPercentage = 0.5;
+        </script>
+        
+    ]]
+    [[!getResourceInclude? &id=`8`]]
+    
+     
+    <div class="wrapper">
+       
+      <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content js-simplebar">
+          <a class="sidebar-brand" href="index.html">
+            <span class="zimagi-symbol align-middle"></span>
+
+            <span class="zimagi-brand align-middle mr-3"
+              >[[!getSiteSetting? &id=`4` &tv=`SiteTitle`]]</span
+            >
+          </a>
+          [[!hasFredPermissions:is=`1`:then=`<style>.btn-edit-sidebar{display: none;}</style><div class="p-4 btn-edit-sidebar"><a href="[[~6]]">Edit side bar</a></div>`]]
+          <ul class="sidebar-nav">
+            [[- Include _Side Menu ]]
+            [[!getResourceInclude? &id=`6`]]
+          </ul>
+
+         
+        </div>
+      </nav>
+      
+      <div class="main">
+        <nav class="navbar navbar-expand navbar-light navbar-bg">
+          <a class="sidebar-toggle">
+            <i class="hamburger align-self-center"></i>
+          </a>
+
+        
+          <ul class="navbar-nav">
+            <li class="nav-item px-2 dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Mega menu
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-left dropdown-mega"
+                aria-labelledby="servicesDropdown"
+              >
+                <div class="d-md-flex align-items-start justify-content-start">
+                  <div class="dropdown-mega-list">
+                    <div class="dropdown-header">UI Elements</div>
+                    <a class="dropdown-item" href="#">Alerts</a>
+                    <a class="dropdown-item" href="#">Buttons</a>
+                    <a class="dropdown-item" href="#">Cards</a>
+                    <a class="dropdown-item" href="#">Carousel</a>
+                    <a class="dropdown-item" href="#">General</a>
+                    <a class="dropdown-item" href="#">Grid</a>
+                    <a class="dropdown-item" href="#">Modals</a>
+                    <a class="dropdown-item" href="#">Tabs</a>
+                    <a class="dropdown-item" href="#">Typography</a>
+                  </div>
+                  <div class="dropdown-mega-list">
+                    <div class="dropdown-header">Forms</div>
+                    <a class="dropdown-item" href="#">Layouts</a>
+                    <a class="dropdown-item" href="#">Basic Inputs</a>
+                    <a class="dropdown-item" href="#">Input Groups</a>
+                    <a class="dropdown-item" href="#">Advanced Inputs</a>
+                    <a class="dropdown-item" href="#">Editors</a>
+                    <a class="dropdown-item" href="#">Validation</a>
+                    <a class="dropdown-item" href="#">Wizard</a>
+                  </div>
+                  <div class="dropdown-mega-list">
+                    <div class="dropdown-header">Tables</div>
+                    <a class="dropdown-item" href="#">Basic Tables</a>
+                    <a class="dropdown-item" href="#">Responsive Table</a>
+                    <a class="dropdown-item" href="#">Table with Buttons</a>
+                    <a class="dropdown-item" href="#">Column Search</a>
+                    <a class="dropdown-item" href="#">Muulti Selection</a>
+                    <a class="dropdown-item" href="#">Ajax Sourced Data</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+         
+        </nav>
+
+        <main class="content" data-fred-dropzone="content">
+            [[- Main area where building blocks will be dropped]]
+            [[*content]]
+        </main>
+
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row text-muted">
+              <div class="col-6 text-left">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a class="text-muted" href="#">Support</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="text-muted" href="#">Help Center</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="text-muted" href="#">Privacy</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="text-muted" href="#">Terms of Service</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-6 text-right">
+                <p class="mb-0">
+                  &copy; 2020 -
+                  <a href="index.html" class="text-muted">AppStack</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      
+    </div>
+    <script>
+      feather.replace()
+    </script>
+    
+    
+    [[- Do not remove the following script
+        Used to fix some fred functionality or fixes
+    ]]
+    [[!hasFredPermissions:is=`1`:then=`
+        <script src="[[++fred.theme_dir]]customizations/fred/fred-ui-listeners.js"></script>
+        <!-- Modal -->
+        <div class="modal fade" id="modalFredHelp" tabindex="-1" aria-labelledby="modalFredHelpLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalFredHelpLabel">Sample</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        [[- Fred customizations managed in the System Settings > Fred]]
+        [[++fred.element_disable_createpartialblueprint:is=`1`:then=`
+            <style>.fred--toolbar-plugins a:nth-child(3){display: none !important;}</style>
+        `]]
+        [[++fred.element_disable_elementthumbnail:is=`1`:then=`
+            <style>.fred--toolbar-plugins a:nth-child(4){display: none !important;}</style>
+        `]]
+    `]]
+    
+    
+   
+  </body>
+</html>

@@ -1,0 +1,4 @@
+id: 2
+name: 'Hide Fields'
+description: 'Disables some fields in Resources that are not used/needed'
+active: 1

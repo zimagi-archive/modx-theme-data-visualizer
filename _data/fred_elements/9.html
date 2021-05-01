@@ -1,0 +1,85 @@
+id: 9
+name: Pie
+uuid: 5e0857f4-a578-44b3-8e13-932e7f35f26d
+image: '{{theme_dir}}thumb-pie-chart.gif'
+category: 7
+rank: 3
+options_override: '{"remote":true,"settings":[{"group":"Data Source","settings":[{"name":"local_ds","label":"Upload your data <div class=''fred--helpcontent''><a id=''samplePie'' href=''javascript:\/\/'' data-source=''assets\/datasources\/sample-pie-chart-datasource.json'' data-title=''Sample Pie Chart Data Source'' onClick=''updateModalFredHelp(this);''>View sample data source<\/a><\/div>","type":"file","value":"[[++fred.theme_dir]]sample_chart_data\/sample-pie-chart-datasource.json","mediaSource":"Data Sources"},{"name":"remote_ds","label":"URL path (API)<a href=''javascript:\/\/'' class=''fred--tooltip''><div class=''fred--tooltiptext p-3''>Cras efficitur egestas parturient ullamcorper vehicula malesuada at dignissim rutrum facilisis bibendum. Lectus parturient proin ad tempus taciti arcu felis ultricies.<\/div><\/a>","type":"text","value":"http:\/\/"},{"fred-import":"background_settings"}]},{"group":"Legend","settings":[{"name":"legend","label":"Show legend","type":"toggle","value":true},{"name":"legend_pos","label":"Position","type":"select","options":{"top":"Top","bottom":"Bottom","left":"Left","right":"Right"},"value":"top"}]},{"name":"table","label":"Show Value Table","type":"toggle","value":false},{"name":"currency","label":"Data as currency<a href=''javascript:\/\/'' class=''fred--tooltip''><div class=''fred--tooltiptext p-3''>Formats numeric data values as currency.<\/div><\/a>","type":"toggle","value":false}]}'
+
+-----
+
+{% set uId = random() %}
+<div id="card-{{uId}}" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0" data-fred-name="title">Card Title</h5>
+    {%if local_ds == "assets/themes/zimagi_data_visualizer/sample_chart_data/sample-pie-chart-datasource.json"%}
+    <div data-fred-render="false" class="alert alert-info alert-dismissible mt-2" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="alert-message">
+          <strong class="d-block text-lg">Showing sample data</strong><p>Hover over this building block and click the <strong class="fred-icon-gear"><span class="sr-only">Gears</span></strong> icon, go to <strong>Open Settings</strong> to change the data source.</p><p class="text-danger">This information will not show in site.</p>
+        </div>
+    </div>
+    {%endif%}
+  </div>
+  <div class="card-body d-flex w-100 flex-column">
+    
+    <div class="align-self-center chart chart-lg"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+      <canvas id="canvas-{{uId}}" data-attr='{"type": "pie", "legend": {%if legend%}{{legend}}{%else%}false{%endif%}, "legend_pos": "{{legend_pos}}", "url": "{{local_ds}}", "currency": {%if currency%}{{currency}}{%else%}false{%endif%}}' class="chart-canvas"></canvas>
+    </div>
+    
+    {%if table%}
+    <table id="canvas-{{uId}}-tbl" class="table mb-0 mt-2">
+        <thead>
+          <tr>
+            <th data-fred-name="col_1">Source</th>
+            <th data-fred-name="col_2" class="text-right">Revenue</th>
+            <th data-fred-name="col_3" class="text-right">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+            <!--
+          <tr>
+            <td>
+              <i class="fas fa-square-full text-primary"></i>
+              Direct
+            </td>
+            <td class="text-right">$ 2602</td>
+            <td class="text-right text-success">+43%</td>
+          </tr>
+          <tr>
+            <td>
+              <i class="fas fa-square-full text-warning"></i>
+              Affiliate
+            </td>
+            <td class="text-right">$ 1253</td>
+            <td class="text-right text-success">+13%</td>
+          </tr>
+          <tr>
+            <td>
+              <i class="fas fa-square-full text-danger"></i>
+              E-mail
+            </td>
+            <td class="text-right">$ 541</td>
+            <td class="text-right text-success">+24%</td>
+          </tr>
+          <tr>
+            <td>
+              <i class="fas fa-square-full text-dark"></i> Other
+            </td>
+            <td class="text-right">$ 1465</td>
+            <td class="text-right text-success">+11%</td>
+          </tr>-->
+        </tbody>
+      </table>
+    {%endif%}
+  </div>
+</div>
+<script>
+
+     document.body.addEventListener('DOMContentLoaded', function () {
+         buildChart('canvas-{{uId}}');
+     });
+
+</script>

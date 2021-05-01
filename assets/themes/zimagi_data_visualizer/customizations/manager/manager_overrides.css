@@ -1,0 +1,5 @@
+/* HIDE Resource Groups Tab in Resources */
+#modx-resource-access-permissions,
+#modx-resource-tabs__modx-resource-access-permissions{
+    display: none !important
+    }

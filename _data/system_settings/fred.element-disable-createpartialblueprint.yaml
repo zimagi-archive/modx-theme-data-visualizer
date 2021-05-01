@@ -1,0 +1,4 @@
+key: fred.element_disable_createpartialblueprint
+value: '1'
+xtype: combo-boolean
+namespace: fred

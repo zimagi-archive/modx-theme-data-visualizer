@@ -1,0 +1,20 @@
+id: 2
+name: 'Nav Accordion(Toggle)'
+uuid: 82084082-85cc-4556-8105-9305da887af4
+description: 'Group links in side navigation and toggle show/hide.'
+image: '{{theme_dir}}thumb-accordion.gif'
+category: 6
+rank: 1
+options_override: '[]'
+
+-----
+
+<li class="sidebar-item active" data-fred-block-class="fred-sidebar-accordion">
+  <a href="#dashboards" data-toggle="collapse" class="sidebar-link" aria-expanded="true">
+    <i class="align-middle" data-feather="sliders"></i>
+    <span class="align-middle" data-fred-name="title">Dashboards</span>
+  </a>
+  <ul id="dashboards" class="sidebar-dropdown list-unstyled collapse show" data-parent="#sidebar" data-fred-dropzone="items">
+   
+  </ul>
+</li>

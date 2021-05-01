@@ -1,0 +1,14 @@
+id: 3
+name: 'Nav Item (link)'
+uuid: 82297139-3a5b-4218-838c-9305dc449ac2
+description: 'Link item pointing to another resource or url.'
+image: '{{theme_dir}}thumb-navigation-link.gif'
+category: 6
+rank: 2
+options_override: '{"remote":true,"settings":[{"name":"text","label":"Text\/Label","type":"text","value":"Link"},{"name":"link","label":"Linked Page (MODX)","type":"page","clearButton":true,"value":{"id":null,"url":null}},{"name":"ext_link","label":"External Linked (Ex. https:\/\/www...)","type":"text","value":null},{"name":"target","label":"Open in New Window","type":"toggle","value":false},{"group":"Icon","settings":[{"name":"icon","label":"Hide Icon","type":"toggle","value":false},{"name":"image_svg","label":"SVG Image Icon","type":"image","value":null,"mediaSource":"Uploads"},{"fred-import":"background_settings"}]}]}'
+
+-----
+
+<li class="sidebar-item">
+    <a class="sidebar-link" href="{%if ext_link %}{{ext_link}}{% else %}[[~{{link.id}}]]{% endif %}" {%if target %}target="_blank" {%endif%} title="{{text}}">{{text}}</a>
+</li>

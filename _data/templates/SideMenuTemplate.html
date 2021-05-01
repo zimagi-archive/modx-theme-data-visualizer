@@ -1,0 +1,105 @@
+id: 7
+source: 1
+templatename: _SideMenuTemplate
+description: ''
+properties: 'a:0:{}'
+
+-----
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    
+    <!--<link rel="canonical" href="https://appstack.bootlab.io/dashboard-default.html" />-->
+    <link rel="shortcut icon" href="[[++fred.theme_dir]]img/favicon.ico" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Choose your prefered color scheme -->
+    <link href="[[++fred.theme_dir]]css/light.css" rel="stylesheet" />
+    <!-- <link href="[[++fred.theme_dir]]css/dark.css" rel="stylesheet" /> -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        /*DISABLE Some Fred Sections in toolbar*/
+        .fred--sidebar_blueprints,
+        .fred--sidebar_page_settings,
+        .fred--sidebar_more{
+            display: none !important;
+        }
+        
+        
+        .sidebar{
+            width: 320px !important;
+            max-width: 320px !important;
+            margin: auto !important;
+        }
+        .fred--block .sidebar-item *[data-fred-dropzone]{
+            margin-top: 0px !important;
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+            padding: 20px 0px !important;
+        }
+        .fred--block .sidebar-item *[data-fred-dropzone]:before{
+            content: "DROP NAV ITEMS HERE";
+            left: 5px;
+        }
+        .fred--block .sidebar-dropdown .sidebar-link{
+            padding: .55rem 0rem .55rem 2.25rem;
+        }
+        .sidebar-header, 
+        .sidebar-item,
+        .sidebar-link, 
+        a.sidebar-link{
+            padding-left: 0rem !important;
+        }
+        .fred--block.fred-sidebar-accordion *[data-fred-dropzone]{
+            margin-left: 27px !important;
+            margin-bottom: 0px !important;
+            padding-left: 5px !important;
+            padding-bottom: 0px !important;
+        }
+
+    </style>
+  </head>
+  
+  <body
+    data-theme="dark"
+    data-layout="fluid"
+    data-sidebar-position="left"
+    data-sidebar-behavior="sticky"
+  >
+    <div class="wrapper">
+      
+      <div class="main">
+       
+        <main class="content sidebar">
+          <ul class="sidebar-nav"  data-fred-dropzone="content">
+           [[- Main area where building blocks will be dropped]]
+           [[*content]]
+          </ul>
+        </main>
+
+       
+      </div>
+      
+    </div>
+    <script>
+      feather.replace()
+    </script>
+    <script src="[[++fred.theme_dir]]js/app.js"></script>
+   [[- Do not remove the following script
+        Used to fix some fred functionality or fixes
+    ]]
+    <script src="[[++fred.theme_dir]]customizations/fred/fred-ui-listeners.js"></script>
+   
+  </body>
+</html>

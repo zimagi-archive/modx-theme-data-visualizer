@@ -1,0 +1,15 @@
+id: 1
+source: 1
+type: text
+name: SiteTitle
+caption: 'Site Title'
+category: 'Site Title'
+elements: ''
+display: default
+properties: 'a:0:{}'
+input_properties: 'a:5:{s:10:"allowBlank";s:4:"true";s:9:"minLength";s:0:"";s:9:"maxLength";s:0:"";s:5:"regex";s:0:"";s:9:"regexText";s:0:"";}'
+output_properties: 'a:0:{}'
+
+-----
+
+Data Visualization

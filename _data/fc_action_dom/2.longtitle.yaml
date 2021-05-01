@@ -1,0 +1,10 @@
+id: 322
+set: 2
+action: 'resource/*'
+name: longtitle
+description: null
+container: modx-panel-resource
+rule: fieldTitle
+value: 'SEO Title'
+constraint_class: modResource
+rank: 4

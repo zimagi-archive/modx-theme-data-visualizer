@@ -1,0 +1,5 @@
+key: fred.force_sidebar
+value: '1'
+xtype: combo-boolean
+namespace: fred
+area: default

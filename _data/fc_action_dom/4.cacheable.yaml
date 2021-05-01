@@ -1,0 +1,10 @@
+id: 958
+set: 4
+action: 'resource/*'
+name: cacheable
+description: null
+container: modx-panel-resource
+rule: fieldVisible
+value: '0'
+constraint_class: modResource
+rank: 5
