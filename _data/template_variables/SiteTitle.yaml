@@ -3,7 +3,7 @@ source: 1
 type: text
 name: SiteTitle
 caption: 'Site Title'
-category: 'Site Title'
+category: Scheme
 elements: ''
 display: default
 properties: 'a:0:{}'

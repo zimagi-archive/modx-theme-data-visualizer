@@ -1,6 +1,5 @@
 id: 2
 name: Fred
-category: ''
 properties: 'a:0:{}'
 
 -----

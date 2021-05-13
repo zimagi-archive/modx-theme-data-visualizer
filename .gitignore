@@ -1,7 +1,7 @@
 # MODX & Gitify #
 #################
 
-#/_backup
+/_backup
 /config.core.php
 /connectors
 /core
@@ -9,9 +9,10 @@
 /.htaccess
 /index.php
 /manager
-#/assets/*
+!/assets/
 #!/assets/themes/zimagi_data_visualizer
-
+/assets/themes/default
+/assets/components
 # IDE files (optional or add more #
 ###################################
 .idea

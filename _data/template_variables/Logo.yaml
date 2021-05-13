@@ -3,7 +3,7 @@ source: 1
 type: image
 name: Logo
 caption: Logo
-category: Logo
+category: 'Site Language'
 elements: ''
 rank: 1
 display: default

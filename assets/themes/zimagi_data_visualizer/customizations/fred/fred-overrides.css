@@ -117,6 +117,7 @@ button.fred--element-settings {
 .fred--panel select:active {
     color: #00205c !important;
 }
+
 /*Turn of preview controls*/
 .fred--content-preview_controls{
     display: none !important;
@@ -253,6 +254,17 @@ main{
 /* Show the tooltip text when you mouse over the tooltip container */
 .fred--tooltip:hover .fred--tooltiptext {
   display: block !important;
+}
+
+body,
+p,
+h1, 
+h2, 
+h3, 
+h4, 
+h5,
+.mce-content-body{
+    line-height: 1.8;
 }
 
 /* Modal style fixes*/

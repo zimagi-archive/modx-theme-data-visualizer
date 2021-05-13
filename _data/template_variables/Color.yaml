@@ -3,7 +3,7 @@ source: 1
 type: option
 name: Color
 caption: 'Color Scheme'
-category: Scheme
+category: Logo
 elements: 'Light Theme==0||Dark Theme==1'
 rank: 3
 display: default

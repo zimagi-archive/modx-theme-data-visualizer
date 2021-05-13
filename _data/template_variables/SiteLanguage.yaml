@@ -3,7 +3,7 @@ source: 1
 type: listbox
 name: SiteLanguage
 caption: 'Site Language'
-category: 'Site Language'
+category: ''
 elements: 'English (United States)==en||Español==es'
 rank: 4
 display: string

@@ -1,0 +1,22 @@
+id: 15
+name: 'Paragraph Content'
+uuid: 737688a4-6a35-4a20-a7cf-9368a2d6fcfb
+image: '{{theme_dir}}thumb-paragraph.gif'
+category: 9
+rank: 3
+options_override: '{"settings":[{"name":"align","label":"Center Text","type":"toggle","value":false}]}'
+
+-----
+
+<div
+  
+  data-fred-name="rte-content"
+  data-fred-rte="true"
+  data-fred-rte-config="bold-and-italics-only"
+  class="{%if align %}text-center {%endif%}"
+>
+  <p>
+    Platea turpis sed sollicitudin nisl nostra tristique mi. Finibus nascetur
+    penatibus nullam dolor orci sollicitudin curae vel.
+  </p>
+</div>
