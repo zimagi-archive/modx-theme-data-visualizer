@@ -1,0 +1,60 @@
+id: 22
+name: Table
+uuid: b57c8343-97b6-4a07-8fac-9398ac197187
+image: '{{theme_dir}}thumb-table.gif'
+category: 9
+rank: 7
+options_override: '{"settings":[{"group":"General Table","settings":[{"name":"columns","label":"Columns","type":"select","options":{"1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","9":"9","10":"10"},"value":"4"},{"name":"items","label":"Rows (Numeric)","type":"text","value":"5"},{"name":"numbered","label":"Number Rows","type":"toggle","value":false}]},{"group":"Ajax Sourced Data","settings":[{"name":"use_data_table","label":"Use Ajax Source Data","type":"toggle","value":false},{"name":"local_ds","label":"Upload your data<div class=''fred--helpcontent''><a id=''samplePie'' href=''javascript:\/\/'' data-source=''[[++fred.theme_dir]]sample_data\/sample_datatable_ajax.json'' data-title=''Sample Data Tables'' onClick=''updateModalFredHelp(this);''>View sample data source<\/a><\/div>","type":"file","value":"","mediaSource":"Data Sources"},{"name":"remote_ds","label":"URL path (API)<a href=''javascript:\/\/'' class=''fred--tooltip''><div class=''fred--tooltiptext p-3''>Cras efficitur egestas parturient ullamcorper vehicula malesuada at dignissim rutrum facilisis bibendum. Lectus parturient proin ad tempus taciti arcu felis ultricies.<\/div><\/a>","type":"text","value":""},{"name":"use_local","label":"Use Local Data Source","type":"toggle","value":true},{"fred-import":"background_settings"}]},{"name":"bordered","label":"Bordered","type":"toggle","value":false},{"name":"striped","label":"Striped Rows","type":"toggle","value":false}]}'
+
+-----
+
+{% set uId = random() %}
+<div class="table-responsive">
+    <table id="table-{{uId}}" class="table mb-0{%if striped%} table-striped{%endif%}{%if bordered%} table-bordered{%endif%}">
+    
+      <thead>
+        
+        <tr>
+        {%if use_data_table==false%}
+          {% for i in 1..columns %}
+              {%if numbered and i==1%}
+                  <th scope="col">#</th>
+              {%else%}
+                  <th scope="col" data-fred-name="th-{{i}}" data-fred-rte="true"
+  data-fred-rte-config="table-head">Heading</th>
+              {%endif%}
+          {%endfor%}
+        {%endif%}
+        </tr>
+       
+      </thead>
+      
+      <tbody>
+        {%if use_data_table==false%}
+            {% for i in 1..items %}
+            <tr id="tr-{{i}}">
+              {% for x in 1..columns %}
+                  {%if numbered and x==1%}
+                      <td>{{i}}</td>
+                  {%else%}
+                      <td data-fred-name="td-{{i}}-{{x}}" data-fred-rte="true"
+      data-fred-rte-config="table-cell">Cell</td>
+                  {%endif%}
+              {%endfor%}
+            </tr>
+            {%endfor%}
+        {%endif%}
+      </tbody>
+      
+    </table>
+    
+   
+    
+</div>
+{%if (local_ds != '' and use_data_table) or (remote_ds != '' and use_data_table)%}
+ <script>
+   
+    buildDataTable('table-{{uId}}', '{%if use_local%}{{local_ds}}{%else%}{{remote_ds}}{%endif%}');
+    
+ </script> 
+{%endif%}

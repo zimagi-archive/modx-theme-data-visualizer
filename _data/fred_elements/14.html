@@ -4,15 +4,18 @@ uuid: 2be7832e-339a-41aa-9bae-934397fe8a36
 image: '{{theme_dir}}thumb-card-basic.gif'
 category: 9
 rank: 2
-options_override: '[]'
+options_override: '{"remote":true,"settings":[{"name":"show_img","label":"Show Card Image","type":"toggle","value":false},{"name":"image","label":"Card Image (1200px x 800px)","type":"image","value":"assets\/themes\/zimagi_data_visualizer\/img\/sample-card-image-1200x800.jpeg","mediaSource":"Uploads"},{"group":"Row Margin","settings":[{"name":"mt","label":"Margin Top","type":"select","options":{"":"Default","mt-0":"None","mt-1":"Small","mt-2":"Medium","mt-3":"Large","mt-4":"X-Large","mt-5":"XX-Large"},"value":""},{"name":"mb","label":"Margin Bottom","type":"select","options":{"":"Default","mb-0":"None","mb-1":"Small","mb-2":"Medium","mb-3":"Large","mb-4":"X-Large","mb-5":"XX-Large"},"value":""}]},{"fred-import":"background_settings"}]}'
 
 -----
 
-<div class="card">
-  <div class="card-header">
-    <h5 class="card-title" data-fred-name="title">Card title goes here</h5>
+<div class="card {{mt}} {{mb}}">
+  {%if show_img%}
+  <img class="card-img-top" src="{{image}}" alt="">
+  {%endif%}
+  <div class="card-header pb-0">
+    <h5 class="card-title mb-0 pb-0" data-fred-name="title">Card title goes here</h5>
   </div>
-  <div class="card-body" data-fred-dropzone="body">
+  <div class="card-body pt-0" data-fred-dropzone="body">
     
   </div>
 </div>

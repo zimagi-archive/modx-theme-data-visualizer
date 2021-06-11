@@ -1,0 +1,8 @@
+{
+  "labels": ["2018", "2019", "2020", "2021"],
+  "datasets": [
+    { "label": "Dataset 1", "data": [54, 67, 41, 55] },
+    { "label": "Dataset 2", "data": [69, 96, 24, 134] },
+    { "label": "Dataset 3", "data": [12, 16, 64, 8] }
+  ]
+}

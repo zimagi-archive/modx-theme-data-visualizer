@@ -8,7 +8,7 @@ template: 2
 createdby: 1
 createdon: 1616070167
 uri: index.html
-properties: '{"contentblocks":{"_isContentBlocks":false},"fred":{"data":{"content":[{"widget":"d7a9c3de-b2a6-4c5c-94e8-9307e3a06ef1","values":[],"pluginsData":[],"settings":[],"children":{"left":[{"widget":"2be7832e-339a-41aa-9bae-934397fe8a36","values":{"title":{"_raw":{"_value":"Card title goes here"}}},"pluginsData":[],"settings":[],"children":{"body":[]},"elId":"fred_c9414ed_6cdmplgwyk9"}],"right":[]},"elId":"fred_ad6fb95_gd788ww0d7b"}],"fingerprint":"0a425ede527543e503d848e49b02f10f42220e62"},"plugins":[]}}'
+properties: '{"contentblocks":{"_isContentBlocks":false},"fred":{"data":{"content":[{"widget":"d7a9c3de-b2a6-4c5c-94e8-9307e3a06ef1","values":[],"pluginsData":[],"settings":[],"children":{"left":[{"widget":"2be7832e-339a-41aa-9bae-934397fe8a36","values":{"title":{"_raw":{"_value":"Card title goes here"}}},"pluginsData":[],"settings":[],"children":{"body":[]},"elId":"fred_c9414ed_6cdmplgwyk9"},{"widget":"0ad55d20-d04d-4a15-a496-9307e05b81a9","values":{"title":{"_raw":{"_value":"Card Title"}}},"pluginsData":[],"settings":{"style":"bar","local_ds":"assets\/themes\/zimagi_data_visualizer\/sample_chart_data\/sample-bar-chart-datasource.json","remote_ds":"http:\/\/","legend":true,"legend_pos":"top"},"children":[],"elId":"fred_232a5fc_prau74rpl3"}],"right":[{"widget":"dc709204-dd12-437b-8f3f-936a3c04d214","values":{"alert-text":{"_raw":{"_value":"\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.\n      "}}},"pluginsData":[],"settings":{"ele_id":"","alert_type":"success","is_slim":false,"cta_button_text":"CTA","cta_link":{"id":null,"url":null},"cta_ext_link":null,"cta_target":false,"cta_ada":null},"children":[],"elId":"fred_8f70872_uiajmseg47"}]},"elId":"fred_ad6fb95_gd788ww0d7b"}],"fingerprint":"daff8cacd8087b830c4a77f45e8fe64eed4db496"},"plugins":[]}}'
 tvs: {  }
 
 -----
@@ -22,7 +22,38 @@ tvs: {  }
   <div class="card-body">
     
   </div>
-</div></div>
-        <div class="col-6 col-sm-12 col-xxl"></div>
+</div><div id="card-2121516279" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0">Card Title</h5>
+        
+      </div>
+  <div class="card-body d-flex w-100">
+    <div class="align-self-center chart chart-lg"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+      <canvas id="canvas-2121516279" data-attr="{&quot;type&quot;: &quot;bar&quot;, &quot;style&quot;: &quot;bar&quot;, &quot;legend&quot;: 1, &quot;legend_pos&quot;: &quot;top&quot;, &quot;url&quot;: &quot;assets/themes/zimagi_data_visualizer/sample_chart_data/sample-bar-chart-datasource.json&quot;}" class="chart-canvas"></canvas>
+    </div>
+  </div>
+</div>
+<script>
+
+     document.body.addEventListener('DOMContentLoaded', function () {
+         buildChart('canvas-2121516279');
+     });
+
+</script>
+
+</div>
+        <div class="col-6 col-sm-12 col-xxl"><div class="row">
+  <div class="container">
+    <div class="alert alert-success  mb-3" role="alert">
+    
+      <div class="alert-icon">
+                        <i class="align-middle mr-2" data-feather="check"></i>              </div>
+      <div class="alert-message">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+      </div>
+          </div>
+  </div>
+</div>
+</div>
     </div>
 </div>

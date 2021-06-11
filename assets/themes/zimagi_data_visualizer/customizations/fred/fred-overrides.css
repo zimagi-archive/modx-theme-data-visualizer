@@ -13,6 +13,9 @@
     padding-bottom: 1rem !important;
     margin-bottom: 0px !important;
 }
+.fred .fred--panel{
+    z-index: 20000 !important
+}
 .fred .fred--panel dl dt:after{
     color: #363636 !important;
 }
@@ -27,12 +30,13 @@
 .fred--block .fred--block {
     border: 0px;
 }
+
 .fred .fred--modal-bg{
     left: 0px;
 }
 *[data-fred-dropzone] {
     border: 1px dotted red;
-    margin: 40px 0px 40px 0px;
+    margin: 10px 0px 10px 0px;
     padding: 20px;
     position: relative;
     clear: both !important;
@@ -51,16 +55,21 @@
 
 }
 main[data-fred-dropzone] {
-     padding: 30px 0px 20px 0px !important;
+     /* padding: 30px 0px 20px 0px !important; */
+     padding: 0px 0px 20px 0px !important;
      margin: 0px !important;
+     border: none !important;
 }
 main[data-fred-dropzone]::before {
-    content: 'PAGE DROPZONE';
+    /* content: 'PAGE DROPZONE'; */
+    content: '';
 }
 /*Push page content to the side for fred's toolbar*/
-body{
-   padding-left: 80px !important;
+
+body {
+  padding-left: 80px !important;
 }
+
 .fred--toolbar-plugins {
     box-shadow: 0 0 4px #363636;
     z-index: 2000;
@@ -220,7 +229,7 @@ main{
   padding: 10px;
   width: 20px !important;
   height: 20px !important;
-  background-image: url('../../../assets/icons/icon-info.svg');
+  background-image: url('../../assets/icons/icon-info.svg');
   background-repeat: no-repeat;
 }
 
@@ -286,7 +295,7 @@ dd label, fieldset label{
     display: inline-block;
     width: 24px !important;
     height: 18px !important;
-    background-image: url('../../../assets/icons/file-text.svg') !important;
+    background-image: url('../../assets/icons/file-text.svg') !important;
     background-size: auto 100% !important;
     background-repeat: no-repeat;
     opacity: .6;
@@ -306,7 +315,7 @@ dd label, fieldset label{
 /*Disable Menu Title Input in settings in Fred*/
 .fred--page_settings_form fieldset label:nth-child(5),
 .fred--page_settings_form fieldset label:nth-child(8){
-    display: none !important;
+    /* display: none !important; */
 }
 
 dd[role="tablist"]{
@@ -317,6 +326,37 @@ dd[role="tablist"]{
     margin-bottom: 20px !important;
 }
 .card *[data-fred-dropzone]{
+    padding-top: 20px !important;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
+}
+.navbar{
+    z-index: 19999 !important;
+    
+}
+.fred--block.button_link{
+    display: inline-block;
+}
+/*Disable Up/Down & Grab for button link elements*/
+.fred--block.button_link .fred--position-group{
+    display: none !important;
+}
+.fred--block.button_link.fred--block-active .fred--element-settings{
+    margin-top: -50px !important
+}
+
+.fred--block .tab-content{
+    padding-top: 20px !important
+}
+.fred--block .tab-content *[data-fred-dropzone]{
+   margin-top: 0px !important
+}
+
+.fred--accordion *[data-fred-dropzone]{
+    padding-bottom: 3rem !important;
+    border-top: 1px dotted red
+}
+
+.fred--toolbar-plugins{
+    width: 130px !important
 }

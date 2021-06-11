@@ -1,0 +1,38 @@
+id: 16
+name: Alert
+uuid: dc709204-dd12-437b-8f3f-936a3c04d214
+image: '{{theme_dir}}thumb-alert.gif'
+category: 9
+rank: 4
+options_override: '{"remote":true,"settings":[{"name":"ele_id","label":"Element ID <br>(No spaces or special characters)","type":"text","value":""},{"name":"alert_type","label":"Type","type":"select","options":{"info":"Info","success":"Success","warning":"Warning","danger":"Error"},"value":"info"},{"name":"additional_content","label":"Dropzone","type":"toggle","value":false},{"name":"is_outline","label":"Outlined","type":"toggle","value":false},{"name":"icon","label":"Show Icon","type":"toggle","value":true}]}'
+
+-----
+
+<div {%if ele_id!="" %}id="{{ele_id}}" {%endif%} class="row">
+  <div class="container">
+    <div
+      class="alert alert-{{ alert_type}} rounded-left {%if is_outline %} alert-outline-coloured{% endif %} alert-dismissible mb-3"
+      role="alert"
+    >
+      
+      <div class="alert-icon rounded-left{%if icon==false%} p-0{%endif%}">
+        {%if icon%}
+            {%if alert_type == 'info'%}<i class="align-middle mr-2 fas fa-fw fa-exclamation{%if is_outline==false%} text-info{%endif%}"></i>{%endif%}
+            {%if alert_type == 'warning'%}<i class="align-middle mr-2 fas fa-fw fa-exclamation-triangle{%if is_outline==false%} text-warning{%endif%}"></i>{%endif%}
+            {%if alert_type == 'success'%}<i class="align-middle mr-2 fas fa-fw fa-check{%if is_outline==false%} text-success{%endif%}"></i>{%endif%}
+            {%if alert_type == 'danger'%}<i class="align-middle mr-2 fas fa-fw fa-exclamation-circle {%if is_outline==false%}text-danger{%endif%}"></i>{%endif%}
+        {%endif%}
+      </div>
+      
+     
+      <div class="alert-message d-flex flex-column{%if icon%} rounded-right{%endif%}">
+        <p data-fred-name="alert-text" data-fred-rte="true" data-fred-rte-config="global">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+        {%if additional_content%}
+        <div class="d-flex flex-row" data-fred-dropzone="alert-content"></div>
+        {%endif%}
+        
+      </div>
+      
+    </div>
+  </div>
+</div>

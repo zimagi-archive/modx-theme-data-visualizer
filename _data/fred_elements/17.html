@@ -1,0 +1,11 @@
+id: 17
+name: Heading
+uuid: bdc67d9d-94ae-4a47-9a54-9371dc3a06d2
+image: '{{theme_dir}}thumb-heading.gif'
+category: 9
+rank: 5
+options_override: '{"settings":[{"name":"ele_id","label":"Element ID <br>(No spaces or special characters)","type":"text","value":""},{"name":"head_tag","label":"Heading Tag","type":"select","options":{"h1":"H1","h2":"H2","h3":"H3","h4":"H4","h5":"H5"},"value":"h2"},{"name":"head_align","label":"Heading Align Center","type":"toggle","value":false},{"group":"Margin","settings":[{"name":"mt","label":"Margin Top","type":"select","options":{"mt-0":"None","mt-1":"Small","mt-2":"Medium","mt-3":"Large","mt-4":"X-Large","mt-5":"XXL-Large"},"value":"mt-0"},{"name":"mr","label":"Margin Right","type":"select","options":{"mr-0":"None","mr-1":"Small","mr-2":"Medium","mr-3":"Large","mr-4":"X-Large","mr-5":"XXL-Large"},"value":"mr-0"},{"name":"mb","label":"Margin Bottom","type":"select","options":{"mb-0":"None","mb-1":"Small","mb-2":"Medium","mb-3":"Large","mb-4":"X-Large","mb-5":"XXL-Large"},"value":"mb-0"},{"name":"ml","label":"Margin Left","type":"select","options":{"ml-0":"None","ml-1":"Small","ml-2":"Medium","ml-3":"Large","ml-4":"X-Large","ml-5":"XXL-Large"},"value":"ml-0"}]}]}'
+
+-----
+
+<{{head_tag}} {%if ele_id!=''%}id="{{ele_id}}"{%endif%} data-fred-name="heading" data-fred-rte="true" data-fred-rte-config="global" class="{{mt}} {{mr}} {{mb}} {{ml}} {%if head_align%}text-center{%endif%}">Catchy Heading</{{head_tag}}>

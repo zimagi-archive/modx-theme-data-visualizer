@@ -1,0 +1,7 @@
+id: 3
+name: table-head
+theme: 2
+
+-----
+
+{"theme":"inlite","inline":true,"plugins":"modxlink image imagetools media lists table","insert_toolbar":"image media quicktable modxlink","selection_toolbar":"italic | alignleft aligncenter alignright | superscript subscript | clearFormating | removeformat","image_advtab":true,"imagetools_toolbar":"alignleft aligncenter alignright","auto_focus":false,"branding":false,"relative_urls":false,"image_dimensions":false}

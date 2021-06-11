@@ -48,6 +48,9 @@ document.body.addEventListener("FredElementSettingChange", function(){
    // Init charts
    initCharts();
    
+   // Init feather icons
+   feather.replace();
+   
    // Update charts
    ///*
   
@@ -84,6 +87,8 @@ $(function(){
                        // Init charts
                        initCharts();
                    },500);
+                   // Init icons
+                   feather.replace();
                });
                
                var intBrowse = setInterval(function(){

@@ -32,11 +32,12 @@ properties: 'a:0:{}'
     />
 
     <!-- Choose your prefered color scheme -->
-    <link href="[[++fred.theme_dir]]css/light.css" rel="stylesheet" />
+    <link href="[[++fred.theme_dir]]css/light.css?v=1" rel="stylesheet" />
     <link href="[[++fred.theme_dir]]css/styles.css" rel="stylesheet" />
     <!-- <link href="css/dark.css" rel="stylesheet" /> -->
     <!--<base href="[[++site_url]]">-->
     [[- Set some css fred customizations for better user experience]]
+   
     [[!hasFredPermissions:is=`1`:then=`
         <link href="[[++fred.theme_dir]]customizations/fred/fred-overrides.css" rel="stylesheet" />
     `]]
@@ -54,6 +55,7 @@ properties: 'a:0:{}'
     ]]
     <script src="[[++fred.theme_dir]]js/app.js"></script>
     <script src="[[++fred.theme_dir]]js/charts-custom-functions.js"></script>
+    <script src="[[++fred.theme_dir]]js/datatables-custom-functions.js"></script>
 
     [[- Graphs default colors & settings
         Include resource with ID 8 (_ChartsDefaultColors)

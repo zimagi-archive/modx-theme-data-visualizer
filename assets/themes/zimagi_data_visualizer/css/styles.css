@@ -43,8 +43,141 @@
   animation: spin 1s linear infinite;
 }
 
+
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 /* END Spinner*/
+
+/*Move this styles to light.css & dark.css*/
+.alert-message p{
+    margin-bottom: 0px !important
+}
+.alert-outline-coloured .alert-message.rounded-right, 
+.alert-outline .alert-message.rounded-right {
+   border-top-left-radius: 0rem !important;
+   border-bottom-left-radius: 0rem !important;
+}
+
+/* Start Fred List Element */
+.list-checked ul{
+    position: relative !important;
+    padding-left: 20px !important
+}
+.list-checked ul li{
+    list-style: none !important;
+    padding-left: 0px !important
+}
+.list-checked ul li::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0px;
+    width: 16px;
+    height: 16px;
+    margin-top: 4px;
+    background-image: url(../icons/check.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto !important;
+}
+
+.list-steps ul {
+  counter-reset: step !important;
+  margin: 0 !important;
+  padding: 10px 0 0 30px !important;
+}
+.list-steps ul li {
+  list-style-type: none !important;
+  list-style: none !important;
+  background: none !important;
+  float: none !important;
+  position: relative !important;
+  text-align: left;
+  padding: 0px 0 15px 0 !important;
+  margin-top: 0px !important;
+}
+.list-steps ul li:last-child {
+  border-left: none !important;
+}
+
+.list-steps ul li:before {
+  width: 25px !important;
+  height: 25px !important;
+  background: none !important;
+  content: counter(step) !important;
+  counter-increment: step;
+  line-height: 25px !important;
+  border: 1px solid #3F80EA;
+  float: left;
+  text-align: center;
+  margin: 0px 10px 10px -30px !important;
+  border-radius: 50%;
+  font-size: 1em !important;
+}
+.list-group ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: .2rem;
+    border-top: inherit;
+    border-bottom: inherit;
+}
+.list-group ul li:last-child {
+    border-bottom-width: 0;
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+.list-group ul li {
+    list-style: none !important;
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    border-width: 0 0 1px;
+}
+.list-group ul li:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+/* End Fred List Element */
+
+/* Start Card */
+.card .tab .nav-tabs{
+    border-bottom: 1px solid #dedede
+}
+.card .tab .nav-tabs .nav-link{
+    border: 1px solid transparent
+}
+.card .tab .nav-tabs .nav-link.active{
+    border: 1px solid #dedede;
+    border-bottom: 1px solid transparent
+}
+/* End Card */
+ .tab-primary b,
+  .tab-primary strong,
+  .tab-second b,
+  .tab-second strong,
+  .tab-success b,
+  .tab-success strong,
+  .tab-danger b,
+  .tab-danger strong {
+    color: inherit !important;
+  }
+  .tab-primary:not(.fred--toolbar) a,
+  .tab-second:not(.fred--toolbar) a,
+  .tab-success:not(.fred--toolbar) a,
+  .tab-dange:not(.fred--toolbar) a {
+    color: white !important;
+    text-decoration: underline;
+  }
+  
+.table tr th p,
+.table tr td p{
+   padding: 0px !important; 
+   margin: 0px !important;
+   line-height: 1;
+}

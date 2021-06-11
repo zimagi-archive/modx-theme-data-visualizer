@@ -1,0 +1,7 @@
+id: 1
+name: global
+theme: 2
+
+-----
+
+{"theme":"inlite","inline":true,"plugins":"modxlink link image imagetools media lists","insert_toolbar":"image media quicktable modxlink","selection_toolbar":"bold italic | alignleft aligncenter alignright | link | bullist numlist | superscript subscript | removeformat","image_advtab":true,"imagetools_toolbar":"alignleft aligncenter alignright | rotateleft rotateright | flipv fliph | editimage imageoptions","auto_focus":false,"branding":false,"relative_urls":false,"image_dimensions":false}
