@@ -1,6 +1,0 @@
-{
-  "labels": ["Direct", "Affiliate", "E-mail", "Other"],
-  "datasets": [
-    { "data": [2602, 1253, 541, 1465] }
-  ]
-}

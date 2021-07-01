@@ -181,3 +181,7 @@
    margin: 0px !important;
    line-height: 1;
 }
+
+.jsvmap-tooltip{
+    z-index: 9999 !important;
+}

@@ -18,6 +18,18 @@ var updateConfigByMutating = function(chart) {
     chart.options.plugins.title.text = 'new title';
     chart.update();
 }
+function hexToRgbA(hex, alpha){
+    var c;
+    if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+        c= hex.substring(1).split('');
+        if(c.length== 3){
+            c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+        }
+        c= '0x'+c.join('');
+        return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+','+alpha+')';
+    }
+    throw new Error('Bad Hex');
+}
 
 // function destroyCharts(){
 //     // for(chart in charts){
@@ -105,6 +117,32 @@ var buildChart = function(id){
                             data.datasets[i].hoverBorderColor = defaultGraphsColors[colorIndex];
                             data.datasets[i].barPercentage = barChartPercentage;
                             data.datasets[i].categoryPercentage = barChartCatPercentage;
+                            colorIndex++;
+                        }
+                    }
+                    if(type==='line'){
+                        colorIndex = 0;
+                        for(var i=0; i<data.datasets.length; i++){
+                            data.datasets[i].backgroundColor = defaultGraphsColors[colorIndex];
+                            data.datasets[i].borderColor = defaultGraphsColors[colorIndex];
+                            colorIndex++;
+                        }
+                    }
+                    if(type === 'doughnut'){
+                        colorIndex = 0;
+                        data.datasets[0].backgroundColor = [];
+                        for(var i=0; i<data.datasets[0].data.length; i++){
+                            data.datasets[0].backgroundColor.push(defaultGraphsColors[colorIndex]);
+                            // data.datasets[i].borderColor = defaultGraphsColors[colorIndex];
+                            colorIndex++;
+                        }
+                        data.datasets[0].hoverOffset = 4;
+                    }
+                    if(type==='radar'){
+                        colorIndex = 0;
+                        for(var i=0; i<data.datasets.length; i++){
+                            data.datasets[i].backgroundColor = hexToRgbA(defaultGraphsColors[colorIndex], 0.2);
+                            data.datasets[i].borderColor = defaultGraphsColors[colorIndex];
                             colorIndex++;
                         }
                     }

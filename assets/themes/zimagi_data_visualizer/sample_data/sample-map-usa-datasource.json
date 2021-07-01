@@ -1,0 +1,29 @@
+{
+    "datasets": [
+      {
+        "coords": [37.77, -122.41],
+        "name": "San Francisco",
+        "value": 375
+      },
+      {
+        "coords": [40.71, -74.0],
+        "name": "New York",
+        "value": 350
+      },
+      {
+        "coords": [39.09, -94.57],
+        "name": "Kansas City",
+        "value": 250
+      },
+      {
+        "coords": [36.16, -115.13],
+        "name": "Las Vegas",
+        "value": 275
+      },
+      {
+        "coords": [32.77, -96.79],
+        "name": "Dallas",
+        "value": 255
+      }
+    ]
+}

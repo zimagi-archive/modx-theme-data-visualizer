@@ -43,6 +43,8 @@ document.body.addEventListener("FredElementDrop", function(){
     //     //$(this).attr('id');
     // });
     
+    initMaps();
+    
 });
 document.body.addEventListener("FredElementSettingChange", function(){
    // Init charts

@@ -1,0 +1,6 @@
+{
+  "labels": ["Label 1", "Label 2", "Label 3"],
+  "datasets": [
+    { "label": "Dataset 1", "data": [54, 5, 41] }
+  ]
+}

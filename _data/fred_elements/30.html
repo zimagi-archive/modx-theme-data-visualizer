@@ -1,0 +1,46 @@
+id: 30
+name: Timeline
+uuid: 742914d9-2962-46c4-8ebe-93cce262f10b
+image: '{{theme_dir}}thumb-doughnut-chart.gif'
+category: 9
+rank: 8
+options_override: '{"remote":true,"settings":[{"name":"items","label":"Items","type":"select","options":{"1":"1","2":"2","3":"3","4":"4","5":"5"},"value":"3"}]}'
+
+-----
+
+{% set uId = random() %}
+<div id="card-{{uId}}" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0" data-fred-name="title">Timeline</h5>
+    {%if local_ds == "assets/themes/zimagi_data_visualizer/sample_data/sample-doughnut-chart-datasource.json"%}
+    <div data-fred-render="false" class="alert alert-info alert-dismissible mt-2" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="alert-message">
+          <strong class="d-block text-lg">Showing sample data</strong><p>Hover over this building block and click the <strong class="fred-icon-gear"><span class="sr-only">Gears</span></strong> icon, go to <strong>Open Settings</strong> to change the data source.</p><p class="text-danger">This information will not show in site.</p>
+        </div>
+    </div>
+    {%endif%}
+  </div>
+  <div class="card-body d-flex w-100">
+    <ul class="timeline">
+        {% for i in 1..items %}
+          <li class="timeline-item">
+            <strong data-fred-name="item_head_{ i }}">Lorem ipsum
+            </strong>
+            <span data-fred-name="item_time_{{ i }}" class="float-right text-muted text-sm"
+              >30m ago</span
+            >
+            <div data-fred-name="item_content_{{ i }}">
+              <p>Nam pretium turpis et arcu. Duis arcu tortor, suscipit
+              eget, imperdiet nec, imperdiet iaculis, ipsum. Sed
+              aliquam ultrices mauris...</p>
+            </div>
+          </li>
+         {%endfor%}
+          
+        </ul>
+  </div>
+</div>
+

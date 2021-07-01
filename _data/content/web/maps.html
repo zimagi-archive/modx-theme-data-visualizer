@@ -1,0 +1,72 @@
+id: 22
+pagetitle: Maps
+alias: maps
+published: 1
+parent: 9
+introtext: ''
+template: 2
+menuindex: 9
+createdby: 1
+createdon: 1624929147
+publishedon: 1624929147
+publishedby: 1
+uri: ''
+properties: '{"contentblocks":{"_isContentBlocks":false},"fred":{"plugins":[],"data":{"content":[{"widget":"508f174c-a46b-4be3-a06f-9307e2ad6b73","values":[],"pluginsData":[],"settings":[],"children":{"content":[{"widget":"bdc67d9d-94ae-4a47-9a54-9371dc3a06d2","values":{"heading":{"_raw":{"_value":"Maps"}}},"pluginsData":[],"settings":{"ele_id":"","head_tag":"h2","head_align":false,"mt":"mt-0","mr":"mr-0","mb":"mb-0","ml":"ml-0"},"children":[],"elId":"fred_850445c_cnq495138fs"}]},"elId":"fred_3514550_eh99bf58nio"},{"widget":"d7a9c3de-b2a6-4c5c-94e8-9307e3a06ef1","values":[],"pluginsData":[],"settings":[],"children":{"left":[{"widget":"d731ce76-a485-4b7a-b93e-93c955b491bf","values":{"title":{"_raw":{"_value":"USA Map"}}},"pluginsData":[],"settings":{"local_ds":"assets\/themes\/zimagi_data_visualizer\/sample_data\/sample-map-usa-datasource.json","remote_ds":"http:\/\/"},"children":[],"elId":"fred_0d90046_sqrz7it67br"}],"right":[{"widget":"dc81fe4c-c66d-4e51-a54b-93cb0104f3ca","values":{"title":{"_raw":{"_value":"World Map"}}},"pluginsData":[],"settings":{"local_ds":"assets\/themes\/zimagi_data_visualizer\/sample_data\/sample-map-world-datasource.json","remote_ds":"http:\/\/"},"children":[],"elId":"fred_cd1d524_8fz5twn4etr"}]},"elId":"fred_ad6fb95_vxgym2af2m7"}],"fingerprint":"eb2ae4f0ee0d6812d2235d9121f75cf76368c9f2"}}}'
+tvs: {  }
+
+-----
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-xxl"><h2 class="mt-0 mr-0 mb-0 ml-0 ">Maps</h2></div>
+    </div>
+</div><div class="container-fluid">
+    <div class="row">
+        <div class="col-6 col-sm-12 col-xxl">
+
+<div id="card-284587309" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0">USA Map</h5>
+        
+      </div>
+  <div class="card-body d-flex w-100">
+    <div id="map-284587309" class="map" style="height: 350px" data-attr="{&quot;id&quot;: &quot;284587309&quot;, &quot;map&quot;: &quot;us_aea_en&quot;,  &quot;url&quot;: &quot;assets/themes/zimagi_data_visualizer/sample_data/sample-map-usa-datasource.json&quot;}"></div>
+  </div>
+</div>
+<script>
+
+     document.body.addEventListener('DOMContentLoaded', function () {
+         
+         buildMap('map-284587309');
+         
+         
+     });
+
+</script>
+
+</div>
+        <div class="col-6 col-sm-12 col-xxl">
+
+<div id="card-1566588243" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0">World Map</h5>
+        
+      </div>
+  <div class="card-body d-flex w-100">
+    <div id="map-1566588243" class="map" style="height: 350px" data-attr="{&quot;id&quot;: &quot;1566588243&quot;, &quot;map&quot;: &quot;world&quot;,  &quot;url&quot;: &quot;assets/themes/zimagi_data_visualizer/sample_data/sample-map-world-datasource.json&quot;}"></div>
+  </div>
+</div>
+<script>
+
+     //document.body.addEventListener('DOMContentLoaded', function () {
+         
+         buildMap('map-1566588243');
+         
+         
+     //});
+
+</script>
+
+</div>
+    </div>
+</div>

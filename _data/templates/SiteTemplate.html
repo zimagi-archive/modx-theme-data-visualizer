@@ -49,14 +49,7 @@ properties: 'a:0:{}'
     data-sidebar-position="left"
     data-sidebar-behavior="sticky"
   >
-    
-    [[- App.js combines various javascript libraries like:
-        jQuery, Bootstrap 4, Charts.js, ApexCharts.js, etc 
-    ]]
-    <script src="[[++fred.theme_dir]]js/app.js"></script>
-    <script src="[[++fred.theme_dir]]js/charts-custom-functions.js"></script>
-    <script src="[[++fred.theme_dir]]js/datatables-custom-functions.js"></script>
-
+      
     [[- Graphs default colors & settings
         Include resource with ID 8 (_ChartsDefaultColors)
         This resource's template generates javascript variables
@@ -71,6 +64,15 @@ properties: 'a:0:{}'
     ]]
     [[!getResourceInclude? &id=`8`]]
     
+    
+    [[- App.js combines various javascript libraries like:
+        jQuery, Bootstrap 4, Charts.js, ApexCharts.js, etc 
+    ]]
+    <script src="[[++fred.theme_dir]]js/app.js"></script>
+    <script src="[[++fred.theme_dir]]js/charts-custom-functions.js"></script>
+    <script src="[[++fred.theme_dir]]js/maps-custom-functions.js"></script>
+    <script src="[[++fred.theme_dir]]js/datatables-custom-functions.js"></script>
+
      
     <div class="wrapper">
        
@@ -230,7 +232,7 @@ properties: 'a:0:{}'
         `]]
     `]]
     
-    
+     
    
   </body>
 </html>
