@@ -1,0 +1,14 @@
+id: 7
+source: 1
+type: textarea
+name: pageStyles
+caption: 'Page Styles'
+description: '(Ex. &lt;style&gt;&lt;/style&gt;'
+category: 'Page Styles'
+elements: ''
+display: default
+default_text: ''
+properties: 'a:0:{}'
+input_properties: 'a:1:{s:10:"allowBlank";s:4:"true";}'
+output_properties: 'a:0:{}'
+content: ''

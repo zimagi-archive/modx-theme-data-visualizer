@@ -1,0 +1,31 @@
+id: 34
+name: 'Include Page Content'
+uuid: f83a0735-6bc5-48ad-9b0b-9404d4bbddbd
+description: 'Brings content from another page in your site. '
+image: '{{theme_dir}}thumb-include.jpeg'
+category: 13
+rank: 3
+options_override: '{"remote":true,"settings":[{"name":"resource_id","label":"Resource Id\/Page alias","type":"page","value":{"id":""}}]}'
+
+-----
+
+<div data-fred-block-class="fred-resource-include" class="p-5">
+    {%if resource_id.id == ''%}
+    <div data-fred-render="false" class="alert alert-info alert-dismissible mt-2" role="alert">
+        <div class="alert-message">
+          <p>Hover over this building block and click the <strong class="fred-icon-gear"><span class="sr-only">Gears</span></strong> icon, go to <strong>Open Settings</strong> to set the page ID.</p><p class="text-danger">This information will not show in site.</p>
+        </div>
+    </div>
+    
+    {%endif%}
+    {%if resource_id.id != ''%}
+     <div data-fred-render="false" class="alert alert-info alert-dismissible mt-2" role="alert">
+       
+        <div class="alert-message">
+          <span class="d-block text-lg">The information below belogs to the following page: </span> <a target="_blank" href="manager/?a=resource/update&id={{resource_id.id}}">[[!getPageTitle? &id=`{{resource_id.id}}`]]</a>
+        </div>
+    </div>
+    
+    {%endif%}
+    <div>[[!getResourceInclude? &id=`{% if resource_id.id != '' %}{{resource_id.id}}{%endif%}`]]</div>  
+</div>

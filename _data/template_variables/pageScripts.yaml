@@ -1,0 +1,14 @@
+id: 6
+source: 1
+type: textarea
+name: pageScripts
+caption: 'Page Scripts'
+description: '(Ex. &lt;script&gt; var myVar = "Zimagi";&lt;/script&gt;'
+category: 'Page Scripts'
+elements: ''
+display: default
+default_text: ''
+properties: 'a:0:{}'
+input_properties: 'a:1:{s:10:"allowBlank";s:4:"true";}'
+output_properties: 'a:0:{}'
+content: ''

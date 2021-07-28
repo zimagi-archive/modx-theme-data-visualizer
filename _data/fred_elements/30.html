@@ -1,18 +1,19 @@
 id: 30
 name: Timeline
 uuid: 742914d9-2962-46c4-8ebe-93cce262f10b
-image: '{{theme_dir}}thumb-doughnut-chart.gif'
+image: '{{theme_dir}}thumb-timeline.gif'
 category: 9
 rank: 8
-options_override: '{"remote":true,"settings":[{"name":"items","label":"Items","type":"select","options":{"1":"1","2":"2","3":"3","4":"4","5":"5"},"value":"3"}]}'
+options_override: '{"remote":true,"settings":[{"group":"Data Source","settings":[{"name":"local_ds","label":"Upload your data<div class=''fred--helpcontent''><a id=''samplePie'' href=''javascript:\/\/'' data-source=''[[++fred.theme_dir]]sample_data\/sample-timeline-datasource.json'' data-title=''Sample Timeline Data Source'' onClick=''updateModalFredHelp(this);''>View sample data source<\/a><\/div>","type":"file","value":"[[++fred.theme_dir]]sample_data\/sample-timeline-datasource.json","mediaSource":"Data Sources"},{"name":"remote_ds","label":"URL path (API)<a href=''javascript:\/\/'' class=''fred--tooltip''><div class=''fred--tooltiptext p-3''>Cras efficitur egestas parturient ullamcorper vehicula malesuada at dignissim rutrum facilisis bibendum. Lectus parturient proin ad tempus taciti arcu felis ultricies.<\/div><\/a>","type":"text","value":"http:\/\/"},{"fred-import":"background_settings"}]},{"group":"Mannually","settings":[{"name":"mannually","label":"Set data mannually","type":"toggle","value":false},{"name":"items","label":"Items","type":"select","options":{"1":"1","2":"2","3":"3","4":"4","5":"5"},"value":"3"}]}]}'
 
 -----
 
 {% set uId = random() %}
-<div id="card-{{uId}}" class="card flex-fill w-100">
+<div id="card-{{uId}}" class="card flex-fill w-100 ">
   <div class="card-header">
     <h5 class="card-title mb-0" data-fred-name="title">Timeline</h5>
-    {%if local_ds == "assets/themes/zimagi_data_visualizer/sample_data/sample-doughnut-chart-datasource.json"%}
+    <div data-fred-dropzone="content"></div>
+    {%if local_ds == "assets/themes/zimagi_data_visualizer/sample_data/sample-timeline-datasource.json" and mannually == false%}
     <div data-fred-render="false" class="alert alert-info alert-dismissible mt-2" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">×</span>
@@ -24,23 +25,29 @@ options_override: '{"remote":true,"settings":[{"name":"items","label":"Items","t
     {%endif%}
   </div>
   <div class="card-body d-flex w-100">
-    <ul class="timeline">
-        {% for i in 1..items %}
-          <li class="timeline-item">
-            <strong data-fred-name="item_head_{ i }}">Lorem ipsum
-            </strong>
-            <span data-fred-name="item_time_{{ i }}" class="float-right text-muted text-sm"
-              >30m ago</span
-            >
-            <div data-fred-name="item_content_{{ i }}">
-              <p>Nam pretium turpis et arcu. Duis arcu tortor, suscipit
-              eget, imperdiet nec, imperdiet iaculis, ipsum. Sed
-              aliquam ultrices mauris...</p>
-            </div>
-          </li>
-         {%endfor%}
-          
+    
+    <ul id="timeline-{{uId}}" class="timeline" data-attr='{"id": "{{uId}}", "url": "{{local_ds}}"}'>
+        {%if mannually %}
+            {% for i in 1..items %}
+              <li class="timeline-item">
+                <strong data-fred-name="item_head_{ i }}">Lorem ipsum</strong>
+                <span data-fred-name="item_time_{{ i }}" class="float-right text-muted text-sm"
+                  >30m ago</span
+                >
+                <div data-fred-name="rte_content_{{ i }}" data-fred-rte="true"
+      data-fred-rte-config="global">
+                  <p>Nam pretium turpis et arcu. Duis arcu tortor, suscipit
+                  eget, imperdiet nec, imperdiet iaculis, ipsum. Sed
+                  aliquam ultrices mauris...</p>
+                </div>
+              </li>
+             {%endfor%}
+          {%endif%}
         </ul>
   </div>
 </div>
-
+{%if mannually == false%}
+<script>
+    buildTimeline('timeline-{{uId}}');
+</script>
+{%endif%}

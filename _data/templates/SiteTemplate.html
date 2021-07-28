@@ -25,7 +25,7 @@ properties: 'a:0:{}'
     <title>[[*longtitle:is=``:then=`[[!getSiteSetting? &id=`4` &tv=`SiteTitle`]]`:else=`[[*longtitle]]`]]</title>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="shortcut icon" href="/[[!getSiteSetting? &id=`4` &tv=`SiteIcon`]]" />
-
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
       rel="stylesheet"
@@ -71,7 +71,9 @@ properties: 'a:0:{}'
     <script src="[[++fred.theme_dir]]js/app.js"></script>
     <script src="[[++fred.theme_dir]]js/charts-custom-functions.js"></script>
     <script src="[[++fred.theme_dir]]js/maps-custom-functions.js"></script>
+    <script src="[[++fred.theme_dir]]js/timeline-custom-functions.js"></script>
     <script src="[[++fred.theme_dir]]js/datatables-custom-functions.js"></script>
+    <script src="[[++fred.theme_dir]]js/simple-card-custom-functions.js"></script>
 
      
     <div class="wrapper">
@@ -232,7 +234,9 @@ properties: 'a:0:{}'
         `]]
     `]]
     
-     
+    [[- Add pageScripts template variable]]
+    <!--Page Scripts-->
+    [[*pageScripts]]
    
   </body>
 </html>

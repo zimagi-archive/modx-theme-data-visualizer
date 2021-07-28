@@ -32,11 +32,14 @@ properties: 'a:0:{}'
         /*DISABLE Some Fred Sections in toolbar*/
         .fred--sidebar_blueprints,
         .fred--sidebar_page_settings,
-        .fred--sidebar_more{
+        .fred--sidebar_more,
+        .fred--sidebar_pages{
             display: none !important;
         }
-        
-        
+        .fred--block_content i[data-fred-name="icon"]:hover{
+            cursor: pointer;
+            outline: 2px solid #357dc2
+        }
         .sidebar{
             width: 320px !important;
             max-width: 320px !important;

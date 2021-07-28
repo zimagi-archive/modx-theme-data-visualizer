@@ -1,0 +1,7 @@
+id: 4
+name: html
+theme: 1
+
+-----
+
+{"theme":"inlite","inline":true,"plugins":"code modxlink link image imagetools media lists","insert_toolbar":"code","selection_toolbar":"code italic"}

@@ -1,0 +1,44 @@
+id: 32
+name: 'Table v2'
+uuid: c43e0a05-cb73-493a-b0ea-93ecf4a27b50
+image: '{{theme_dir}}thumb-table.gif'
+category: 9
+rank: 9
+options_override: '{"settings":[{"name":"columns","label":"Column Names<br>(Ex. Name, Last name, ...)","type":"text","value":"Col 1,Col 2,Col 3,Col 4"},{"name":"local_ds","label":"Upload your data<div class=''fred--helpcontent''><a id=''samplePie'' href=''javascript:\/\/'' data-source=''[[++fred.theme_dir]]sample_data\/sample_datatable_ajax.json'' data-title=''Sample Data Tables'' onClick=''updateModalFredHelp(this);''>View sample data source<\/a><\/div>","type":"file","value":"","mediaSource":"Data Sources"},{"name":"remote_ds","label":"URL path (API)<a href=''javascript:\/\/'' class=''fred--tooltip''><div class=''fred--tooltiptext p-3''>Cras efficitur egestas parturient ullamcorper vehicula malesuada at dignissim rutrum facilisis bibendum. Lectus parturient proin ad tempus taciti arcu felis ultricies.<\/div><\/a>","type":"text","value":""},{"name":"use_local","label":"Use Local Data Source","type":"toggle","value":true},{"fred-import":"background_settings"},{"name":"bordered","label":"Bordered","type":"toggle","value":false},{"name":"numbered","label":"Number Rows","type":"toggle","value":false},{"name":"striped","label":"Striped Rows","type":"toggle","value":false}]}'
+
+-----
+
+{% set uId = random() %}
+<div class="table-responsive">
+    <table id="table-{{uId}}" class="table mb-0{%if striped%} table-striped{%endif%}{%if bordered%} table-bordered{%endif%}">
+    
+      <thead>
+        
+        <tr>
+       
+          {% set cols = columns|split(',')%}
+          
+          {%for i in 1..cols|length %}
+             <th scope="col">{{cols[i-1]|trim}}</th>
+          {%endfor%}
+        
+        </tr>
+       
+      </thead>
+      
+      <tbody>
+       
+      </tbody>
+      
+    </table>
+    
+   
+    
+</div>
+{%if local_ds != '' or remote_ds != ''%}
+ <script>
+    var cols = '{{cols}}';
+    buildDataTable2('table-{{uId}}', '{%if use_local%}{{local_ds}}{%else%}{{remote_ds}}{%endif%}', cols);
+    
+ </script> 
+{%endif%}

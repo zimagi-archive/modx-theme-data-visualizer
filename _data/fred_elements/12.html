@@ -1,30 +1,41 @@
 id: 12
-name: 'Card Small with Icon'
+name: 'Card Small w Icon'
 uuid: 8490db36-f260-4ee9-84dc-933c7d357a88
 image: '{{theme_dir}}thumb-card-simple.jpg'
 category: 9
-options_override: '[]'
+options_override: '{"remote":true,"settings":[{"name":"mannually","label":"Set data mannually","type":"toggle","value":true},{"name":"badge","label":"Badge Color (For mannual data only)","type":"select","options":{"success":"Green","warning":"Yellow","danger":"Red"},"value":"success"},{"group":"Data Source","settings":[{"name":"local_ds","label":"Upload your data<div class=''fred--helpcontent''><a id=''samplePie'' href=''javascript:\/\/'' data-source=''[[++fred.theme_dir]]sample_data\/sample-simple-card-datasource.json'' data-title=''Sample Timeline Data Source'' onClick=''updateModalFredHelp(this);''>View sample data source<\/a><\/div>","type":"file","value":"[[++fred.theme_dir]]sample_data\/sample-simple-card-datasource.json","mediaSource":"Data Sources"},{"name":"remote_ds","label":"URL path (API)<a href=''javascript:\/\/'' class=''fred--tooltip''><div class=''fred--tooltiptext p-3''>Cras efficitur egestas parturient ullamcorper vehicula malesuada at dignissim rutrum facilisis bibendum. Lectus parturient proin ad tempus taciti arcu felis ultricies.<\/div><\/a>","type":"text","value":"http:\/\/"},{"fred-import":"background_settings"}]}]}'
 
 -----
 
-<div class="card flex-fill">
-  <div class="card-body py-4">
-    <div class="media">
-      <div class="media-body">
-        <h3 class="mb-2">$ 24.300</h3>
-        <p class="mb-2">Total Earnings</p>
-        <div class="mb-0">
-          <span class="badge badge-soft-success mr-2">
-            <i class="mdi mdi-arrow-bottom-right"></i> +5.35%
-          </span>
-          <span class="text-muted">Since last week</span>
-        </div>
+{% set uId = random() %}
+<div id="card-s-{{uId}}" class="card flex-fill" data-attr='{"url": "{{local_ds}}"}'>
+  <div class="card-body">
+    <div class="row">
+      <div class="col mt-0">
+        <h5 class="card-title" data-fred-name="title">Card Title</h5>
       </div>
-      <div class="d-inline-block ml-3">
-        <div class="stat">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign align-middle text-success"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+      <div class="col-auto">
+        <div class="stat stat-sm d-flex justify-content-center align-items-center text-primary">
+          <!--<i
+            class="align-middle"
+            data-feather="shopping-bag"
+          ></i>-->
+          <i class="fas fa-dollar-sign fa-1x" data-fred-name="icon"></i>
         </div>
       </div>
     </div>
+    <span class="h1 d-inline-block mt-1 mb-3" data-fred-name="amount">$37.500</span>
+    <div class="mb-0">
+      <span class="badge badge-soft-{{badge}} mr-2">
+        
+        <i class="mdi mdi-arrow-bottom-right"></i> <span class="percentage" data-fred-name="num">6.25%</span>
+      </span>
+      <span class="text-muted" data-fred-name="amount_desc">Since last week</span>
+    </div>
   </div>
 </div>
+{%if mannually == false and local_ds != ""%}
+<script>
+    buildSimpleCard('card-s-{{uId}}');
+</script>
+{%endif%}
