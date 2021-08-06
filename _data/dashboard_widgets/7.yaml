@@ -1,0 +1,8 @@
+id: 7
+name: 'How to'
+description: ''
+type: html
+content: "<link rel=\"stylesheet\" href=\"../[[++fred.theme_dir]]css/widgets/widgets-custom.css\">\n<ul>\n  <li><a href=\"#\">How to change your site's color scheme?</a></li>\n  <li><a href=\"#\">How to change your site color scheme?</a></li>\n  <li><a href=\"#\">How to change your site color scheme?</a></li>\n  <li><a href=\"#\">How to change your site color scheme?</a></li>\n</ul>"
+namespace: core
+name_trans: 'How to'
+description_trans: ''

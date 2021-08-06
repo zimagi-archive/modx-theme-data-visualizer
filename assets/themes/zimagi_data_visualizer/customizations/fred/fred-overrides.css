@@ -67,7 +67,8 @@ main[data-fred-dropzone]::before {
 /*Push page content to the side for fred's toolbar*/
 
 body {
-  padding-left: 80px !important;
+  /* padding-left: 80px !important; */
+  /* padding-left: 0px !important; */
 }
 
 .fred--toolbar-plugins {
@@ -94,7 +95,7 @@ body {
     content: 'MODAL FRED ELEMENT';
 }
 .fred--block.fred-resource-include::before{
-    content: 'INCLUDE RESOURCE ID IN SETTINGS';
+    content: 'INCLUDE PAGE CONTENT';
 }
 
 .fred--block.fred-modal .modal,
@@ -359,4 +360,8 @@ dd[role="tablist"]{
 
 .fred--toolbar-plugins{
     width: 130px !important
+}
+.fred--block_content i[data-fred-name="icon"]:hover{
+    cursor: pointer;
+    outline: 2px solid #357dc2
 }

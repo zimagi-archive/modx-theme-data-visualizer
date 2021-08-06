@@ -1,0 +1,8 @@
+id: 6
+name: 'Start here'
+description: ''
+type: html
+content: "<link rel=\"stylesheet\" href=\"../[[++fred.theme_dir]]css/widgets/widgets-custom.css\">\n<div class=\"p-3\">\n   <ol>\n      <li>You can <a href=\"../index.php?id=1&fred=4\" target=\"_blank\">preview your site</a> by right clicking the <strong>Home</strong> resource(page) and choose \"View\".</li>\n      <li>You can can manage your site settings such as:\n   <strong>color scheme, font, identity</strong> and others within the \n   <a href=\"../manager/?a=resource/update&id=4\" target=\"_blank\">_Settings</a> resource(page) under the <strong>_Site Configuration</strong> directory.</li>\n   </ol>\n</div>"
+namespace: core
+name_trans: 'Start here'
+description_trans: ''

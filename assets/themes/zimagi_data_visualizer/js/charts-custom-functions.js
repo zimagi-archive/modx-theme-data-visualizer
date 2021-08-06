@@ -47,6 +47,16 @@ var getPercentage = function(num, arr){
     //(num/100)*per
     return result+'%';
 }
+var getNode = function(obj, key){
+    var result = {};
+    for(var i=0;i<obj.length;i++){
+       if(obj[key] == key){
+           
+       } 
+    }
+    return result;
+}
+
 var buildChart = function(id){
     
     // Get chart attributes
@@ -61,6 +71,7 @@ var buildChart = function(id){
     var legend = obj.legend;
     var legend_pos = obj.legend_pos;
     var currency = obj.currency;
+    // var schemaMapping = obj.schema;
     // var step = Number(obj.step);
     var options = {
         responsive: true,
@@ -102,7 +113,32 @@ var buildChart = function(id){
              if (xhr.status === 200) {
                 //console.log(JSON.parse(xhr.responseText));
                 var data = JSON.parse(xhr.responseText);
-                if(!data.labels || !data.datasets){
+                var labels;
+                var datasets;
+                console.log(obj.remote);
+                if(obj.remote == "true"){
+                    // Temporary/not reliable
+                    data = data[0];
+                    // If schema mapping is set 
+                    // define which json node name we will grab its content
+                    if(obj.map1 != ""){
+                        labels = data[obj.map1];
+                    }else{
+                        labels = data.labels;
+                    }
+                    if(obj.map2 != ""){
+                        datasets = data[obj.map2];
+                    }else{
+                        datasets = data.datasets;
+                    }
+                    
+                }else{
+                    labels = data.labels;
+                    datasets = data.datasets;
+                }
+                
+                console.log(datasets.length);
+                if(!labels || !datasets){
                     console.error('Wrong data structure');
                 }else{
                     // console.log(data.datasets);
@@ -110,46 +146,46 @@ var buildChart = function(id){
                     var colorIndex = 0;
                     if(type==='bar'){
                         colorIndex = 0;
-                        for(var i=0; i<data.datasets.length; i++){
-                            data.datasets[i].backgroundColor = defaultGraphsColors[colorIndex];
-                            data.datasets[i].borderColor = defaultGraphsColors[colorIndex];
-                            data.datasets[i].hoverBackgroundColor = defaultGraphsColors[colorIndex];
-                            data.datasets[i].hoverBorderColor = defaultGraphsColors[colorIndex];
-                            data.datasets[i].barPercentage = barChartPercentage;
-                            data.datasets[i].categoryPercentage = barChartCatPercentage;
+                        for(var i=0; i<datasets.length; i++){
+                            datasets[i].backgroundColor = defaultGraphsColors[colorIndex];
+                            datasets[i].borderColor = defaultGraphsColors[colorIndex];
+                            datasets[i].hoverBackgroundColor = defaultGraphsColors[colorIndex];
+                            datasets[i].hoverBorderColor = defaultGraphsColors[colorIndex];
+                            datasets[i].barPercentage = barChartPercentage;
+                            datasets[i].categoryPercentage = barChartCatPercentage;
                             colorIndex++;
                         }
                     }
                     if(type==='line'){
                         colorIndex = 0;
-                        for(var i=0; i<data.datasets.length; i++){
-                            data.datasets[i].backgroundColor = defaultGraphsColors[colorIndex];
-                            data.datasets[i].borderColor = defaultGraphsColors[colorIndex];
+                        for(var i=0; i<datasets.length; i++){
+                            datasets[i].backgroundColor = defaultGraphsColors[colorIndex];
+                            datasets[i].borderColor = defaultGraphsColors[colorIndex];
                             colorIndex++;
                         }
                     }
                     if(type === 'doughnut'){
                         colorIndex = 0;
-                        data.datasets[0].backgroundColor = [];
+                        datasets[0].backgroundColor = [];
                         for(var i=0; i<data.datasets[0].data.length; i++){
-                            data.datasets[0].backgroundColor.push(defaultGraphsColors[colorIndex]);
+                            datasets[0].backgroundColor.push(defaultGraphsColors[colorIndex]);
                             // data.datasets[i].borderColor = defaultGraphsColors[colorIndex];
                             colorIndex++;
                         }
-                        data.datasets[0].hoverOffset = 4;
+                        datasets[0].hoverOffset = 4;
                     }
                     if(type==='radar'){
                         colorIndex = 0;
-                        for(var i=0; i<data.datasets.length; i++){
-                            data.datasets[i].backgroundColor = hexToRgbA(defaultGraphsColors[colorIndex], 0.2);
-                            data.datasets[i].borderColor = defaultGraphsColors[colorIndex];
+                        for(var i=0; i<datasets.length; i++){
+                            datasets[i].backgroundColor = hexToRgbA(defaultGraphsColors[colorIndex], 0.2);
+                            datasets[i].borderColor = defaultGraphsColors[colorIndex];
                             colorIndex++;
                         }
                     }
                     if(type==='pie'){
                         colorIndex = 0;
                         var colors = [];
-                        if(data.datasets.length>1){
+                        if(datasets.length>1){
                             // If there are more than one data set
                             // remove others
                             alert('Please verify your data source. Pie charts should have only a single dataset: Ex. "datasets": {"data": [2602,1253,541,1465]}');
@@ -157,13 +193,13 @@ var buildChart = function(id){
                         }
                         for(var i=0; i<data.datasets[0].data.length; i++){
                             colors.push(defaultGraphsColors[colorIndex]);
-                            // data.datasets[i].borderColor = defaultGraphsColors[colorIndex];
-                            // data.datasets[i].hoverBackgroundColor = defaultGraphsColors[colorIndex];
-                            // data.datasets[i].hoverBorderColor = defaultGraphsColors[colorIndex];
+                            // datasets[i].borderColor = defaultGraphsColors[colorIndex];
+                            // datasets[i].hoverBackgroundColor = defaultGraphsColors[colorIndex];
+                            // datasets[i].hoverBorderColor = defaultGraphsColors[colorIndex];
                             
                             colorIndex++;
                         }
-                        data.datasets[0].backgroundColor = colors;
+                        datasets[0].backgroundColor = colors;
                         
                         
                     }
@@ -181,9 +217,9 @@ var buildChart = function(id){
                   if(type==='pie'){
                       colorIndex = 0;
                       var colors = [];
-                      for(var i=0; i<data.labels.length; i++){
+                      for(var i=0; i<labels.length; i++){
                           var hex = defaultGraphsColors[colorIndex];
-                          var val = data.datasets[0].data[i];
+                          var val = datasets[0].data[i];
                           if(currency){
                               val = formatter.format(val);
                           }else{

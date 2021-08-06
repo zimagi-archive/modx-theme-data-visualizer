@@ -2,4 +2,7 @@
 #modx-resource-access-permissions,
 #modx-resource-tabs__modx-resource-access-permissions{
     display: none !important
-    }
+}
+.tree-folder{
+    color: #F5821E
+}

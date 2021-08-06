@@ -1,0 +1,6 @@
+{
+  "totalAmount": "1,345.54",
+  "datasets": [
+    { "id": "1", "label": "Sales Income", "value": "456.33" }
+  ]
+}

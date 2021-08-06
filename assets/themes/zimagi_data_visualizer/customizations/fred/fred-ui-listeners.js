@@ -13,22 +13,27 @@ function updateModalFredHelp(ele){
 }
 
 document.body.addEventListener("FredElementDrop", function(){
-    // Show Fred Toolbar
-    var elems = document.querySelectorAll(".fred--sidebar.fred--hidden");
-    [].forEach.call(elems, function(el) {
-        el.classList.remove("fred--hidden");
-        el.setAttribute("aria-hidden", false);
-    });
-    // Remove active in Elements section
-    var elems = document.querySelectorAll(".fred--sidebar_elements.active");
-    [].forEach.call(elems, function(el) {
-        el.classList.remove("active");
-    });
-     // Remove active in Blueprints section
-    var elems = document.querySelectorAll(".fred--sidebar_blueprints.active");
-    [].forEach.call(elems, function(el) {
-        el.classList.remove("active");
-    });
+    setTimeout(function(){
+       
+        // Show Fred Toolbar
+        var elems = document.querySelectorAll(".fred--sidebar.fred--hidden");
+        [].forEach.call(elems, function(el) {
+            el.classList.remove("fred--hidden");
+            el.setAttribute("aria-hidden", false);
+        });
+        // Remove active in Elements section
+        var elems = document.querySelectorAll(".fred--sidebar_elements.active");
+        [].forEach.call(elems, function(el) {
+            el.classList.remove("active");
+        });
+         // Remove active in Blueprints section
+        var elems = document.querySelectorAll(".fred--sidebar_blueprints.active");
+        [].forEach.call(elems, function(el) {
+            el.classList.remove("active");
+        });
+        
+    }, 1000);
+    
     
     // Init feather icons
     feather.replace();
@@ -68,6 +73,14 @@ document.body.addEventListener("FredElementSettingChange", function(){
     //*/
    
 });
+function showToolbar(){
+    console.log('show toolbar');
+    var elems = document.querySelectorAll(".fred--sidebar.fred--hidden");
+    [].forEach.call(elems, function(el) {
+        el.classList.remove("fred--hidden");
+        el.setAttribute("aria-hidden", false);
+    });
+}
 
 $(function(){
     //
@@ -78,10 +91,12 @@ $(function(){
             if (mutation.attributeName === "class") {
               var attributeValue = $(mutation.target).prop(mutation.attributeName);
               $('.fred--panel .fred--input-group.fred--browse input').addClass('inpt-browse');
+              
               setTimeout(function(){
-                  $('.inpt-browse').each(function(){
-                      $(this).attr('data-prev-val', $(this).val());
-                  });
+                $('.inpt-browse').each(function(){
+                    $(this).attr('data-prev-val', $(this).val());
+                });
+                
               },500);
               
               $('.fred--panel input, .fred--panel select').change(function(){
@@ -113,5 +128,32 @@ $(function(){
           attributes: true
         });
     }
+    if($('.fred--sidebar').css('left') == "0px"){
+            $('body').css("padding-left", "80px");
+        }
+    setTimeout(function(){
+        
+        if($('.fred--sidebar').css('left') == "0px"){
+            $('body').css("padding-left", "80px");
+        }else{
+            if( $('body').css("padding-left") == "80px"){
+               $('body').css("padding-left", "0px"); 
+            }
+            
+        }
+        
+        
+        if($('.fred--toolbar-grip.handle').length>0){
+            $('.fred--toolbar-grip.handle').each(function(){
+                
+                $('.fred--toolbar-grip.handle').mouseout(function(){
+                    showToolbar();
+                });
+            
+            });
+        }
+    },500);
+    
+    
 
 });
