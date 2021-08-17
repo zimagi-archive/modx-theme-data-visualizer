@@ -69,16 +69,107 @@ function getHeaders(data){
     return str;
 }
 
+function isJson(item) {
+    item = typeof item !== "string"
+        ? JSON.stringify(item)
+        : item;
+
+    try {
+        item = JSON.parse(item);
+    } catch (e) {
+        return false;
+    }
+
+    if (typeof item === "object" && item !== null) {
+        return true;
+    }
+
+    return false;
+}
+
+function processData(allText) {
+    var record_num = 5;  // or however many elements there are in each row
+    var allTextLines = allText.split(/\r\n|\n/);
+    var entries = allTextLines[0].split(',');
+    var lines = [];
+
+    var headings = entries.splice(0,record_num);
+    while (entries.length>0) {
+        var tarr = [];
+        for (var j=0; j<record_num; j++) {
+            tarr.push(headings[j]+":"+entries.shift());
+        }
+        lines.push(tarr);
+    }
+    console.log(lines);
+}
+
+function csvJSON(csv){
+
+  var lines=csv.split("\n");
+
+  var result = [];
+
+  var headers=lines[0].split(",");
+
+  for(var i=1;i<lines.length-1;i++){
+
+	  var obj = {};
+	  var currentline=lines[i].split(",");
+
+	  for(var j=0;j<headers.length;j++){
+		  obj[headers[j]] = currentline[j];
+	  }
+
+	  result.push(obj);
+
+  }
+  
+  //return result; //JavaScript object
+  return JSON.stringify(result); //JSON
+}
+
 function buildDataTable(id, url, cols){
     var cols = cols.split(',');
     //console.log(cols.length);
     // Build loader
     $('#'+id).parent().append('<div id="loader-'+id+'" class="loader-container d-flex justify-content-center align-items-center"><div class="loader"></div></div>');
-       
+    
+    $.ajax({ type: "GET",
+        url: url,
+        dataType: "text",
+        success: function(data) {
+            var result = "";
+            // processData(data);
+            // Remove loader
+            $('#loader-'+id).remove();
+            if(isJson(data)){
+                result = JSON.parse(data);
+                console.log(result);
+            }else{
+                // Its a csv
+                result = JSON.parse(csvJSON(data));
+               // console.log(result);
+                //return;
+            }
+            
+            // Generate reference table headers
+            if($('#tr-'+id).length == 0 && $('.fred').length>0){
+                $('#'+id+' thead').append('<tr class="help-th" id="#tr-'+id+'" title="This row serves as guide to name your column headers in the settings.">'+getHeaders(result)+'</tr>');
+                  
+            }
+            $('#'+id).DataTable({
+                data: setNodeValuesInArray(result)
+            });
+            
+        }});
+        /*
     $.get(url, function(result){
         // Remove loader
         $('#loader-'+id).remove();
-        // console.log(Object.keys(result).length);
+        if(){
+            
+        }
         // Generate reference table headers
         if($('#tr-'+id).length == 0 && $('.fred').length>0){
             $('#'+id+' thead').append('<tr class="help-th" id="#tr-'+id+'" title="This row serves as guide to name your column headers in the settings.">'+getHeaders(result)+'</tr>');
@@ -110,6 +201,6 @@ function buildDataTable(id, url, cols){
         //     alert('Please set a columns array in your data set. Ex. "columns": ["Name", "Position", "Office", "Age", "Start date", "Salary"]');
         // }
         
-    });
+    });*/
     
 }
