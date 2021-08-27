@@ -1,0 +1,20 @@
+[
+  {
+    "eating": 65,
+    "drinking": 59,
+    "sleeping": 90,
+    "designing": 81,
+    "coding": 56,
+    "cycling": 55,
+    "running": 40
+  },
+  {
+    "eating": 28,
+    "drinking": 48,
+    "sleeping": 40,
+    "designing": 19,
+    "coding": 96,
+    "cycling": 27,
+    "running": 100
+  }
+]

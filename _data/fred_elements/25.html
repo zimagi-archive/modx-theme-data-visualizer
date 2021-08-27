@@ -1,5 +1,5 @@
 id: 25
-name: Doughnut
+name: 'Doughnut Chart'
 uuid: 32ce93db-e54d-49a7-8a5c-93c93175eb63
 image: '{{theme_dir}}thumb-doughnut-chart.gif'
 category: 7
@@ -25,7 +25,7 @@ options_override: '{"remote":true,"settings":[{"group":"Data Source","settings":
   </div>
   <div class="card-body d-flex w-100">
     <div class="align-self-center chart chart-lg"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-      <canvas id="canvas-{{uId}}" data-attr='{"type": "doughnut", "style": "{{style}}", "legend": {%if legend%}{{legend}}{%else%}false{%endif%}, "legend_pos": "{{legend_pos}}", "url": "{{local_ds}}"}' class="chart-canvas"></canvas>
+      <canvas id="canvas-{{uId}}" data-attr='{"id":{{uId}}, "type": "doughnut", "style": "{{style}}", "legend": {%if legend%}{{legend}}{%else%}false{%endif%}, "legend_pos": "{{legend_pos}}", "url": "{{local_ds}}"}' class="chart-canvas"></canvas>
     </div>
   </div>
 </div>

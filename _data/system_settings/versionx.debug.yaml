@@ -1,0 +1,4 @@
+key: versionx.debug
+xtype: combo-boolean
+namespace: versionx
+area: Default

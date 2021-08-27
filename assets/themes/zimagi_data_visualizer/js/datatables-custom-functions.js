@@ -30,7 +30,7 @@
     
 // }
 
-function setNodeValuesInArray(data){
+var setNodeValuesInArray = function(data){
    var arr = [];
    for(var i=0;i<data.length;i++){
        var item = [];
@@ -47,20 +47,8 @@ function setNodeValuesInArray(data){
    return arr;
 }
 
-function getKeyNames(data){
-    var arr = [];
-    for (var key in data[0]) {
-        if (data[0].hasOwnProperty(key)) {
-            //console.log(key);
-            arr.push(key);
-        }
-        
-    }
-    
-    return arr;
-}
 
-function getHeaders(data){
+var getHeaders = function(data){
     var str = "";
     var thArr = getKeyNames(data);
     for(var i=0;i<thArr.length;i++){
@@ -69,67 +57,48 @@ function getHeaders(data){
     return str;
 }
 
-function isJson(item) {
-    item = typeof item !== "string"
-        ? JSON.stringify(item)
-        : item;
+// function isJson(item) {
+//     item = typeof item !== "string"
+//         ? JSON.stringify(item)
+//         : item;
 
-    try {
-        item = JSON.parse(item);
-    } catch (e) {
-        return false;
-    }
+//     try {
+//         item = JSON.parse(item);
+//     } catch (e) {
+//         return false;
+//     }
 
-    if (typeof item === "object" && item !== null) {
-        return true;
-    }
+//     if (typeof item === "object" && item !== null) {
+//         return true;
+//     }
 
-    return false;
-}
+//     return false;
+// }
 
-function processData(allText) {
-    var record_num = 5;  // or however many elements there are in each row
-    var allTextLines = allText.split(/\r\n|\n/);
-    var entries = allTextLines[0].split(',');
-    var lines = [];
+// function csvJSON(csv){
 
-    var headings = entries.splice(0,record_num);
-    while (entries.length>0) {
-        var tarr = [];
-        for (var j=0; j<record_num; j++) {
-            tarr.push(headings[j]+":"+entries.shift());
-        }
-        lines.push(tarr);
-    }
-    console.log(lines);
-}
+//   var lines=csv.split("\n");
+//   var result = [];
+//   var headers=lines[0].split(",");
 
-function csvJSON(csv){
+//   for(var i=1;i<lines.length-1;i++){
 
-  var lines=csv.split("\n");
+// 	  var obj = {};
+// 	  var currentline=lines[i].split(",");
 
-  var result = [];
+// 	  for(var j=0;j<headers.length;j++){
+// 		  obj[headers[j]] = currentline[j];
+// 	  }
 
-  var headers=lines[0].split(",");
+// 	  result.push(obj);
 
-  for(var i=1;i<lines.length-1;i++){
-
-	  var obj = {};
-	  var currentline=lines[i].split(",");
-
-	  for(var j=0;j<headers.length;j++){
-		  obj[headers[j]] = currentline[j];
-	  }
-
-	  result.push(obj);
-
-  }
+//   }
   
-  //return result; //JavaScript object
-  return JSON.stringify(result); //JSON
-}
+//   //return result; //JavaScript object
+//   return JSON.stringify(result); //JSON
+// }
 
-function buildDataTable(id, url, cols){
+var buildDataTable = function(id, url, cols){
     var cols = cols.split(',');
     //console.log(cols.length);
     // Build loader
@@ -140,12 +109,11 @@ function buildDataTable(id, url, cols){
         dataType: "text",
         success: function(data) {
             var result = "";
-            // processData(data);
             // Remove loader
             $('#loader-'+id).remove();
             if(isJson(data)){
                 result = JSON.parse(data);
-                console.log(result);
+                // console.log(result);
             }else{
                 // Its a csv
                 result = JSON.parse(csvJSON(data));

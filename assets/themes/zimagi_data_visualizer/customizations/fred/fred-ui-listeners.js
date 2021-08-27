@@ -74,7 +74,7 @@ document.body.addEventListener("FredElementSettingChange", function(){
    
 });
 function showToolbar(){
-    console.log('show toolbar');
+    //console.log('show toolbar');
     var elems = document.querySelectorAll(".fred--sidebar.fred--hidden");
     [].forEach.call(elems, function(el) {
         el.classList.remove("fred--hidden");

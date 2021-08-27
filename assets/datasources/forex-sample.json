@@ -2,19 +2,19 @@
   {
     "date": "1/2/00 19:00",
     "exchange_rate_audusd_bid_open": 0.6565,
-    "exchange_rate_audusd_bid_low": 1.6561,
-    "exchange_rate_audusd_bid_high": 0.3615
+    "exchange_rate_audusd_bid_low": 0.6561,
+    "exchange_rate_audusd_bid_high": 0.6615
   },
   {
     "date": "1/3/00 19:00",
-    "exchange_rate_audusd_bid_open": 0.4586,
-    "exchange_rate_audusd_bid_low": 2.6543,
+    "exchange_rate_audusd_bid_open": 0.6586,
+    "exchange_rate_audusd_bid_low": 0.6543,
     "exchange_rate_audusd_bid_high": 0.6595
   },
   {
     "date": "1/4/00 19:00",
-    "exchange_rate_audusd_bid_open": 0.3549,
-    "exchange_rate_audusd_bid_low": 1.6537,
+    "exchange_rate_audusd_bid_open": 0.6549,
+    "exchange_rate_audusd_bid_low": 0.6537,
     "exchange_rate_audusd_bid_high": 0.6598
   },
   {
