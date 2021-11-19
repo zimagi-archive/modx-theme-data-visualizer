@@ -22,6 +22,12 @@
 .fred .fred--panel dl dt:hover::after{
     color: #ffffff !important;
 }
+.fred .fred--panel textarea{
+    border: 1px solid #eee
+}
+.fred .fred--panel textarea:focus{
+   border: 1px solid #ddd 
+}
 .fred--block {
     /* border: 2px dashed red; */
     margin: 3px 0 3px 0;
@@ -97,6 +103,9 @@ body {
 .fred--block.fred-resource-include::before{
     content: 'INCLUDE PAGE CONTENT';
 }
+.fred--block.fred-resource-include a{
+    text-decoration: underline;
+}
 
 .fred--block.fred-modal .modal,
 .fred--block.fred-modal .modal {
@@ -129,7 +138,9 @@ button.fred--element-settings {
 }
 
 /*Turn of preview controls*/
-.fred--content-preview_controls{
+.fred--content-preview_controls,
+.fred--toolbar-plugins [title="Element Thumbnail"],
+.fred--toolbar-plugins [title="Create Partial Blueprint"]{
     display: none !important;
 }
 
@@ -230,7 +241,7 @@ main{
   padding: 10px;
   width: 20px !important;
   height: 20px !important;
-  background-image: url('../../assets/icons/icon-info.svg');
+  background-image: url('../../icons/icon-info.svg') !important;
   background-repeat: no-repeat;
 }
 
@@ -364,4 +375,9 @@ dd[role="tablist"]{
 .fred--block_content i[data-fred-name="icon"]:hover{
     cursor: pointer;
     outline: 2px solid #357dc2
+}
+/*Disable blueprints and settings*/
+.fred--sidebar_blueprints,
+.fred--sidebar_page_settings{
+    display: none !important;
 }

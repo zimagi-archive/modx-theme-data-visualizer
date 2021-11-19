@@ -1,6 +1,8 @@
 var date = new Date();
 var timestamp = date.getTime();
 
+var chartLabels = "chartLabels";
+
 
 var ID = function () {
   return '_' + Math.random().toString(36).substr(2, 9);
@@ -46,6 +48,11 @@ var isJson = function(item) {
     return false;
 }
 
+// enteredText = textareaVariableName.val();
+// numberOfLineBreaks = (enteredText.match(/n/g)||[]).length;
+// characterCount = enteredText.length + numberOfLineBreaks;
+
+
 var csvJSON = function(csv){
     // console.log('----');
     // console.log(csv);
@@ -54,21 +61,27 @@ var csvJSON = function(csv){
     var result = [];
     // console.log(lines);
     var headers=lines[0].split(",");
-    
     for(var i=1;i<lines.length;i++){
     
     	var obj = {};
     	var currentline=lines[i].split(",");
-    
+        
+    // 	for(var j=0;j<headers.length;j++){
+    // 		obj[headers[j].replace(/\r?\n|\r/g, "")] = currentline[j];
+    // 	}
     	for(var j=0;j<headers.length;j++){
+    	   // console.log(currentline[j].match(/\r?\n|\r/g));
+    	   // if(currentline[j].match(/\r?\n|\r/g) != null){
+        //         currentline[j] = currentline[j].replace(/\r?\n|\r/g, "");
+        //     }
     		obj[headers[j]] = currentline[j];
     	}
-    
-    	result.push(obj);
+        if(lines[i]!=''){
+    	    result.push(obj);
+        }
     
     }
       
-    // return result; //JavaScript object
     return JSON.stringify(result); //JSON
 }
 
@@ -100,6 +113,9 @@ var getKeyNames = function(data){
     return arr;
 }
 
+var showCardLoader = function(id){
+    $('#card-'+id+' .card-body').append('<div id="loader-'+id+'" class="loader-container d-flex justify-content-center align-items-center"><div class="loader"></div></div>')
+}
 
 var pushDataToObj = function(obj, keyName, value){
     // var result = obj;

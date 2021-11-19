@@ -36,6 +36,10 @@ properties: 'a:0:{}'
         .fred--sidebar_pages{
             display: none !important;
         }
+        
+        .fred--block.fred-sidebar-accordion{
+            padding-bottom: 2rem !important
+        }
         .fred--thumb figcaption strong{
             color: #fff !important;
         }
@@ -61,6 +65,11 @@ properties: 'a:0:{}'
         .fred--block .sidebar-dropdown .sidebar-link{
             padding: .55rem 0rem .55rem 2.25rem;
         }
+        /*Disable Up/Down & Grab for button link elements*/
+        .fred--position-group .fred--position-up,
+        .fred--position-group .fred--position-down{
+            display: none !important;
+        }
         .sidebar-header, 
         .sidebar-item,
         .sidebar-link, 
@@ -73,7 +82,55 @@ properties: 'a:0:{}'
             padding-left: 5px !important;
             padding-bottom: 0px !important;
         }
-
+        
+        .fred--block_content{
+            border: 1px dotted red;
+        }
+        
+        [data-fred-block-class="fred-sidebar-accordion"] {
+            padding-bottom: 30px !important
+        }
+        .fred--toolbar-plugins [title="Element Thumbnail"],
+        .fred--toolbar-plugins [title="Create Partial Blueprint"]{
+            display: none !important;
+        }
+        .fred--block .fred--block.fred--block-active .fred--toolbar{
+            bottom: -30px  !important;
+            border:  1px solid green;
+        }
+        
+        [data-fred-element-title="Sidebar Header"]:before,
+        [data-fred-element-title="Nav Accordion(Toggle)"]:before,
+        [data-fred-element-title="Nav Item (link)"]:before{
+            content: " ";
+            display: block !important;
+            color: red !important;
+            width: 200px !important;
+            position: absolute !important;
+            text-align: right !important;
+            left: -210px;
+            padding-right: 70px;
+            margin-top: 10px;
+            background-image: url(assets/themes/zimagi_data_visualizer/customizations/fred/images/dotted-arrow-right.gif);
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+        [data-fred-element-title="Sidebar Header"]:before{
+            content: "Sidebar Header"  !important;
+        }
+        [data-fred-element-title="Sidebar Header"] .sidebar-header{
+            padding: .6rem
+        }
+        [data-fred-element-title="Nav Accordion(Toggle)"]:before{
+            content: "Nav Accordion" !important;
+        }
+        [data-fred-element-title="Nav Item (link)"]:before{
+            content: "Link" !important;
+        }
+        .sidebar-link span{
+            display: inline-block;
+            width: 80%;
+        }
     </style>
   </head>
   

@@ -1,5 +1,0 @@
-key: versionx.enable.templates
-value: '1'
-xtype: combo-boolean
-namespace: versionx
-area: enable

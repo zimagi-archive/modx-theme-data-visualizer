@@ -2,7 +2,6 @@ id: 8
 source: 1
 type: resourcelist
 name: 'Graph Colors'
-description: 'Test &lt;script&gt;alert(''test'');&lt;/script&gt;'
 category: 'Graphs Colors'
 elements: test
 display: default

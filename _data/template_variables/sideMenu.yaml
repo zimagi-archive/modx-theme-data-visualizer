@@ -1,0 +1,16 @@
+id: 9
+source: 1
+type: number
+name: sideMenu
+caption: 'Resource ID'
+description: "ID of the resource you would like to use as the Side Menu. \nYou can grab the ID from the number enclosed in parenthesis next to each resource in the Resources tab tree."
+category: 'Side Menu'
+elements: ''
+display: default
+properties: 'a:0:{}'
+input_properties: 'a:7:{s:10:"allowBlank";s:5:"false";s:13:"allowDecimals";s:5:"false";s:13:"allowNegative";s:5:"false";s:16:"decimalPrecision";s:1:"2";s:16:"decimalSeparator";s:1:".";s:8:"maxValue";s:0:"";s:8:"minValue";s:0:"";}'
+output_properties: 'a:0:{}'
+
+-----
+
+6

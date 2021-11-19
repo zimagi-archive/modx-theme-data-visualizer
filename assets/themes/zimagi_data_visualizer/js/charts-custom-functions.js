@@ -49,7 +49,7 @@ var getFirstKeyValue = function(node){
     return result;
 }
 
-var generateLabels = function(data, boolKey, boolCounter){
+var generateLabels = function(data, boolKey, boolCounter, arrLegend){
     var labels = [];
     if(boolKey==undefined){
         boolKey = true;  
@@ -68,10 +68,16 @@ var generateLabels = function(data, boolKey, boolCounter){
             if(boolKey==false){
                 // Set all labels once based on the key names
                 if(i==0){
+                    var c = 0;
                     for (var key in node) {
-                        if (node.hasOwnProperty(key)) {
-                            labels.push(key); 
-                        }
+                            // Use defined legend labels instead
+                            if(arrLegend[c]!=undefined && arrLegend[c] != ""){
+                                labels.push(arrLegend[c]);
+                            }else{
+                                labels.push(key);
+                            }
+                        //}
+                        c++;
                     }
                 }
             }else{
@@ -85,7 +91,29 @@ var generateLabels = function(data, boolKey, boolCounter){
     return labels;
 }
 
-var generateDatasets = function(data, includeFirstNode, chartType){
+var getNodeData = function(node, includeFirstNode){
+    var result = [];
+    var c = 0;
+    if(includeFirstNode==undefined){
+        includeFirstNode = true;
+    }
+    console.log(node);
+    for (var key in node) {
+        console.log(key + ' = ' + node[key]);
+        if(includeFirstNode==true){
+            result.push(node[key]);
+        }else{
+            if(c>0){
+                result.push(node[key]);
+            }
+        }
+       
+        c++;
+    }
+    return result;
+}
+
+var generateDatasets = function(data, includeFirstNode, chartType, arrLegend){
     var datasets = [];
     if(includeFirstNode==undefined){
         // Set default value
@@ -106,18 +134,8 @@ var generateDatasets = function(data, includeFirstNode, chartType){
                 // Ex. { "label": "Dataset 1", "data": [54, -67, 41, 55, -62, 45, 55, 73, 60, 76, 48, 79] }
                 var c = 0;
                 for (var key in node) {
-                    // if (node.hasOwnProperty(key)) {
-                        // console.log('insert in '+key);
-                        // for(var d=0;d<datasets.length;d++){
-                        //     var item = datasets[d];
-                            
-                        //     if(String('Dataset '+i)==String(item.label)){
-                               //console.log(node[key]); 
-                               datasets[i].data.push(node[key]);
-                        //     }
-                        // }   
-                        
-                    // }
+                    
+                    datasets[i].data.push(node[key]);
                     c++;
                 }
                   
@@ -125,25 +143,35 @@ var generateDatasets = function(data, includeFirstNode, chartType){
             break;
         case 'bar':
         case 'line':
+            
             // Generate datasets labels without data
             // Ex. { "label": "Dataset 1", "data": [] }
             var c = 0;
             for (var key in data[0]) {
                 if (data[0].hasOwnProperty(key)) {
                     if(includeFirstNode==true){
-                        datasets.push({label: key, data:[]});
+                        if(arrLegend[c]!=undefined && arrLegend[c] != ""){
+                            datasets.push({label: arrLegend[c], originalLabel: key, data:[]});
+                        }else{
+                            datasets.push({label: key, originalLabel: key, data:[]});
+                        }
                     }else{
                         // Skip first node usually used for x axis labels on bar charts
                         if(c>0){
-                            datasets.push({label: key, data:[]});
+                            if(arrLegend[c-1]!=undefined && arrLegend[c-1] != ""){
+                                datasets.push({label: arrLegend[c-1], originalLabel: key, data:[]});
+                            }else{
+                                datasets.push({label: key, originalLabel: key, data:[]});
+                            }
                         } 
                     }
                     
                 }
                 c++;
             }
-           
-            // Build labels based on first json node
+            // console.log(datasets);
+            // return;
+            // // Build labels based on first json node
             for(var i=0;i<data.length;i++){
                
                 var node = data[i];
@@ -152,21 +180,20 @@ var generateDatasets = function(data, includeFirstNode, chartType){
                 // Ex. { "label": "Dataset 1", "data": [54, -67, 41, 55, -62, 45, 55, 73, 60, 76, 48, 79] }
                 var c = 0;
                 for (var key in node) {
-                    if (node.hasOwnProperty(key)) {
-                        // console.log('insert in '+key);
+                    // console.log(key);
                         for(var d=0;d<datasets.length;d++){
                             var item = datasets[d];
-                            if(key==item.label){
-                               //console.log(node[key]); 
-                               item.data.push(node[key]);
+                            // console.log(key + ' = '+item.originalLabel);
+                            if(key==item.originalLabel){
+                                item.data.push(node[key]);
                             }
-                        }   
-                        
-                    }
+                        }  
                     c++;
                 }
                   
             }
+            // console.log(datasets);
+            // return;
             break;
         case 'pie':
         case 'doughnut':
@@ -210,12 +237,7 @@ var isFirstNodeDate = function(node){
 // }
 
 var buildChart = function(id){
-    // var arr_legend = [];
-    // if(legend_labels!=undefined){
-    //     arr_legend = legend_labels.split(',');
-    // }
     
-    // console.log(legend_labels);
     // Get chart attributes
     // console.log($('#'+id).attr('data-attr'));
     var obj = JSON.parse($('#'+id).attr('data-attr'));
@@ -230,10 +252,13 @@ var buildChart = function(id){
     var currency = obj.currency;
     
     // console.log(url);
+    // Generate legend labels if defined in fred elements setting
+    var arr_legend = obj.legend_labels;
+    if(arr_legend!=""){
+        arr_legend = arr_legend.split(',');
+    }
     
-    // var arr_legend = obj.legend_labels;
-    // var schemaMapping = obj.schema;
-    // var step = Number(obj.step);
+    
     var options = {
         responsive: true,
         maintainAspectRatio: false,
@@ -266,8 +291,7 @@ var buildChart = function(id){
     
     if(url!=''){
         // Build loader
-        $('#card-'+obj.id+' .card-body').append('<div id="loader-'+obj.id+'" class="loader-container d-flex justify-content-center align-items-center"><div class="loader"></div></div>');
-       
+        showCardLoader(obj.id);
         $.ajax({ type: "GET",
         url: url+'?v='+timestamp,
         dataType: "text",
@@ -327,10 +351,10 @@ var buildChart = function(id){
             // console.log('chart type = '+type);
             if(type==='bar'){
                 // Generate labels based in node values
-                labels = generateLabels(result, true, !isFirstNodeDate(result[0]));
-                console.log(labels);
+                labels = generateLabels(result, true, !isFirstNodeDate(result[0]), arr_legend);
+                // console.log(labels);
                 // Generate datasets leaving first node for x axis if first node is date
-                datasets = generateDatasets(result, !isFirstNodeDate(result[0]), type);
+                datasets = generateDatasets(result, !isFirstNodeDate(result[0]), type, arr_legend);
                 colorIndex = 0;
                 for(var i=0; i<datasets.length; i++){
                     datasets[i].backgroundColor = defaultGraphsColors[colorIndex];
@@ -344,9 +368,9 @@ var buildChart = function(id){
             }
             if(type==='line'){
                 // Generate labels based in node values
-                labels = generateLabels(result, true, !isFirstNodeDate(result[0]));
+                labels = generateLabels(result, true, !isFirstNodeDate(result[0]), arr_legend);
                 // Generate datasets leaving first node for x axis if first node is date
-                datasets = generateDatasets(result, !isFirstNodeDate(result[0]), type);
+                datasets = generateDatasets(result, !isFirstNodeDate(result[0]), type, arr_legend);
                 colorIndex = 0;
                 for(var i=0; i<datasets.length; i++){
                     datasets[i].backgroundColor = defaultGraphsColors[colorIndex];
@@ -357,7 +381,7 @@ var buildChart = function(id){
             if(type === 'doughnut' || type === 'pie'){
                 
                 // Generate labels based on key names
-                labels = generateLabels(result, false);
+                labels = generateLabels(result, false, false, arr_legend);
                 // Generate datasets 
                 datasets = generateDatasets(result, true, type);
                 // console.log('----');
@@ -375,7 +399,7 @@ var buildChart = function(id){
             }
             if(type==='radar'){
                 // Generate labels based in node values
-                labels = generateLabels(result, false, false);
+                labels = generateLabels(result, false, false, arr_legend);
                 
                 datasets = generateDatasets(result, true, type);
                 colorIndex = 0;
@@ -407,14 +431,14 @@ var buildChart = function(id){
                 
            
             
-            console.log(labels);
-            console.log(datasets);
+            // console.log(labels);
+            // console.log(datasets);
             // return;
             
             var chartData = {};
             chartData.labels = labels;
             chartData.datasets = datasets;
-            console.log(chartData);
+            // console.log(chartData);
             // return;
                 
             if(!charts.hasOwnProperty(id)){

@@ -10,7 +10,7 @@ createdon: 1625671538
 publishedon: 1625671538
 publishedby: 1
 uri: ''
-properties: '{"contentblocks":{"_isContentBlocks":false},"fred":{"plugins":[],"data":{"content":[{"widget":"508f174c-a46b-4be3-a06f-9307e2ad6b73","values":[],"pluginsData":[],"settings":[],"children":{"content":[{"widget":"bdc67d9d-94ae-4a47-9a54-9371dc3a06d2","values":{"heading":{"_raw":{"_value":"Default Dashboard"}}},"pluginsData":[],"settings":{"ele_id":"","head_tag":"h2","head_align":false,"mt":"mt-5","mr":"mr-0","mb":"mb-0","ml":"ml-0"},"children":[],"elId":"fred_850445c_qedmd0mhk2c"}]},"elId":"fred_3514550_2xxuk53mb25"},{"widget":"c50ea6f1-82d2-4ea4-834f-933c712a9998","values":[],"pluginsData":[],"settings":[],"children":{"col_1":[],"col_2":[],"col_3":[]},"elId":"fred_e1c4733_4vxyfasqleh"},{"widget":"508f174c-a46b-4be3-a06f-9307e2ad6b73","values":[],"pluginsData":[],"settings":[],"children":{"content":[]},"elId":"fred_3514550_bzaundsokt8"}],"fingerprint":"ab1fe7f0152a98e250180fce5e5c900ee9a342c8"}}}'
+properties: '{"contentblocks":{"_isContentBlocks":false},"fred":{"plugins":[],"data":{"content":[{"widget":"508f174c-a46b-4be3-a06f-9307e2ad6b73","values":[],"pluginsData":[],"settings":[],"children":{"content":[{"widget":"bdc67d9d-94ae-4a47-9a54-9371dc3a06d2","values":{"heading":{"_raw":{"_value":"My Dashboard"}}},"pluginsData":[],"settings":{"ele_id":"","head_tag":"h2","head_align":false,"mt":"mt-5","mr":"mr-0","mb":"mb-0","ml":"ml-0"},"children":[],"elId":"fred_850445c_qedmd0mhk2c"}]},"elId":"fred_3514550_2xxuk53mb25"},{"widget":"d7a9c3de-b2a6-4c5c-94e8-9307e3a06ef1","values":[],"pluginsData":[],"settings":[],"children":{"left":[{"widget":"0ad55d20-d04d-4a15-a496-9307e05b81a9","values":{"title":{"_raw":{"_value":"Bar"}}},"pluginsData":[],"settings":{"style":"bar","local_ds":"assets\/themes\/zimagi_data_visualizer\/sample_data\/sample-bar-chart-datasource.json","use_remote":false,"remote_ds":"http:\/\/","legend":true,"legend_pos":"top","legend_labels":"Blue\nYellow\nRed"},"children":[],"elId":"fred_3309f37_kvzxv6uwlxn"}],"right":[{"widget":"32ce93db-e54d-49a7-8a5c-93c93175eb63","values":{"title":{"_raw":{"_value":"Doughnut"}}},"pluginsData":[],"settings":{"local_ds":"assets\/themes\/zimagi_data_visualizer\/sample_data\/sample-doughnut-chart-datasource.json","remote_ds":"http:\/\/","legend":true,"legend_pos":"top","legend_labels":"Blue\nYellow\nRed"},"children":[],"elId":"fred_5ba869f_wglcws2sixe"}]},"elId":"fred_25ac784_dxh7t4g81xq"},{"widget":"d7a9c3de-b2a6-4c5c-94e8-9307e3a06ef1","values":[],"pluginsData":[],"settings":[],"children":{"left":[{"widget":"5c752cc8-65e4-4444-ada6-93c81856c553","values":{"title":{"_raw":{"_value":"Line"}}},"pluginsData":[],"settings":{"local_ds":"assets\/themes\/zimagi_data_visualizer\/sample_data\/sample-bar-chart-datasource.json","remote_ds":"http:\/\/","legend":true,"legend_pos":"top","legend_labels":"Blue\nYellow\nRed"},"children":[],"elId":"fred_93e75d3_fzql3dobrvj"}],"right":[{"widget":"868ec2a1-be8a-42a3-a635-93c8223a6158","values":{"title":{"_raw":{"_value":"Radar"}}},"pluginsData":[],"settings":{"local_ds":"assets\/themes\/zimagi_data_visualizer\/sample_data\/sample-radar-datasource.csv","remote_ds":"http:\/\/","legend":true,"legend_pos":"top","legend_labels":"line 1"},"children":[],"elId":"fred_b3fb0fd_8vcjky4x46j"}]},"elId":"fred_25ac784_3eewjahcn88"}],"fingerprint":"03e276dc07bca3b84a1c2e8e6282e806f9ee2d66"}}}'
 tvs:
     pageScripts: ''
     pageStyles: ''
@@ -19,16 +19,92 @@ tvs:
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-xxl"><h2 class="mt-5 mr-0 mb-0 ml-0 ">Default Dashboard</h2></div>
+        <div class="col-12 col-xxl"><h2 class="mt-5 mr-0 mb-0 ml-0 ">My Dashboard</h2></div>
     </div>
 </div><div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-lg-6 col-xl-4 d-flexx align-items-stretchx"></div>
-        <div class="col-12 col-lg-6 col-xl-4 d-flexx align-items-stretchx"></div>
-        <div class="col-12 col-lg-6 col-xl-4 d-flexx align-items-stretchx"></div>
+        <div class="col-6 col-sm-12 col-xxl d-flexx align-items-stretchx"><div id="card-1159428578" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0">Bar</h5>
+        
+      </div>
+  <div class="card-body d-flex w-100">
+    <div class="align-self-center chart chart-lg"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+      <canvas id="canvas-1159428578" data-attr="{&quot;id&quot;:1159428578, &quot;type&quot;: &quot;bar&quot;, &quot;style&quot;: &quot;bar&quot;, &quot;legend_labels&quot;: &quot;Blue,Yellow,Red&quot;, &quot;legend&quot;: 1, &quot;legend_pos&quot;: &quot;top&quot;, &quot;url&quot;: &quot;assets/themes/zimagi_data_visualizer/sample_data/sample-bar-chart-datasource.json&quot;, &quot;map1&quot;: &quot;&quot;, &quot;map2&quot;: &quot;&quot;, &quot;remote&quot;: &quot;false&quot;}" class="chart-canvas"></canvas>
+    </div>
+  </div>
+</div>
+<script>
+
+     document.body.addEventListener('DOMContentLoaded', function () {
+         buildChart('canvas-1159428578');
+     });
+
+</script>
+
+</div>
+        <div class="col-6 col-sm-12 col-xxl d-flexx align-items-stretchx"><div id="card-102185277" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0">Doughnut</h5>
+        
+      </div>
+  <div class="card-body d-flex w-100">
+    <div class="align-self-center chart chart-lg"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+      <canvas id="canvas-102185277" data-attr="{&quot;id&quot;:102185277, &quot;type&quot;: &quot;doughnut&quot;, &quot;style&quot;: &quot;&quot;, &quot;legend_labels&quot;: &quot;Blue,Yellow,Red&quot;, &quot;legend&quot;: 1, &quot;legend_pos&quot;: &quot;top&quot;, &quot;url&quot;: &quot;assets/themes/zimagi_data_visualizer/sample_data/sample-doughnut-chart-datasource.json&quot;}" class="chart-canvas"></canvas>
+    </div>
+  </div>
+</div>
+<script>
+
+     document.body.addEventListener('DOMContentLoaded', function () {
+         buildChart('canvas-102185277');
+     });
+
+</script>
+
+</div>
     </div>
 </div><div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-xxl"></div>
+        <div class="col-6 col-sm-12 col-xxl d-flexx align-items-stretchx"><div id="card-64664419" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0">Line</h5>
+        
+      </div>
+  <div class="card-body d-flex w-100">
+    <div class="align-self-center chart chart-lg"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+      <canvas id="canvas-64664419" data-attr="{&quot;id&quot;:64664419, &quot;type&quot;: &quot;line&quot;, &quot;style&quot;: &quot;&quot;, &quot;legend_labels&quot;: &quot;Blue,Yellow,Red&quot;, &quot;legend&quot;: 1, &quot;legend_pos&quot;: &quot;top&quot;, &quot;url&quot;: &quot;assets/themes/zimagi_data_visualizer/sample_data/sample-bar-chart-datasource.json&quot;}" class="chart-canvas"></canvas>
+    </div>
+  </div>
+</div>
+<script>
+
+     document.body.addEventListener('DOMContentLoaded', function () {
+         buildChart('canvas-64664419');
+     });
+
+</script>
+
+</div>
+        <div class="col-6 col-sm-12 col-xxl d-flexx align-items-stretchx"><div id="card-593427686" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0">Radar</h5>
+        
+      </div>
+  <div class="card-body d-flex w-100">
+    <div class="align-self-center chart chart-lg"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+      <canvas id="canvas-593427686" data-attr="{&quot;id&quot;:593427686, &quot;type&quot;: &quot;radar&quot;, &quot;style&quot;: &quot;&quot;, &quot;legend_labels&quot;: &quot;line 1&quot;, &quot;legend&quot;: 1, &quot;legend_pos&quot;: &quot;top&quot;, &quot;url&quot;: &quot;assets/themes/zimagi_data_visualizer/sample_data/sample-radar-datasource.csv&quot;}" class="chart-canvas"></canvas>
+    </div>
+  </div>
+</div>
+<script>
+
+     document.body.addEventListener('DOMContentLoaded', function () {
+         buildChart('canvas-593427686');
+     });
+
+</script>
+
+</div>
     </div>
 </div>

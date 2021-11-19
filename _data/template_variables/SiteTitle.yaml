@@ -1,7 +1,7 @@
 id: 1
 source: 1
 type: text
-name: SiteTitle
+name: siteTitle
 caption: 'Site Title'
 category: 'Site Title'
 elements: ''

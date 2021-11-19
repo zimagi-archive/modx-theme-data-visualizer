@@ -3,20 +3,29 @@ var buildMap = function(id){
     var obj = JSON.parse($('#'+id).attr('data-attr'));
     var url = obj.url;
     var mType = obj.map;
-    var mapMarkers = [];
     if(url!=''){
         // Build loader
-        $('#card-'+obj.id+' .card-body').append('<div id="loader-'+obj.id+'" class="loader-container d-flex justify-content-center align-items-center"><div class="loader"></div></div>');
-         $.get(url, function(data, status){
-            if(data.datasets.length>0){
-                for(var i=0;i<data.datasets.length;i++){
-                    if(data.datasets[i].value != null && data.datasets[i].value != '' && data.datasets[i].value != undefined){
-                        mapMarkers.push({coords: data.datasets[i].coords, name: data.datasets[i].name + ': '+ data.datasets[i].value});  
-                    }else{
-                        mapMarkers.push({coords: data.datasets[i].coords, name: data.datasets[i].name});
-                    }
-                }
+        showCardLoader(obj.id);
+        $.ajax({ type: "GET",
+        url: url+'?v='+timestamp,
+        dataType: "text",
+        success: function(data) {
+            // return;
+            var result = "";
+            if(isJson(data)){
+                result = JSON.parse(data);
+            }else{
+                // Its a csv
+                var dataJson = csvJSON(data);
+                result = JSON.parse(dataJson);
+            } 
+            var mapMarkers = [];
+            var colon = "";
+            for(var i=0;i<result.length;i++){
+                if(result[i].value!=undefined && result[i].value!=""){colon=": ";}
+                mapMarkers.push({coords: [Number(result[i].lat), Number(result[i].lon)], name: result[i].name + colon + result[i].value,  value: Number(result[i].value)});
             }
+        //   console.log(mapMarkers);
             var vMap = new JsVectorMap({
               map: mType,
               selector: '#'+id,
@@ -42,10 +51,10 @@ var buildMap = function(id){
               },
               zoomOnScroll: false,
             });
-            
-        }); 
-        // Hide loader
-        $('#loader-'+obj.id).remove();
+            // Hide loader
+            $('#loader-'+obj.id).remove();
+        }});
+        
     }
     
     

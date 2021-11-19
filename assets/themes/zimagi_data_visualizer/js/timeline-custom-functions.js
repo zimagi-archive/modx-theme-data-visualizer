@@ -4,21 +4,31 @@ var buildTimeline = function(id){
     var url = obj.url;
     if(url!=''){
         // Build loader
-        $('#card-'+obj.id+' .card-body').append('<div id="loader-'+obj.id+'" class="loader-container d-flex justify-content-center align-items-center"><div class="loader"></div></div>');
-         $.get(url, function(data, status){
-            if(data.datasets.length>0){
-                // Clear all li items if any
-                $('#'+id).html('');
-                for(var i=0;i<data.datasets.length;i++){
-                    var time = timeago.format(data.datasets[i].date);
-                    $('#'+id).append('<li class="timeline-item"><strong>'+data.datasets[i].head+'</strong><span class="float-right text-muted text-sm">'+time+'</span><div><p>'+data.datasets[i].content+'</p></div></li>');
-                }
+        showCardLoader(obj.id);
+        $.ajax({ type: "GET",
+        url: url+'?v='+timestamp,
+        dataType: "text",
+        success: function(data) {
+            // return;
+            var result = "";
+            if(isJson(data)){
+                result = JSON.parse(data);
+            }else{
+                // Its a csv
+                var dataJson = csvJSON(data);
+                result = JSON.parse(dataJson);
             }
-            
-            
-        }); 
-        // Hide loader
-        $('#loader-'+obj.id).remove();
+            // Clear all li items if any
+            $('#'+id).html('');
+            for(var i=0;i<result.length;i++){
+                var time = timeago.format(result[i].date);
+                    $('#'+id).append('<li class="timeline-item"><strong>'+result[i].head+'</strong><span class="float-right text-muted text-sm">'+time+'</span><div><p>'+result[i].content+'</p></div></li>');
+            }
+           
+            // Hide loader
+            $('#loader-'+obj.id).remove();
+        }}); 
+        
     }
     
     

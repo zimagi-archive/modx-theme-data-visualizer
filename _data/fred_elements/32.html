@@ -14,7 +14,7 @@ options_override: '{"settings":[{"name":"columns","label":"Column Names<br>(Each
     {%if local_ds == 'assets/themes/zimagi_data_visualizer/sample_data/sample_datatable_ajax.json'%}
      <div data-fred-render="false" class="alert alert-info alert-dismissible mt-2" role="alert">
         <div class="alert-message">
-          <p>Hover over this building block element and click the <strong class="fred-icon-gear"><span class="sr-only">Gears</span></strong> icon, then go to <strong>Open Settings</strong>.</p><p><ol><li>Change the default sample datasource file.</li><li>Set your column names based on the amount of columns your datasource keys.</li></ol></p><p class="text-danger">This message box or the reference column names based on your datasource will not show in site.</p>
+          <p>Hover over this building block element and click the <strong class="fred-icon-gear"><span class="sr-only">Gears</span></strong> icon, then go to <strong>Open Settings</strong>.</p><p><ol><li>Change the default sample datasource file.</li><li>Set <strong>all</strong> your column names based on the amount of columns your datasource keys.</li></ol></p><p class="text-danger">This message box or the reference column names based on your datasource will not show in site.</p>
         </div>
     </div>
     {%endif%}
@@ -24,7 +24,8 @@ options_override: '{"settings":[{"name":"columns","label":"Column Names<br>(Each
               <i class="align-middle mr-2 fas fa-fw fa-exclamation-triangle text-warning"></i>
               </div>
         <div class="alert-message">
-          <p>Remember to add your column names.</p>
+          <p>- Remember to add all your column names.</p>
+          <p>- After modifying the settings, hit the <strong>Apply</strong> button in order to see your changes.</p>
         </div>
     </div>
     {%endif%}
