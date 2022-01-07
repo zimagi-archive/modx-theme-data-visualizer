@@ -2,7 +2,7 @@ id: 8
 name: Welcome
 description: ''
 type: html
-content: "<link rel=\"stylesheet\" href=\"../[[++fred.theme_dir]]css/widgets/widgets-custom.css\">\n<div class=\"p-3\">\n   <h2>Welcome to your site's <strong>content management system</strong>(CMS).</h2>\n   <p>Your site pages(resources) are located in the Resources tab where you can edit them as you like.</p>\n</div>"
+content: "<link rel=\"stylesheet\" href=\"../[[++fred.theme_dir]]css/widgets/bootstrap.min.css\">\n<div class=\"p-3\">\n   <h3>The following videos tutorials will give you a better understanding on how to manage and build your website.</h3>\n</div>"
 namespace: core
 size: full
 name_trans: Welcome

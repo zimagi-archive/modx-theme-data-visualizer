@@ -1,0 +1,40 @@
+id: 41
+name: 'LinkedIn Post'
+uuid: a9503aa8-7e30-4757-81e8-9504cc9ecfe1
+image: 'https://via.placeholder.com/300x150?text=LinkedIn+Post'
+category: 15
+rank: 14
+options_override: '{"settings":[{"name":"post","label":"Post URL<a href=''javascript:\/\/'' class=''fred--tooltip''><div class=''fred--tooltiptext p-3''><strong>How to get your Post URL:<\/strong><br>1. Parturient letius ad duis torquent pede ultricies massa diam.<\/div><\/a>","type":"text","value":""}]}'
+
+-----
+
+{% set uId = random() %}
+<div id="card-{{uId}}" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0" data-fred-name="title">Card Title</h5>
+    <div data-fred-render="false" class="alert alert-info alert-dismissible mt-2" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <div class="alert-message">
+      <strong class="d-block text-lg">Please set your Linked In Post URL</strong><p>Hover over this building block and click the <strong class="fred-icon-gear"><span class="sr-only">Gears</span></strong> icon, go to <strong>Open Settings</strong> to change the LinkedIn URL.</p><p class="text-danger">This information will not show in site.</p>
+    </div>
+</div>
+  </div>
+  <div class="card-body w-100">
+    {%if post %}
+    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:{{post}}" height="358" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+    {%else%}
+    <div data-fred-render="false" class="p-5 border w-100 d-flex align-items-center" style="height: 300px"><h2 class="text-center text-hg w-100">Your LinkedIn Post feed will display in this area.</h2></div>
+    {%endif%}
+  </div>
+</div>
+{%if post %}
+<style>
+
+
+</style>
+<script>
+   
+</script>
+{%endif%}

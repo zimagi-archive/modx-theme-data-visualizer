@@ -1,0 +1,5 @@
+id: 5
+name: myGoogleDrive
+description: ''
+class_key: GoogleCloudStorage
+properties: null

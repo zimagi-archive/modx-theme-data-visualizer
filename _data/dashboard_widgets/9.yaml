@@ -1,0 +1,9 @@
+id: 9
+name: 'Take the tour'
+description: ''
+type: html
+content: "<link rel=\"stylesheet\" href=\"../[[++fred.theme_dir]]css/widgets/bootstrap.min.css\">\n<div style=\"padding: 2rem;text-align:center\">\n<iframe width=\"640\" height=\"365\" style=\"border: 4px solid #eee\"\nsrc=\"https://www.youtube.com/embed/QeWcpYlX5Bg\">\n</iframe>\n<div class=\"row p-3\">\n\n<div class=\"col\">\n<iframe width=\"100%\" height=\"165\" style=\"border: 4px solid #eee\"\nsrc=\"https://www.youtube.com/embed/QeWcpYlX5Bg\">\n</iframe></div>\n<div class=\"col\">\n<iframe width=\"100%\" height=\"165\" style=\"border: 4px solid #eee\"\nsrc=\"https://www.youtube.com/embed/QeWcpYlX5Bg\">\n</iframe></div>\n<div class=\"col\">\n<iframe width=\"100%\" height=\"165\" style=\"border: 4px solid #eee\"\nsrc=\"https://www.youtube.com/embed/QeWcpYlX5Bg\">\n</iframe></div>\n</div>\n</div>"
+namespace: core
+size: full
+name_trans: 'Take the tour'
+description_trans: ''

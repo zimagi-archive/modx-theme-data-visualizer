@@ -1,0 +1,6 @@
+id: 9
+name: setting_slack.channel_default
+value: 'Default Channel'
+namespace: slack
+createdon: '2021-12-22 17:10:44'
+editedon: null

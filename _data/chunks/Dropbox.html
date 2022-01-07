@@ -1,0 +1,67 @@
+id: 5
+source: 1
+name: Dropbox
+description: ''
+properties: 'a:0:{}'
+
+-----
+
+<script>
+
+function uploadToDropbox(file){
+    //file = event.target.files[0];
+    console.log(file.name);
+    console.log(file);
+    //return; 
+    $('body').append('<div id="overlay-loader" style="position: fixed;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;background-color: rgba(255,255,255,0.7);z-index: 99999; cursor: pointer; "><div style="position: absolute;top: 50%;left: 50%;margin-left: -30px;margin-top: -30px"><img src="assets/themes/zimagi_data_visualizer/img/loader.gif"/><p>Uploading</p></div></div>');
+    $.ajax({
+        url: 'https://content.dropboxapi.com/2/files/upload',
+        type: 'post',
+        data: file,
+        processData: false,
+        contentType: 'application/octet-stream',
+        headers: {
+            "Authorization": "Bearer [[++dropbox.access_token]]",
+            "Dropbox-API-Arg": '{"path": "/'+$('#form-drop-dir').val()+'/'+file.name+'","mode": "add","mute": false}'
+        },
+        success: function (data) {
+            console.log(data);
+            toastr.success('Your file has been uploaded successfully.');
+            $('#fileToUpload').val('');
+            $("#btn-upload-dropbox").attr('disabled', true);
+            $('#overlay-loader').remove();
+        },
+        error: function (data) {
+            console.error(data);
+            toastr.error('Please make sure access token and directory are correct.');
+            $('#overlay-loader').remove();
+        }
+    });
+}
+
+$(function(){
+    $("#btn-upload-dropbox").attr('disabled', true);
+    $('#fileToUpload').change(function(){
+        if ($(this).get(0).files.length === 0) {
+           $("#btn-upload-dropbox").attr('disabled', true);
+        } else {
+           $("#btn-upload-dropbox").attr('disabled', false);
+        }
+    });
+});
+
+ 
+</script>
+<div style="float: left;margin-left: -220px;margin-top: -15px">
+    <img src="assets/themes/zimagi_data_visualizer/img/dropbox-logo.gif" style="width: 200px; height: auto"/>
+</div>
+ <div class="form-group">
+    <div id="uploadProgress"></div>
+    <label for="form-dir-name">Dropbox Directory Name</label>
+    <input class="form-control" id="form-drop-dir" value="[[++dropbox.directory]]"/>
+  </div>
+  <div class="form-group">
+      <label for="fileToUpload">Select file to upload</label>
+      <input type="file" name="fileToUpload" id="fileToUpload">
+    </div>
+  <button id="btn-upload-dropbox" type="button" class="btn btn-primary mb-2" onclick="uploadToDropbox(document.getElementById('fileToUpload').files[0])">Upload</button>

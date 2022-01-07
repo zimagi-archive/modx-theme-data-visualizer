@@ -1,0 +1,31 @@
+id: 38
+name: 'Twitter Tweet'
+uuid: 67875099-0273-41b9-9cbd-95042ad86665
+image: 'https://via.placeholder.com/300x150?text=Twitter+Tweet'
+category: 15
+rank: 12
+options_override: '{"settings":[{"name":"tweet_id","label":"Tweet ID<a href=''javascript:\/\/'' class=''fred--tooltip''><div class=''fred--tooltiptext p-3''><strong>How to get your Tweet Id:<\/strong><br>1. Parturient letius ad duis torquent pede ultricies massa diam.<\/div><\/a>","type":"text","value":""}]}'
+
+-----
+
+{% set uId = random() %}
+<div id="card-{{uId}}" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0" data-fred-name="title">Card Title</h5>
+    <div data-fred-render="false" class="alert alert-info alert-dismissible mt-2" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <div class="alert-message">
+      <strong class="d-block text-lg">Please set your Tweet ID</strong><p>Hover over this building block and click the <strong class="fred-icon-gear"><span class="sr-only">Gears</span></strong> icon, go to <strong>Open Settings</strong> to change the Tweet ID.</p><p class="text-danger">This information will not show in site.</p>
+    </div>
+</div>
+  </div>
+  <div class="card-body d-flex w-100">
+    {%if tweet_id %}
+    <blockquote class="twitter-tweet"><a href="https://twitter.com/Interior/status/{{tweet_id}}?ref_src=twsrc%5Etfw"></a></blockquote> 
+    {%else%}
+    <div data-fred-render="false" class="p-5 border w-100 d-flex align-items-center" style="height: 300px"><h2 class="text-center text-hg w-100">Your Tweet feed will display in this area.</h2></div>
+    {%endif%}
+  </div>
+</div>

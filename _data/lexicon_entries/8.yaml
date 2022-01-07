@@ -1,0 +1,6 @@
+id: 8
+name: setting_slack.webhook
+value: 'Slack Webhook'
+namespace: slack
+createdon: '2021-12-22 17:09:26'
+editedon: null

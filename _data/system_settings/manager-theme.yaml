@@ -1,4 +1,4 @@
 key: manager_theme
-value: default
+value: zimagi-theme
 xtype: modx-combo-manager-theme
 area: manager

@@ -1,0 +1,47 @@
+id: 39
+name: 'Facebook Post'
+uuid: 8fa85c86-23be-40dc-aebc-9504a9455ac7
+image: 'https://via.placeholder.com/300x150?text=Facebook+Post'
+category: 15
+rank: 13
+options_override: '{"settings":[{"name":"post","label":"Post URL<a href=''javascript:\/\/'' class=''fred--tooltip''><div class=''fred--tooltiptext p-3''><strong>How to get your Post URL:<\/strong><br>1. Parturient letius ad duis torquent pede ultricies massa diam.<\/div><\/a>","type":"text","value":""}]}'
+
+-----
+
+{% set uId = random() %}
+<div id="card-{{uId}}" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0" data-fred-name="title">Card Title</h5>
+    <div data-fred-render="false" class="alert alert-info alert-dismissible mt-2" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <div class="alert-message">
+      <strong class="d-block text-lg">Please set your Facebook Post URL</strong><p>Hover over this building block and click the <strong class="fred-icon-gear"><span class="sr-only">Gears</span></strong> icon, go to <strong>Open Settings</strong> to change the Post URL.</p><p class="text-danger">This information will not show in site.</p>
+    </div>
+</div>
+  </div>
+  <div class="card-body w-100">
+    {%if post %}
+    <div class="fb-post" data-href="{{post}}" data-width="100%"></div>
+    {%else%}
+    <div data-fred-render="false" class="p-5 border w-100 d-flex align-items-center" style="height: 300px"><h2 class="text-center text-hg w-100">Your Post feed will display in this area.</h2></div>
+    {%endif%}
+  </div>
+</div>
+{%if post %}
+<style>
+.fb-post,
+.fb-post span,
+.fb-post iframe{
+  width: 100% !important;
+}
+
+
+</style>
+<script>
+    setTimeout(function(){
+        $('#card-{{uId}} iframe').attr('scrolling', 'yes');
+    },2000);
+</script>
+{%endif%}

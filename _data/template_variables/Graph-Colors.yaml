@@ -1,12 +1,13 @@
 id: 8
 source: 1
-type: resourcelist
+type: textarea
 name: 'Graph Colors'
+caption: '<a href="../index.php?id=8">Click here to manage Graph Colors</a>'
 category: 'Graphs Colors'
 elements: test
 display: default
 default_text: ''
 properties: 'a:0:{}'
-input_properties: 'a:8:{s:10:"allowBlank";s:4:"true";s:8:"showNone";s:4:"true";s:7:"parents";s:1:"8";s:5:"depth";s:2:"10";s:13:"includeParent";s:4:"true";s:19:"limitRelatedContext";s:5:"false";s:5:"where";s:0:"";s:5:"limit";s:1:"0";}'
+input_properties: 'a:1:{s:10:"allowBlank";s:4:"true";}'
 output_properties: 'a:0:{}'
 content: ''

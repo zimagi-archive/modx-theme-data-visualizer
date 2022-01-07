@@ -1,74 +1,73 @@
 /** Fred Override Styles
 *   by Aramis
-*   
+*
 *   These syles will make more user friendly the Fred environment
-*   
-*   Include this next line of code in first line in assets/components/fred/web/fred.css: 
+*
+*   Include this next line of code in first line in assets/components/fred/web/fred.css:
 *   @import url("../../../customizations/fred/fred-overrides.css");
 */
 .fred .fred--toggle,
-.fred--panel label{
-    min-height: auto;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-    margin-bottom: 0px !important;
+.fred--panel label {
+  min-height: auto;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  margin-bottom: 0px !important;
 }
-.fred .fred--panel{
-    z-index: 20000 !important
+.fred .fred--panel {
+  z-index: 20000 !important;
 }
-.fred .fred--panel dl dt:after{
-    color: #363636 !important;
+.fred .fred--panel dl dt:after {
+  color: #363636 !important;
 }
-.fred .fred--panel dl dt:hover::after{
-    color: #ffffff !important;
+.fred .fred--panel dl dt:hover::after {
+  color: #ffffff !important;
 }
-.fred .fred--panel textarea{
-    border: 1px solid #eee
+.fred .fred--panel textarea {
+  border: 1px solid #eee;
 }
-.fred .fred--panel textarea:focus{
-   border: 1px solid #ddd 
+.fred .fred--panel textarea:focus {
+  border: 1px solid #ddd;
 }
 .fred--block {
-    /* border: 2px dashed red; */
-    margin: 3px 0 3px 0;
+  /* border: 2px dashed red; */
+  margin: 3px 0 3px 0;
 }
 
 .fred--block .fred--block {
-    border: 0px;
+  border: 0px;
 }
 
-.fred .fred--modal-bg{
-    left: 0px;
+.fred .fred--modal-bg {
+  left: 0px;
 }
 *[data-fred-dropzone] {
-    border: 1px dotted red;
-    margin: 10px 0px 10px 0px;
-    padding: 20px;
-    position: relative;
-    clear: both !important;
+  border: 1px dotted red;
+  margin: 10px 0px 10px 0px;
+  padding: 20px;
+  position: relative;
+  clear: both !important;
 }
 
 *[data-fred-dropzone]::before {
-    content: 'DROPZONE';
-    color: red;
-    font-size: 10px;
-    font-family: "Courier", Helvetica, Arial !important;
-    font-weight: bold;
-    position: absolute;
-    top: 4px;
-    left: 20px;
-    opacity: .7;
-
+  content: 'DROPZONE';
+  color: red;
+  font-size: 10px;
+  font-family: 'Courier', Helvetica, Arial !important;
+  font-weight: bold;
+  position: absolute;
+  top: 4px;
+  left: 20px;
+  opacity: 0.7;
 }
 main[data-fred-dropzone] {
-     /* padding: 30px 0px 20px 0px !important; */
-     padding: 0px 0px 20px 0px !important;
-     margin: 0px !important;
-     border: none !important;
+  /* padding: 30px 0px 20px 0px !important; */
+  padding: 0px 0px 20px 0px !important;
+  margin: 0px !important;
+  border: none !important;
 }
 main[data-fred-dropzone]::before {
-    /* content: 'PAGE DROPZONE'; */
-    content: '';
+  /* content: 'PAGE DROPZONE'; */
+  content: '';
 }
 /*Push page content to the side for fred's toolbar*/
 
@@ -78,127 +77,136 @@ body {
 }
 
 .fred--toolbar-plugins {
-    box-shadow: 0 0 4px #363636;
-    z-index: 2000;
+  box-shadow: 0 0 4px #363636;
+  z-index: 2000;
 }
 
 .fred--block.fred-modal,
 .fred--block.fred-resource-include {
-    border: 1px solid #ddd !important;
-    background: linear-gradient(45deg, #eee 12.5%, #fff 12.5%, #fff 37.5%, #eee 37.5%, #eee 62.5%, #fff 62.5%, #fff 87.5%, #eee 87.5%);
-    background-size: 10px 10px;
-    background-position: 50px 50px;
-    padding: 1rem;
+  border: 1px solid #ddd !important;
+  background: linear-gradient(
+    45deg,
+    #eee 12.5%,
+    #fff 12.5%,
+    #fff 37.5%,
+    #eee 37.5%,
+    #eee 62.5%,
+    #fff 62.5%,
+    #fff 87.5%,
+    #eee 87.5%
+  );
+  background-size: 10px 10px;
+  background-position: 50px 50px;
+  padding: 1rem;
 }
 
 .fred--block.fred-modal::before,
 .fred--block.fred-resource-include::before {
-    font-size: 12px;
-    text-shadow: 0px 0px 5px #fff;
-    color: #00205c;
+  font-size: 12px;
+  text-shadow: 0px 0px 5px #fff;
+  color: #00205c;
 }
-.fred--block.fred-modal::before{
-    content: 'MODAL FRED ELEMENT';
+.fred--block.fred-modal::before {
+  content: 'MODAL FRED ELEMENT';
 }
-.fred--block.fred-resource-include::before{
-    content: 'INCLUDE PAGE CONTENT';
+.fred--block.fred-resource-include::before {
+  content: 'INCLUDE PAGE CONTENT';
 }
-.fred--block.fred-resource-include a{
-    text-decoration: underline;
+.fred--block.fred-resource-include a {
+  text-decoration: underline;
 }
 
 .fred--block.fred-modal .modal,
 .fred--block.fred-modal .modal {
-    display: block !important;
-    opacity: 1 !important;
-    position: relative !important;
+  display: block !important;
+  opacity: 1 !important;
+  position: relative !important;
 }
 
 .fred--block.fred-modal .fade:not(.show) {
-    opacity: 1 !important;
+  opacity: 1 !important;
 }
 
 .fred--block.fred-modal .modal.fade .modal-dialog {
-    transform: none !important;
+  transform: none !important;
 }
 
 /* Give gear setting icon larger hit area*/
 button.fred--element-settings {
-    /*  padding: 1rem 2rem 2rem 6rem !important; */
+  /*  padding: 1rem 2rem 2rem 6rem !important; */
 }
 
 .fred--modal .ui-widget.elfinder-button-menu.elfinder-button-search-menu {
-    top: 25px !important;
-
+  top: 25px !important;
 }
 
 .fred--panel select:focus,
 .fred--panel select:active {
-    color: #00205c !important;
+  color: #00205c !important;
 }
 
 /*Turn of preview controls*/
 .fred--content-preview_controls,
-.fred--toolbar-plugins [title="Element Thumbnail"],
-.fred--toolbar-plugins [title="Create Partial Blueprint"]{
-    display: none !important;
+.fred--toolbar-plugins [title='Element Thumbnail'],
+.fred--toolbar-plugins [title='Create Partial Blueprint'] {
+  display: none !important;
 }
 
 /* Hide some elements on Fred modal fontawesome select */
-.fred--modal-body div.fred--preview{
-    margin-top: 2rem !important;
-    font-size: 2rem !important;
+.fred--modal-body div.fred--preview {
+  margin-top: 2rem !important;
+  font-size: 2rem !important;
 }
-.fred--modal-body > div label{
-    /*display: none !important;*/
+.fred--modal-body > div label {
+  /*display: none !important;*/
 }
 
-.fred--modal-body{
-    min-height: 400px !important;
+.fred--modal-body {
+  min-height: 400px !important;
 }
 .choices .choices__list.choices__list--single,
-.choices__inner .choices select{
-    font-size: 1.3rem !important;
+.choices__inner .choices select {
+  font-size: 1.3rem !important;
 }
-.fred--block_content .card-custom-icon{
-    width: 55px !important;
-    height: 55px !important;
+.fred--block_content .card-custom-icon {
+  width: 55px !important;
+  height: 55px !important;
 }
-.fred--block .section .row{
-    margin-top: 0px !important;
+.fred--block .section .row {
+  margin-top: 0px !important;
 }
 
-header{
-    z-index: 1000;
-    position: relative;
+header {
+  z-index: 1000;
+  position: relative;
 }
-main{
-    z-index: 9999;
-    position: relative;
+main {
+  z-index: 9999;
+  position: relative;
 }
-.fred--block_content section.object-wrap div[data-fred-dropzone]{
-    padding-top: 30px !important;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+.fred--block_content section.object-wrap div[data-fred-dropzone] {
+  padding-top: 30px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
-.fred--block_content .tab-content{
-    margin-top: 0px !important;
-    padding-top: 0px !important;
+.fred--block_content .tab-content {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
 }
-.fred--block_content .tabs-custom .nav-tabs{
-    margin-bottom: -40px !important;
+.fred--block_content .tabs-custom .nav-tabs {
+  margin-bottom: -40px !important;
 }
-.fred--block_content .step .body{
-    margin-top: 0px;
+.fred--block_content .step .body {
+  margin-top: 0px;
 }
-.fred--block_content .step .line{
-   /*  margin-top: -60px;
+.fred--block_content .step .line {
+  /*  margin-top: -60px;
    margin-bottom: -60px; */
   top: 32px !important;
   bottom: -40px !important;
 }
-.fred-resource-include .tab-content{
-    margin-top: 2.6rem !important;
+.fred-resource-include .tab-content {
+  margin-top: 2.6rem !important;
 }
 
 /* Turn of preview controls */
@@ -218,16 +226,15 @@ main{
   display: none !important;
 }
 
-.fred--thumbs figcaption strong{
-    color: #fff !important;
-    font-weight: bold;
+.fred--thumbs figcaption strong {
+  color: #fff !important;
+  font-weight: bold;
 }
-
 
 /*Hide sidebar edit link*/
 
-.fred--active .btn-edit-sidebar{
-    display: block !important;
+.fred--active .btn-edit-sidebar {
+  display: block !important;
 }
 
 /* Tooltip container */
@@ -244,6 +251,9 @@ main{
   background-image: url('../../icons/icon-info.svg') !important;
   background-repeat: no-repeat;
 }
+.fred--tooltip strong{
+    color: #fff !important;
+}
 
 /* Tooltip text */
 .fred--tooltip .fred--tooltiptext {
@@ -252,7 +262,7 @@ main{
   background-color: #444 !important;
   color: #fff !important;
   border-radius: 6px !important;
- 
+
   /* Position the tooltip text - see examples below! */
   position: absolute !important;
   z-index: 1 !important;
@@ -262,15 +272,14 @@ main{
   /* margin-left: -80px !important; */
 }
 .fred--tooltip .fred--tooltiptext::after {
-  content: " ";
+  content: ' ';
   position: absolute;
-  bottom: 100%;  
+  bottom: 100%;
   left: 6px;
   /* margin-left: -5px; */
   border-width: 5px;
   border-style: solid;
   border-color: transparent transparent #444 transparent;
-  
 }
 /* Show the tooltip text when you mouse over the tooltip container */
 .fred--tooltip:hover .fred--tooltiptext {
@@ -279,105 +288,122 @@ main{
 
 body,
 p,
-h1, 
-h2, 
-h3, 
-h4, 
+h1,
+h2,
+h3,
+h4,
 h5,
-.mce-content-body{
-    line-height: 1.8;
+.mce-content-body {
+  line-height: 1.8;
 }
 
 /* Modal style fixes*/
-.modal{
-    z-index: 10003 !important;
+.modal {
+  z-index: 10003 !important;
 }
-.modal-backdrop{
-    z-index: 10001 !important;
+.modal-backdrop {
+  z-index: 10001 !important;
 }
-dd label, fieldset label{
-    position: relative;
+dd label,
+fieldset label {
+  position: relative;
 }
-.fred--helpcontent{
-    position: absolute;
-    top: 80px;
+.fred--helpcontent {
+  position: absolute;
+  top: 80px;
 }
-.fred--helpcontent:before{
-    content: '' !important;
-    display: inline-block;
-    width: 24px !important;
-    height: 18px !important;
-    background-image: url('../../assets/icons/file-text.svg') !important;
-    background-size: auto 100% !important;
-    background-repeat: no-repeat;
-    opacity: .6;
+.fred--helpcontent:before {
+  content: '' !important;
+  display: inline-block;
+  width: 24px !important;
+  height: 18px !important;
+  background-image: url('../../assets/icons/file-text.svg') !important;
+  background-size: auto 100% !important;
+  background-repeat: no-repeat;
+  opacity: 0.6;
 }
-.fred--helpcontent:hover::before{
-    opacity: 1;
+.fred--helpcontent:hover::before {
+  opacity: 1;
 }
-.fred-icon-gear{
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background-image: url('images/fred-gear-icon.png');
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    margin-bottom: -10px;
+.fred-icon-gear {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url('images/fred-gear-icon.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin-bottom: -10px;
 }
 /*Disable Menu Title Input in settings in Fred*/
 .fred--page_settings_form fieldset label:nth-child(5),
-.fred--page_settings_form fieldset label:nth-child(8){
-    /* display: none !important; */
+.fred--page_settings_form fieldset label:nth-child(8) {
+  /* display: none !important; */
 }
 
-dd[role="tablist"]{
-    padding-bottom: 80px !important;
+dd[role='tablist'] {
+  padding-bottom: 80px !important;
 }
-*[data-fred-dropzone]{
-    margin-top: 20px !important;
-    margin-bottom: 20px !important;
+*[data-fred-dropzone] {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
 }
-.card *[data-fred-dropzone]{
-    padding-top: 20px !important;
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
+.card *[data-fred-dropzone] {
+  padding-top: 20px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }
-.navbar{
-    z-index: 19999 !important;
-    
+.navbar {
+  z-index: 19999 !important;
 }
-.fred--block.button_link{
-    display: inline-block;
+.fred--block.button_link {
+  display: inline-block;
 }
 /*Disable Up/Down & Grab for button link elements*/
-.fred--block.button_link .fred--position-group{
-    display: none !important;
+.fred--block.button_link .fred--position-group {
+  display: none !important;
 }
-.fred--block.button_link.fred--block-active .fred--element-settings{
-    margin-top: -50px !important
-}
-
-.fred--block .tab-content{
-    padding-top: 20px !important
-}
-.fred--block .tab-content *[data-fred-dropzone]{
-   margin-top: 0px !important
+.fred--block.button_link.fred--block-active .fred--element-settings {
+  margin-top: -50px !important;
 }
 
-.fred--accordion *[data-fred-dropzone]{
-    padding-bottom: 3rem !important;
-    border-top: 1px dotted red
+.fred--block .tab-content {
+  padding-top: 20px !important;
+}
+.fred--block .tab-content *[data-fred-dropzone] {
+  margin-top: 0px !important;
 }
 
-.fred--toolbar-plugins{
-    width: 130px !important
+.fred--accordion *[data-fred-dropzone] {
+  padding-bottom: 3rem !important;
+  border-top: 1px dotted red;
 }
-.fred--block_content i[data-fred-name="icon"]:hover{
-    cursor: pointer;
-    outline: 2px solid #357dc2
+
+.fred--toolbar-plugins {
+  width: 130px !important;
+}
+.fred--block_content i[data-fred-name='icon']:hover {
+  cursor: pointer;
+  outline: 2px solid #357dc2;
 }
 /*Disable blueprints and settings*/
 .fred--sidebar_blueprints,
-.fred--sidebar_page_settings{
-    display: none !important;
+.fred--sidebar_page_settings {
+  display: none !important;
+}
+
+.fred--logo {
+  display: none;
+}
+.fred--sidebar_title {
+  background-image: url(../../img/zimagi-symbol-white.svg) !important;
+  background-repeat: no-repeat !important;
+  background-size: 70% 70% !important;
+  background-position: center !important;
+}
+.fred .fred--sidebar,
+.fred .fred--accordion > dt {
+  background-color: #303030 !important;
+}
+.fred .fred--accordion {
+  border-width: 0 0 0 0 !important;
 }

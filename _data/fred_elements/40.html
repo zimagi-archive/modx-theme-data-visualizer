@@ -1,0 +1,39 @@
+id: 40
+name: 'Facebook Video'
+uuid: f6f22bc2-6537-443e-a702-9504b99a55d8
+image: 'https://via.placeholder.com/300x150?text=Facebook+Video'
+category: 15
+rank: 14
+options_override: '{"settings":[{"name":"url","label":"Video URL<a href=''javascript:\/\/'' class=''fred--tooltip''><div class=''fred--tooltiptext p-3''><strong>How to get your Video URL:<\/strong><br>1. Parturient letius ad duis torquent pede ultricies massa diam.<\/div><\/a>","type":"text","value":""},{"name":"width","label":"Width","type":"text","value":"320px"}]}'
+
+-----
+
+{% set uId = random() %}
+<div id="card-{{uId}}" class="card flex-fill w-100">
+  <div class="card-header">
+    <h5 class="card-title mb-0" data-fred-name="title">Card Title</h5>
+    <div data-fred-render="false" class="alert alert-info alert-dismissible mt-2" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <div class="alert-message">
+      <strong class="d-block text-lg">Please set your Facebook Video URL</strong><p>Hover over this building block and click the <strong class="fred-icon-gear"><span class="sr-only">Gears</span></strong> icon, go to <strong>Open Settings</strong> to change the Video URL.</p><p class="text-danger">This information will not show in site.</p>
+    </div>
+</div>
+  </div>
+  <div class="card-body w-100">
+    {%if url %}
+    <div data-fred-render="false" class="alert alert-success mb-2 w-100"><div class="alert-message"><p><strong>Your video has been set</strong><br>Please preview your page.</p></div></div>
+   <div class="fb-video" data-href="{{url}}" data-width="{{width}}" data-show-text="false"></div>
+    {%else%}
+    <div data-fred-render="false" class="p-5 border w-100 d-flex align-items-center" style="height: 300px"><h2 class="text-center text-hg w-100">Your video post will display in this area.</h2></div>
+    {%endif%}
+  </div>
+</div>
+{%if url %}
+<style>
+
+
+</style>
+
+{%endif%}

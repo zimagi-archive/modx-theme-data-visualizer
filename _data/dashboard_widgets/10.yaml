@@ -1,0 +1,8 @@
+id: 10
+name: 'Slack Messaging'
+description: ''
+type: php
+content: "<?php\n\n$webhook = $modx->getOption('slack.webhook', null, '123');\n$channel = $modx->getOption('slack.channel_default', null, 'general');\n$data['webhook'] = $webhook;\n$data['channel'] = $channel;\n\nreturn $modx->getChunk('SlackMessaging', $data);\n\n"
+namespace: core
+name_trans: 'Slack Messaging'
+description_trans: ''

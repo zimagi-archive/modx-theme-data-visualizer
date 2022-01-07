@@ -27,6 +27,9 @@ properties: 'a:0:{}'
     <!-- Choose your prefered color scheme -->
     <link href="[[++fred.theme_dir]]css/light.css" rel="stylesheet" />
     <!-- <link href="[[++fred.theme_dir]]css/dark.css" rel="stylesheet" /> -->
+    [[!hasFredPermissions:is=`1`:then=`
+        <link href="[[++fred.theme_dir]]customizations/fred/fred-overrides.css" rel="stylesheet" />
+    `]]
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
         /*DISABLE Some Fred Sections in toolbar*/

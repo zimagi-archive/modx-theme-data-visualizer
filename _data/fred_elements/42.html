@@ -1,0 +1,86 @@
+id: 42
+name: 'Productivity Tools'
+uuid: 96535689-a83b-48f2-9fd5-95489c944e4e
+image: 'https://via.placeholder.com/300x150?text=Productivity+Tools'
+category: 16
+options_override: '{"remote":true}'
+
+-----
+
+<!-- Productivity Toolbar -->
+<style>
+ #prod-tools h2{
+     font-size: 1rem !important;
+     text-transform: capitalize
+ }
+ #prod-tools .border-bottom{
+     border-bottom: 1px solid #e8dbc8 !important;
+ }
+ #prod-tools .border-right{
+     border-right: 1px solid #e8dbc8 !important;
+ }
+</style>
+<script>
+ function resetProdTools(){
+     $('#prod-drive, #prod-drop, #prod-slack').addClass('d-none');
+     $('#form-slack-message').val('');
+ }
+ $(function(){
+    $( "#drop-prod-tools" ).change(function() {
+        if($(this).val()=="0"){
+            $('#prod-drive, #prod-drop, #prod-slack').addClass('d-none');
+        }
+        // Verify the slack channel and hook are defined in settings
+        
+        if($(this).val()=="slack"){
+            $('#prod-slack').removeClass('d-none');
+            $('#prod-drive, #prod-drop').addClass('d-none');
+            $('#form-slack textarea').focus();
+        }
+        if($(this).val()=="drive"){
+            $('#prod-slack, #prod-drop').addClass('d-none');
+            $('#prod-drive').removeClass('d-none');
+        }
+        if($(this).val()=="drop"){
+            $('#prod-slack, #prod-drive').addClass('d-none');
+            $('#prod-drop').removeClass('d-none');
+        }
+    });
+ });
+</script>
+<div id="prod-tools" class="container-fluid d-flex flex-column alert-warning">
+<div class="row p-4">
+    <label for="drop-prod-tools" class="col-sm-2 col-form-label"><strong>Productiviy Tools</strong></label>
+    <div class="col-sm-10 col-md-4">
+        <select id="drop-prod-tools" class="form-control">
+          <option value="0">-- Select tool</option>
+          <option value="slack">Slack message</option>
+          <option value="drop">Upload to Dropbox</option>
+          <option value="drive">Upload to Google Drive</option>
+        </select>
+    </div>
+</div>
+
+<div id="prod-slack" class="row p-4 d-none">
+   <div class="col-sm-2"></div>
+   <div class="col-sm-10 col-md-4">
+       [[++slack.webhook:is=``:then=`
+           <strong class="d-block">Slack channel/webhook are not defined in settings</strong>
+           <div>Please go to <strong>Systems Settings</strong>, filter Slack and enter the default channel you would like to post messages to and the <a href="https://api.slack.com/messaging/webhooks" target="_blank">webhook</a>.</div>
+       `:else=`
+           <strong class="d-block">Post Slack Message</strong>[[$SlackMessaging]]
+       `]]
+   </div>
+</div>
+
+<div id="prod-drive" class="row p-4 d-none">
+   <div class="col-sm-2"></div>
+   <div class="col-sm-10 col-md-4"><strong class="d-block">Upload file to drive</strong>[[$GoogleDrive]]</div>
+</div>
+
+<div id="prod-drop" class="row p-4 d-none">
+   <div class="col-sm-2"></div>
+   <div class="col-sm-10 col-md-4"><strong class="d-block">Upload file to Dropbox</strong>[[$Dropbox]]</div>
+</div>
+</div>
+<!-- /. Productivity Toolbar -->
