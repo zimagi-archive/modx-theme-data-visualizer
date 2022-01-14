@@ -1,51 +1,55 @@
 <?php
 
-// $path = 'test_php_upload.txt';
-// $fp = fopen($path, 'rb');
-// $size = filesize($path);
+$filename = $_FILES['file']['name'];
+$filedata = $_FILES['file']['tmp_name'];
+$filesize = $_FILES['file']['size'];
 
+include_once '../../../../../core/model/modx/modx.class.php';
 
-$target_dir = "test/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$fp = fopen($_FILES["UploadFileName"]["tmp_name"], 'rb');
-$size = filesize($_FILES["UploadFileName"]["tmp_name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$modx = new modX();
 
-
-// echo '='.$size;
+$token = $modx->getObject('modSystemSetting', 'dropbox.access_token');
+// echo $token->get('value');
 // die();
+// echo $filename;
+// die();
+if ($filedata != ''){
+    $api_url = 'https://content.dropboxapi.com/2/files/upload'; //dropbox api url
+    // $postfields = array("filedata" => "@$filedata", "filename" => $filename);
+    $token = $token->get('value');
 
-// Check if image file is a actual image or fake image
-// if(isset($_POST["submit"])) {
-    // echo $target_file;
-    // die();
-    $cheaders = array('Authorization: Bearer sl.A_jZvsh0O3ibkR6xi5K5_2N_4ArTJnSUe2B85cipzL40p862cMGTwPSTTp5OvLErzs_68AImGAFGOHCnSpM8vgi1VfUJfwcgWRTtpuJ1G1QTp56IyWVhMrDt98QhcJlI2Vju9eI',
-                  'Content-Type: application/octet-stream',
-                  'Dropbox-API-Arg: {"path":"/'.$target_file.'", "mode":"add"}');
+    $headers = array('Authorization: Bearer '. $token,
+        'Content-Type: application/octet-stream',
+        'Dropbox-API-Arg: '.
+        json_encode(
+            array(
+                "path"=> '/'.$_POST['path']. '/'.basename($filename),
+                "mode" => "add",
+                "autorename" => false,
+                "mute" => false
+            )
+        )
 
-    $ch = curl_init('https://content.dropboxapi.com/2/files/upload');
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $cheaders);
-    curl_setopt($ch, CURLOPT_PUT, true);
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-    curl_setopt($ch, CURLOPT_INFILE, $fp);
-    curl_setopt($ch, CURLOPT_INFILESIZE, $size);
+    );
+
+    $ch = curl_init($api_url);
+
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_POST, true);
+
+    $path = $filedata;
+    $fp = fopen($path, 'rb');
+    $filesize = filesize($path);
+
+    // curl_setopt($ch, CURLOPT_POSTFIELDS, fread($fp, $filesize));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, fread($fp, $filesize));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//        curl_setopt($ch, CURLOPT_VERBOSE, 1); // debug
+
     $response = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    echo($response.'<br/>');
+    echo($http_code.'<br/>');
 
-    echo $response;
     curl_close($ch);
-    fclose($fp);
-//   $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-//   if($check !== false) {
-//     echo "File is an image - " . $check["mime"] . ".";
-//     $uploadOk = 1;
-//   } else {
-//     echo "File is not an image.";
-//     $uploadOk = 0;
-//   }
-// }
-
-
-
-?>
+}

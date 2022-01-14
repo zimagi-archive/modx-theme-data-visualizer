@@ -1,7 +1,16 @@
 <?php
 
-// Create a constant to store your Slack URL
-define('SLACK_WEBHOOK', $_POST['hook']);
+include_once '../../../../../core/model/modx/modx.class.php';
+
+$modx = new modX();
+
+$webhook = $modx->getObject('modSystemSetting', 'slack.webhook');
+if ($webhook) {
+
+     // Create a constant to store your Slack URL
+    define('SLACK_WEBHOOK', $webhook->get('value'));
+
+}
 
 function slack($message, $channel)
 {
@@ -18,4 +27,7 @@ function slack($message, $channel)
     return $result;
 }
 // Use curl to send your message
-slack($_POST['message'],$_POST['channel']);//
+if($_POST['message'] && $_POST['channel']){
+    slack($_POST['message'],$_POST['channel']);//
+}
+

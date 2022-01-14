@@ -1,0 +1,73 @@
+id: 43
+name: 'Slack Messaging'
+uuid: 5e47fe2d-be1c-41c8-bd8a-9556946c58cf
+image: '{{theme_dir}}thumb-slack-messaging.gif'
+category: 16
+rank: 1
+options_override: '{"remote":true}'
+
+-----
+
+{% set uId = random() %}
+<script type="text/javascript">
+  function validateSlackForm(id) {
+      
+    if ($('#form-slack-channel-'+id).val() == '') {
+      alert('Please enter a slack channel where you want to post the message');
+      $('#form-slack-channel-'+id).focus();
+      return false;
+    }
+    if ($('#form-slack-message-'+id).val() == '') {
+      alert('Please enter a message');
+      $('#form-slack-message-'+id).focus();
+      return false;
+    }
+    var data = $.ajax({
+      type: 'POST',
+      url: 'assets/themes/zimagi_data_visualizer/widgets/slack/message.php',
+      data: {
+        message: $('#form-slack-message-'+id).val(),
+        channel: $('#form-slack-channel-'+id).val(),
+      },
+      success: function (result) {
+        if(result=='ok'){
+            toastr["success"]("Message posted successfully!");
+            //resetProdTools();
+        };
+      },
+    });
+
+    return true;
+  }
+</script>
+
+
+
+<div class="card">
+  <div class="card-header pb-0">
+    <h5 class="card-title mb-0 pb-0"><img class="float-right" src="[[++fred.theme_dir]]img/slack-logo.gif" style="width: 110px; height: auto;margin-top: -10px"/>Slack Messaging</h5>
+    
+  </div>
+  <div class="card-body pt-0">
+    <form id="form-slack-{{uId}}" onsubmit="event.preventDefault(); validateSlackForm('{{uId}}');">
+  
+        
+          <div class="form-group">
+            <label for="form-slack-channel-{{uId}}">Channel (Ex. general)</label>
+            <input class="form-control" id="form-slack-channel-{{uId}}" value="[[++slack.channel_default]]"/>
+          </div>
+
+          <div class="form-group">
+            <label for="form-slack-message-{{uId}}">Message</label>
+            <textarea
+              class="form-control"
+              id="form-slack-message-{{uId}}"
+              rows="3"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary mb-2">Post</button>
+       
+     
+    </form>
+  </div>
+</div>
