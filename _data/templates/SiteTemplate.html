@@ -91,14 +91,13 @@ properties: 'a:0:{}'
        
       <nav id="sidebar" class="sidebar">
         <div class="sidebar-content js-simplebar">
-          <a class="sidebar-brand" href="../">
-            <span class="zimagi-symbol align-middle" style="background-image: url([[!getSiteSetting? &id=`4` &tv=`logo`]])"></span>
+          <a class="sidebar-brand d-flex justify-content-center align-items-center" href="/">
+              <div style="background-image: url([[!getSiteSetting? &id=`4` &tv=`logo`]])"></div>
+            <!--<span class="zimagi-symbol align-middle" style="background-image: url([[!getSiteSetting? &id=`4` &tv=`logo`]])"></span>
 
-            <span class="zimagi-brand align-middle mr-3"
-              >[[!getSiteSetting? &id=`4` &tv=`siteTitle`]]</span
-            >
+            <span class="zimagi-brand align-middle mr-3">[[!getSiteSetting? &id=`4` &tv=`siteTitle`]]</span>-->
           </a>
-          [[!hasFredPermissions:is=`1`:then=`<style>.btn-edit-sidebar{display: none;}</style><div class="p-4 btn-edit-sidebar"><a href="[[~6]]" target="_blank">Edit side bar</a></div>`]]
+          [[!hasFredPermissions:is=`1`:then=`<style>.btn-edit-sidebar{display: none;}</style><div class="p-4 btn-edit-sidebar"><a href="index.php?id=[[!getSiteSetting? &id=`4` &tv=`sideMenu`]]" target="_blank">Edit side bar</a></div>`]]
           <ul class="sidebar-nav">
             [[- Include _Side Menu ]]
            

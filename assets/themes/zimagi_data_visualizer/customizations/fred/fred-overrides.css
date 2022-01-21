@@ -353,7 +353,7 @@ dd[role='tablist'] {
   margin-bottom: 0px !important;
 }
 .navbar {
-  z-index: 19999 !important;
+  z-index: 1000 !important;
 }
 .fred--block.button_link {
   display: inline-block;
@@ -407,3 +407,20 @@ dd[role='tablist'] {
 .fred .fred--accordion {
   border-width: 0 0 0 0 !important;
 }
+/*Start Panel Overrides*/
+.fred .fred--accordion dd .fred--thumbs .fred--thumb
+{padding-top: 1.8rem !important}
+.fred .fred--accordion dd .fred--thumbs .fred--thumb figcaption{
+
+    left: 0px !important;
+    opacity: 1 !important;
+    top: 0px !important;
+    width: 100% !important;
+    padding: 3px 3px 3px 30px !important;
+    background: transparent !important;
+    
+}
+.fred .fred--accordion dd .fred--thumbs .fred--thumb figcaption strong{
+    color: #757575 !important
+}
+/*End Panel Overrides*/

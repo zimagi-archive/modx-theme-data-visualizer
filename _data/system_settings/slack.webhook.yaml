@@ -1,3 +1,2 @@
 key: slack.webhook
-value: 'https://hooks.slack.com/services/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'
 namespace: slack

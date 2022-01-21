@@ -46,7 +46,19 @@
   animation: spin 1s linear infinite;
 }
 
-
+.sidebar-brand{
+    width: 100%;
+    height: 67px;
+    padding: 0px !important;
+}
+.sidebar-brand div{
+    width: 180px;
+    height: 52px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: fit fit;
+    background-position: center center;
+}
 
 @keyframes spin {
   0% { transform: rotate(0deg); }

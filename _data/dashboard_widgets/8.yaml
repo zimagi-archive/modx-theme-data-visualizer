@@ -2,7 +2,7 @@ id: 8
 name: Welcome
 description: ''
 type: html
-content: "<link rel=\"stylesheet\" href=\"../[[++fred.theme_dir]]css/widgets/bootstrap.min.css\">\n<div class=\"p-3\">\n   <h3>The following videos tutorials will give you a better understanding on how to manage and build your website.</h3>\n</div>"
+content: "<link rel=\"stylesheet\" href=\"../[[++fred.theme_dir]]css/widgets/bootstrap.min.css\">\n<style>h3{font-size: 1.3rem !important}</style>\n<div class=\"p-3\">\n   <h3>The following videos tutorials will give you a better understanding on how to manage and build your website.</h3>\n</div>"
 namespace: core
 size: full
 name_trans: Welcome

@@ -57,7 +57,8 @@ var buildDataTable = function(id, url, cols){
                   
             }
             $('#'+id).DataTable({
-                data: setNodeValuesInArray(result)
+                data: setNodeValuesInArray(result),
+                autoWidth: false
             });
             
         }});

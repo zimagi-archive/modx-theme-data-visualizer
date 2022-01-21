@@ -2,7 +2,7 @@ id: 7
 name: 'How to'
 description: ''
 type: html
-content: "<link rel=\"stylesheet\" href=\"../[[++fred.theme_dir]]css/widgets/widgets-custom.css\">\n<div class=\"p-3\">\n  <ul>\n    <li><a href=\"#\">How to change your site's color scheme?</a></li>\n    <li><a href=\"#\">How to change your site color scheme?</a></li>\n    <li><a href=\"#\">How to change your site color scheme?</a></li>\n    <li><a href=\"#\">How to change your site color scheme?</a></li>\n  </ul>\n</div>"
+content: "<link rel=\"stylesheet\" href=\"../[[++fred.theme_dir]]css/widgets/widgets-custom.css\">\n<div class=\"p-3\">\n  <ul>\n    <li><a href=\"#\">How to add your brand?</a></li>\n    <li><a href=\"#\">Creating your first page?</a></li>\n    <li><a href=\"#\">Styling your site?</a></li>\n    <li><a href=\"#\">Creating a page on your site?</a></li>\n    <li><a href=\"#\">Build your side navigation menu?</a></li>\n     <li><a href=\"#\">Connecting your data to a Zimagi API?</a></li>\n\n  </ul>\n</div>"
 namespace: core
 name_trans: 'How to'
 description_trans: ''

@@ -31,7 +31,7 @@ document.body.addEventListener("FredElementDrop", function(){
             el.classList.remove("active");
         });
         
-    }, 1000);
+    }, 500);
     
     
     // Init feather icons
