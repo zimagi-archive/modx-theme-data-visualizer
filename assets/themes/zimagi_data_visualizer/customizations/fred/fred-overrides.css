@@ -59,15 +59,22 @@
   left: 20px;
   opacity: 0.7;
 }
-main[data-fred-dropzone] {
-  /* padding: 30px 0px 20px 0px !important; */
+main[data-fred-dropzone]:not(:empty) {
   padding: 0px 0px 20px 0px !important;
   margin: 0px !important;
   border: none !important;
 }
-main[data-fred-dropzone]::before {
-  /* content: 'PAGE DROPZONE'; */
+main[data-fred-dropzone]:not(:empty)::before {
   content: '';
+}
+main[data-fred-dropzone]:empty {
+  padding: 30px 0px 20px 0px !important;
+  margin: 0px !important;
+}
+main[data-fred-dropzone]:empty::before {
+  content: 'Start by dropping some Page Layout Elements(Building Blocks) in this area. \A You can find all available building blocks under the Elements section in the grey ← side panel. ';
+  white-space: pre-wrap;
+  font-size: 17px;
 }
 /*Push page content to the side for fred's toolbar*/
 

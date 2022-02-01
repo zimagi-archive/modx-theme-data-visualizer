@@ -73,6 +73,12 @@ properties: 'a:0:{}'
     ]]
     [[!getResourceInclude? &id=`8`]]
     
+    [[- Side pannel colors 
+        Include resource with ID 33 
+        This resource's template generates style override
+        defining background colors 
+    ]]
+    [[!getResourceInclude? &id=`33`]]
     
     [[- App.js combines various javascript libraries like:
         jQuery, Bootstrap 4, Charts.js, ApexCharts.js, etc 
@@ -85,7 +91,7 @@ properties: 'a:0:{}'
     <script src="[[++fred.theme_dir]]js/datatables-custom-functions.js"></script>
     <script src="[[++fred.theme_dir]]js/simple-card-custom-functions.js"></script>
     <script src="[[++fred.theme_dir]]js/toastr.min.js"></script>
-
+    
      
     <div class="wrapper">
        
@@ -97,7 +103,7 @@ properties: 'a:0:{}'
 
             <span class="zimagi-brand align-middle mr-3">[[!getSiteSetting? &id=`4` &tv=`siteTitle`]]</span>-->
           </a>
-          [[!hasFredPermissions:is=`1`:then=`<style>.btn-edit-sidebar{display: none;}</style><div class="p-4 btn-edit-sidebar"><a href="index.php?id=[[!getSiteSetting? &id=`4` &tv=`sideMenu`]]" target="_blank">Edit side bar</a></div>`]]
+          [[!hasFredPermissions:is=`1`:then=`<style>.btn-edit-sidebar{display: none;}</style><div class="p-4 btn-edit-sidebar"><a href="index.php?id=[[!getSiteSetting? &id=`4` &tv=`sideMenu`]]">Edit side bar menu</a></div>`]]
           <ul class="sidebar-nav">
             [[- Include _Side Menu ]]
            
@@ -129,7 +135,7 @@ properties: 'a:0:{}'
               </div>
               <div class="col-6 text-right">
                 <p class="mb-0">
-                  &copy; 2021 -
+                  &copy; 2022 -
                   <a href="../" class="text-muted">[[!getSiteSetting? &id=`4` &tv=`siteTitle`]]</a>
                 </p>
               </div>

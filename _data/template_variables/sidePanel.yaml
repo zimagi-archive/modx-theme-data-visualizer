@@ -1,0 +1,13 @@
+id: 10
+source: 1
+type: textarea
+name: sidePanel
+caption: '<a href="../index.php?id=33">Click here to manage the Side Panel Styles</a>'
+category: 'Side Panel'
+elements: test
+display: default
+default_text: ''
+properties: 'a:0:{}'
+input_properties: 'a:1:{s:10:"allowBlank";s:4:"true";}'
+output_properties: 'a:0:{}'
+content: ''

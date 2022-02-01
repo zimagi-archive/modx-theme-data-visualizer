@@ -118,6 +118,9 @@ properties: 'a:0:{}'
             background-repeat: no-repeat;
             background-position: right center;
         }
+        [data-fred-element-title="Nav Item (link)"]:before{
+            padding-right: 90px;
+        }
         [data-fred-element-title="Sidebar Header"]:before{
             content: "Sidebar Header"  !important;
         }
@@ -146,7 +149,21 @@ properties: 'a:0:{}'
     <div class="wrapper">
       
       <div class="main">
-       
+       [[!hasFredPermissions:is=`1`:then=`
+       <style>
+          .btn-back {
+            float: left;
+            position: absolute;
+          }
+        </style>
+        <div id="btn-back" class="p-4 btn-back"></div>
+        <script>
+          if (window.history.length > 1) {
+    document.getElementById('btn-back').innerHTML =
+      '<a href="javascript://" class="btn btn-outline-primary" onclick="history.back();">Return to previous page</a>';
+  }
+        </script>
+       `]]
         <main class="content sidebar">
           <ul class="sidebar-nav"  data-fred-dropzone="content">
            [[- Main area where building blocks will be dropped]]

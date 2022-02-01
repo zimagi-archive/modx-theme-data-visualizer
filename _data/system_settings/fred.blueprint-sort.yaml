@@ -1,4 +1,4 @@
 key: fred.blueprint_sort
-value: name
+value: rank
 namespace: fred
 area: default

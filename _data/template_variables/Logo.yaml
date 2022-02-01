@@ -1,8 +1,9 @@
 id: 3
-source: 1
+source: 3
 type: image
 name: logo
 caption: Brand
+description: 'Use the "Upload Files" button once you click "Change" image'
 category: Logo
 elements: ''
 rank: 1

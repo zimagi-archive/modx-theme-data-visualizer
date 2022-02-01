@@ -1,0 +1,33 @@
+id: 45
+name: 'Manage Side Panel Colors'
+uuid: 11cf0264-c95a-4f50-8cb4-957dd8b2f05d
+description: 'Element used only for color settings on _ChartsDefaultColorsTemplate'
+image: 'https://via.placeholder.com/300x150?text=Color'
+category: 7
+rank: 4
+options_override: '{"settings":[{"name":"bg_logo","label":"Logo\/Identity Background","type":"colorpicker","value":"#8e278a"},{"name":"bg_side_menu","label":"Side Menu Background","type":"colorpicker","value":"#1f1c31"}]}'
+
+-----
+
+<style>
+    .sidebar-brand{background-color: {{bg_logo}} !important;}
+    #sidebar, .sidebar-content{background-color: {{bg_side_menu}} !important;}
+</style>
+
+<div data-fred-render="false" class="px-2">
+    <h2 data-fred-render="false">Side Panel Background Color</h2>
+   
+    <div data-fred-render="false" class="alert alert-info alert-dismissible mt-2" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="alert-message">
+          <p class="mr-2">Hover over and click the <strong class="fred-icon-gear"><span class="sr-only">Gears</span></strong> icon, go to <strong>Open Settings</strong> to modify graphs colors.</p>
+        </div>
+    </div>
+    
+  </div>
+</div>
+<div data-fred-render="false" class="border shadow-sm" style="background-color: {{ bg_logo }};width: 96%;min-height: 40px;margin: 5px"></div>
+<div data-fred-render="false" class="border shadow-sm" style="background-color: {{ bg_side_menu }};width: 96%;min-height: 40px;margin: 5px"></div>
+
