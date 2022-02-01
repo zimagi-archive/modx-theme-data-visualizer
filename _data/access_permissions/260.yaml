@@ -1,0 +1,4 @@
+id: 260
+template: 8
+name: fred_blueprint_categories_create_public
+description: fred.permissions.fred_blueprint_categories_create_public

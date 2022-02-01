@@ -1,0 +1,4 @@
+id: 23
+template: 1
+name: delete_static_resource
+description: perm.delete_static_resource_desc

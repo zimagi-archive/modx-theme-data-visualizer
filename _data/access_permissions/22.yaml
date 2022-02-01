@@ -1,0 +1,4 @@
+id: 22
+template: 1
+name: delete_symlink
+description: perm.delete_symlink_desc
