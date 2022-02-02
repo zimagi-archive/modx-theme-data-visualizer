@@ -1,0 +1,6 @@
+id: 6
+target: web
+principal_class: modUserGroup
+principal: 2
+authority: 1
+policy: 7
