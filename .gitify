@@ -24,6 +24,9 @@ data:
     class: FredElement
     primary: id
     extension: .html
+  modx_fred_element_category_templates_access:
+    class: FredElementCategoryTemplateAccess
+    primary: 'category'
   fred_blueprint_categories:
     class: FredBlueprintCategory
     primary: id
@@ -47,6 +50,18 @@ data:
     primary:
       - tmplvarid
       - templateid
+  access_policies:
+    class: modAccessPolicy
+    primary:
+      - id
+  access_policy_templates:
+    class: modAccessPolicyTemplate
+    primary:
+      - id
+  access_permissions:
+    class: modAccessPermission
+    primary:
+      - id
   content:
     type: content
     exclude_keys:
@@ -91,6 +106,9 @@ data:
     primary: key
     exclude_keys:
       - editedon
+  lexicon_entries:
+    class: modLexiconEntry
+    primary: id
   extension_packages:
     class: modExtensionPackage
     primary: namespace
@@ -147,3 +165,5 @@ packages:
       - Fred
       - 'Fred TinyMCE RTE'
       - 'Fred Font Awesome 5 Icon Editor'
+      - 'GoogleCloudStorage'
+      - 'Slackify'

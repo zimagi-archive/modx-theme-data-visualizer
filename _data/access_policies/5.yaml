@@ -1,4 +1,5 @@
 id: 5
-template_group: 5
-name: MediaSourceTemplate
-description: 'Media Source Policy Template with all attributes.'
+name: Object
+description: 'An Object policy with all permissions.'
+template: 3
+data: '{"load":true,"list":true,"view":true,"save":true,"remove":true}'

@@ -1,4 +1,5 @@
 id: 4
-template_group: 4
-name: ElementTemplate
-description: 'Element Policy Template with all attributes.'
+name: 'Load, List and View'
+description: 'Provides load, list and view permissions only.'
+template: 3
+data: '{"load":true,"list":true,"view":true}'
