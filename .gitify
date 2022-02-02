@@ -50,6 +50,15 @@ data:
     primary:
       - tmplvarid
       - templateid
+  access_context:
+    class: modAccessContext
+    primary:
+      - id
+      - target
+      - principal_class
+      - principal
+      - authority
+      - policy
   access_policies:
     class: modAccessPolicy
     primary:
@@ -62,6 +71,35 @@ data:
     class: modAccessPermission
     primary:
       - id
+  access_policy_template_groups:
+    class: modAccessPolicyTemplateGroup
+    primary:
+      - id
+  user_group_roles:
+    class: modUserGroupRole
+    primary:
+      - id
+      - name
+      - authority
+  user_group_settings:
+    class: modUserGroupSetting
+    primary:
+      - group
+      - key
+  membergroup_names:
+    class: modUserGroupMember
+    primary:
+      - id
+      - name
+      - parent
+      - rank
+      - dashboard
+  member_groups:
+    class: modUserGroup
+    primary:
+      - id
+      - role
+      - rank
   content:
     type: content
     exclude_keys:
