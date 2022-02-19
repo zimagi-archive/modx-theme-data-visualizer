@@ -32,7 +32,7 @@ Install the latest version of MODX, or the one you specified by running:
 This directory is composed of a series of xaml files with all the information that will be set in the database. Run the following commands to start the process:
 
 `gitify package:install --all`
-`gitify build`
+`gitify build -f`
 
 ## assets/themes/zimagi_data_visualizer
 
