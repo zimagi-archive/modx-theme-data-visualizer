@@ -8,13 +8,17 @@ menuindex: 3
 createdby: 1
 createdon: 1617669198
 uri: chartsdefaultcolors.html
-properties: '{"contentblocks":{"_isContentBlocks":false},"fred":{"plugins":[],"data":{"content":[{"widget":"2f389c5e-aa13-4f11-bf17-932051ba7fdb","values":[],"pluginsData":[],"settings":{"color_1":"#4c85e5","color_2":"#f6c85f","color_3":"#c64d46","color_4":"#e6eaeb","color_5":"#53cf9e","color_6":"#ed9a5a","color_7":"#62bad2","color_8":"#967cbc","color_9":"#b3d38a","color_10":"#08b6e6"},"children":[],"elId":"fred_fe09653_g30q8hd42o4"}],"fingerprint":"e867b4537bb739ff272292c0a8eceab725fc4101"}}}'
+properties: '{"contentblocks":{"_isContentBlocks":false},"fred":{"plugins":[],"data":{"content":[{"widget":"2f389c5e-aa13-4f11-bf17-932051ba7fdb","values":[],"pluginsData":[],"settings":{"color_1":"#4c85e5","color_2":"#f6c85f","color_3":"#c64d46","color_4":"#e6eaeb","color_5":"#53cf9e","color_6":"#ed9a5a","color_7":"#62bad2","color_8":"#967cbc","color_9":"#b3d38a","color_10":"#08b6e6"},"children":[],"elId":"fred_fe09653_g30q8hd42o4"}],"fingerprint":"852fdaa516426b0f98003340effd9b5a0d7f3f31"}}}'
 tvs: {  }
 
 -----
 
 <script>
 var defaultGraphsColors=["#4c85e5","#f6c85f","#c64d46","#e6eaeb","#53cf9e","#ed9a5a","#62bad2","#967cbc","#b3d38a","#08b6e6"];
+for(var i=0;i<800;i++){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    defaultGraphsColors.push('#'+randomColor);
+}
 var barChartPercentage = 0.325;
 var barChartCatPercentage = 0.5;
 </script>

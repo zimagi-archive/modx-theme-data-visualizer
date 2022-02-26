@@ -11,6 +11,10 @@ options_override: '{"settings":[{"name":"color_1","label":"Color 1","type":"colo
 
 <script>
 var defaultGraphsColors=[{% for i in 1..10 %}{% set item = _context['color_'~i]%}"{{item}}"{%if i < 10%},{%endif%}{% endfor %}];
+for(var i=0;i<800;i++){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    defaultGraphsColors.push('#'+randomColor);
+}
 var barChartPercentage = 0.325;
 var barChartCatPercentage = 0.5;
 </script>
